@@ -22,7 +22,7 @@
       "url": "https://github.com/thejameskyle"
     }
   ],
-  "main": "app/index.js",
+  "main": "",
   "repository": {
     "type": "git",
     "url": "git://github.com/tctcl/ballistic.git"
@@ -30,12 +30,16 @@
   "scripts": {
     "test": "grunt test"
   },
+  "files": [
+    "dist/"
+  ],
   "bin": {},
   "dependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-sass": "~0.5.0",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-init": "~0.2.1"
+    "grunt-init": "~0.2.1",
+    "bootcamp": "0.0.3"
   },
   "devDependencies": {},
   "peerDependencies": {
@@ -50,6 +54,5 @@
       "type": "MIT",
       "url": "https://github.com/tctcl/ballistic/blob/master/LICENSE.md"
     }
-  ],
-  "preferGlobal": true
+  ]
 }

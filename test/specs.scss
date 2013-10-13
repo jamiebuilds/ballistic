@@ -1,0 +1,13 @@
+@import "bootcamp";
+
+$bootcamp-setting-verbose: false;
+
+@include runner-start;
+
+@include describe("A suite") {
+  @include it("contains spec with an expectation") {
+    @include should(expect(true), to(be(true)));
+  }
+}
+
+@include runner-end;
