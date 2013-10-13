@@ -1,0 +1,15 @@
+{
+  "name": "ballistic",
+  "version": "0.0.1",
+  "homepage": "http://github.com/tctcl/ballistic",
+  "main": "dist/ballistic.scss",
+  "ignore": [
+    "test",
+    ".editorconfig",
+    ".gitattributes",
+    ".gitignore",
+    ".jshintrc",
+    ".travis.yml",
+    "Gruntfile.coffee"
+  ]
+}
