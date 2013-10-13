@@ -1,0 +1,54 @@
+@function match($list) {
+  $actual: actual();
+  $when: true;
+
+  @for $i from 1 through length($list) {
+    @if nth($actual, $i) != nth($list, $i) {
+      $when: false;
+    }
+  }
+
+  @return should("match", $list, $when);
+}
+
+// TESTS
+
+@include describe("Matchers::Match") {
+  @include it("should match two equal lists") {
+    @include should(expect( (1, 2, 3) ),           to( match( (1, 2, 3) )));
+    @include should(expect( ("a", "b", "c") ),     to( match( ("a", "b", "c") )));
+    @include should(expect( (true, false, true) ), to( match( (true, false, true) )));
+  }
+
+  @include it("should not match two unequal lists") {
+    @include should(expect( (3, 2, 1) ),            not-to( match( (1, 2, 3) )));
+    @include should(expect( ("c", "b", "a") ),      not-to( match( ("a", "b", "c") )));
+    @include should(expect( (false, true, false) ), not-to( match( (true, false, true) )));
+  }
+
+  @include it("should match two equal lists with different seperators") {
+    @include should(expect( 1 2 3 ),           to( match( (1, 2, 3) )));
+    @include should(expect( "a" "b" "c" ),     to( match( ("a", "b", "c") )));
+    @include should(expect( true false true ), to( match( (true, false, true) )));
+  }
+
+  @include it("should match two equal lists built up programmatically") {
+    $numbers: 1, 2, 3;
+    $strings: "a", "b", "c";
+    $booleans: true, false, true;
+
+    $numbers-out:  ();
+    $strings-out:  ();
+    $booleans-out: ();
+
+    @for $i from 1 through 3 {
+      $numbers-out:  append($numbers-out,  nth($numbers,  $i));
+      $strings-out:  append($strings-out,  nth($strings,  $i));
+      $booleans-out: append($booleans-out, nth($booleans, $i));
+    }
+
+    @include should(expect($numbers-out ), to( match( (1, 2, 3) )));
+    @include should(expect($strings-out ), to( match( ("a", "b", "c") )));
+    @include should(expect($booleans-out), to( match( (true, false, true) )));
+  }
+}

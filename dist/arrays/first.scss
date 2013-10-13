@@ -1,0 +1,23 @@
+@function first($list, $nth: 1) {
+  @if length($list) < 1 {
+    @return undefined;
+  }
+
+  $output: ();
+
+  @for $i from 1 to $nth + 1 {
+    $output: append($output, nth($list, $i), comma);
+  }
+
+  @return $output;
+}
+
+// Aliases
+
+@function head($list, $nth: 1) {
+  @return first($list, $nth)
+}
+
+@function take($list, $nth: 1) {
+  @return first($list, $nth)
+}

@@ -1,13 +1,12 @@
 @import "bootcamp";
+@import "matchers/match";
 
 $bootcamp-setting-verbose: false;
 
+@import "../dist/ballistic";
+
 @include runner-start;
 
-@include describe("A suite") {
-  @include it("contains spec with an expectation") {
-    @include should(expect(true), to(be(true)));
-  }
-}
+@import "arrays/first";
 
 @include runner-end;
