@@ -1,4 +1,4 @@
-ballistic
+Ballistic
 =========
 
 Underscore-style Library for Sass
