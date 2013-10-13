@@ -1,0 +1,55 @@
+{
+  "name": "ballistic",
+  "version": "0.0.1",
+  "description": "Underscore-style Library for Sass",
+  "keywords": [
+    "bootcamp",
+    "sass",
+    "scss",
+    "underscore",
+    "bower"
+  ],
+  "homepage": "https://github.com/tctcl/ballistic",
+  "bugs": "https://github.com/tctcl/ballistic/issues",
+  "author": {
+    "name": "Tactical",
+    "url": "https://github.com/tctcl"
+  },
+  "contributors": [
+    {
+      "name": "James Kyle",
+      "email": "me@thejameskyle.com",
+      "url": "https://github.com/thejameskyle"
+    }
+  ],
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tctcl/ballistic.git"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "bin": {},
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-sass": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-init": "~0.2.1"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/tctcl/ballistic/blob/master/LICENSE.md"
+    }
+  ],
+  "preferGlobal": true
+}
