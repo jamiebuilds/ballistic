@@ -1,0 +1,11 @@
+@function compact($list) {
+  $compacted: ();
+
+  @each $item in $list {
+    @if $item and $item != 0 and $item != undefined {
+      $compacted: append($compacted, $item, comma);
+    }
+  }
+
+  @return $compacted;
+}
