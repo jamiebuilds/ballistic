@@ -1,0 +1,12 @@
+@function union($lists...) {
+  $flattened: flatten($lists, true);
+  $unique: ();
+
+  @each $item in $flattened {
+    @if not index($unique, $item) {
+      $unique: append($unique, $item, comma);
+    }
+  }
+
+  @return $unique;
+}

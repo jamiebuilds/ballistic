@@ -1,0 +1,47 @@
+@include describe("Arrays::Union") {
+  @include it("should make a union of unique items in the arrays") {
+    $list-1a: 1 2 3;
+    $list-1b: 2 4 6;
+    $list-1c: 8 2 1;
+
+    $list-2a: "foo", "bar", "baz";
+    $list-2b: "bar", "nan", "baz";
+    $list-2c: "foo", "baz", "bar";
+
+    $list-3a:      true, false, false;
+    $list-3b:      true,  null, false;
+    $list-3c: undefined,  null,  true;
+
+    @include should(expect( union($list-1a, $list-1b, $list-1c) ), to( match( ( 1, 2, 3, 4, 6, 8             ) )));
+    @include should(expect( union($list-2a, $list-2b, $list-2c) ), to( match( ( "foo", "bar", "baz", "nan"   ) )));
+    @include should(expect( union($list-3a, $list-3b, $list-3c) ), to( match( ( true, false, null, undefined ) )));
+  }
+
+  @include it("should return one item if all the items are the same") {
+    @include should(expect( union(1, 1, 1) ), to( match( ( 1 ) )));
+    @include should(expect( union("foo", "foo", "foo") ), to( match( ( "foo" ) )));
+    @include should(expect( union(false, false, false) ), to( match( ( false ) )));
+  }
+
+  @include it("should only go one level deep") {
+    $list-1a: 1, (2, 3);
+    $list-1b: 2, (4, 6);
+    $list-1c: 8, (2, 1);
+
+    $list-2a: "foo", ("bar", "baz");
+    $list-2b: "bar", ("nan", "baz");
+    $list-2c: "foo", ("baz", "bar");
+
+    $list-3a:      true, (false, false);
+    $list-3b:      true, ( null, false);
+    $list-3c: undefined, ( null,  true);
+
+    @include should(expect( union($list-1a, $list-1b, $list-1c) ), not-to( match( ( 1, 2, 3, 4, 6, 8             ) )));
+    @include should(expect( union($list-2a, $list-2b, $list-2c) ), not-to( match( ( "foo", "bar", "baz", "nan"   ) )));
+    @include should(expect( union($list-3a, $list-3b, $list-3c) ), not-to( match( ( true, false, null, undefined ) )));
+  }
+
+  @include it("should leave an empty array alone") {
+    @include should(expect( union( () ) ), to( match( () )));
+  }
+}
