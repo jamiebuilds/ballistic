@@ -14,5 +14,6 @@ $bootcamp-setting-verbose: false;
 @import "arrays/rest";
 @import "arrays/flatten";
 @import "arrays/compact";
+@import "arrays/without";
 
 @include runner-end;
