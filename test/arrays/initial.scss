@@ -1,0 +1,37 @@
+@include describe("Arrays::Initial") {
+  @include it("should return the initial item in an array") {
+    $numbers:  1, 2, 3;
+    $strings:  "foo", "bar", "baz";
+    $booleans: true, false, false;
+
+    @include should(expect( initial($numbers ) ), to( match( (1, 2) )));
+    @include should(expect( initial($strings ) ), to( match( ("foo", "bar") )));
+    @include should(expect( initial($booleans) ), to( match( (true, false) )));
+  }
+
+  @include it("should return the initial nth items in an array") {
+    $numbers:  1, 2, 3;
+    $strings:  "foo", "bar", "baz";
+    $booleans: true, false, false;
+
+    @include should(expect( initial($numbers , 2) ), to( match( 1 )));
+    @include should(expect( initial($strings , 2) ), to( match( "foo" )));
+    @include should(expect( initial($booleans, 2) ), to( match( true )));
+  }
+
+  @include it("should return the only item in an single item array") {
+    $number: 1;
+    $string: "foo";
+    $boolean: true;
+
+    @include should(expect( initial($number ) ), to( match( 1 )));
+    @include should(expect( initial($string ) ), to( match( "foo" )));
+    @include should(expect( initial($boolean) ), to( match( true )));
+  }
+
+  @include it("should return undefined when a list is empty") {
+    $empty: ();
+
+    @include should(expect( initial($empty) ), to( be-undefined() ));
+  }
+}

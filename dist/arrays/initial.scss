@@ -1,0 +1,17 @@
+@function initial($list, $nth: 1) {
+  @if length($list) == 0 {
+    @return undefined;
+  }
+
+  @if length($list) == 1 {
+    @return nth($list, 1);
+  }
+
+  $output: ();
+
+  @for $i from 1 to length($list) - $nth + 1 {
+    $output: append($output, nth($list, $i), comma);
+  }
+
+  @return $output;
+}
