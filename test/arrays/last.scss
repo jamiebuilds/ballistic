@@ -1,0 +1,37 @@
+@include describe("Arrays::Last") {
+  @include it("should return the last item in an array") {
+    $numbers:  1, 2, 3;
+    $strings:  "foo", "bar", "baz";
+    $booleans: true, false, false;
+
+    @include should(expect( last($numbers ) ), to( match( (3) )));
+    @include should(expect( last($strings ) ), to( match( ("baz") )));
+    @include should(expect( last($booleans) ), to( match( (false) )));
+  }
+
+  @include it("should return the last nth items in an array") {
+    $numbers:  1, 2, 3;
+    $strings:  "foo", "bar", "baz";
+    $booleans: true, false, false;
+
+    @include should(expect( last($numbers , 1) ), to( match( 3 )));
+    @include should(expect( last($strings , 1) ), to( match( "baz" )));
+    @include should(expect( last($booleans, 1) ), to( match( false )));
+  }
+
+  @include it("should return the only item in an single item array") {
+    $number: 1;
+    $string: "foo";
+    $boolean: true;
+
+    @include should(expect( last($number ) ), to( match( 1 )));
+    @include should(expect( last($string ) ), to( match( "foo" )));
+    @include should(expect( last($boolean) ), to( match( true )));
+  }
+
+  @include it("should return undefined when a list is empty") {
+    $empty: ();
+
+    @include should(expect( last($empty) ), to( be-undefined() ));
+  }
+}
