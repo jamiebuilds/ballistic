@@ -3,7 +3,11 @@ Ballistic [![Build Status](https://travis-ci.org/tctcl/ballistic.png?branch=mast
 
 Underscore-style Library for Sass
 
-![1998](http://i.imgur.com/rW8PSW2.png)
+> ## Under Construction
+
+> ![Under Construction](http://i.imgur.com/lCwEl63.jpg)
+
+> Is... is that Nick Cannon?
 
 ## License
 
