@@ -8,5 +8,6 @@ $bootcamp-setting-verbose: false;
 @include runner-start;
 
 @import "arrays/first";
+@import "arrays/initial";
 
 @include runner-end;

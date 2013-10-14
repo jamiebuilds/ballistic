@@ -1,5 +1,5 @@
 @function first($list, $nth: 1) {
-  @if length($list) < 1 {
+  @if length($list) == 0 {
     @return undefined;
   }
 
