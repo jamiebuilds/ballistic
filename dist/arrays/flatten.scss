@@ -1,4 +1,4 @@
-@function flatten($list) {
+@function flatten($list, $shallow: false) {
   $flattened: $list;
   $contains-list: true;
 
@@ -10,18 +10,16 @@
     @each $item in $temp {
       @if type-of($item) == "list" {
         @each $_item in $item {
-          @if type-of($_item) == "list" {
+          @if type-of($_item) == "list" and not $shallow {
             $contains-list: true;
           }
 
-          $flattened: append($flattened, $_item);
+          $flattened: append($flattened, $_item, comma);
         }
       } @else {
-        $flattened: append($flattened, $item);
+        $flattened: append($flattened, $item, comma);
       }
     }
-
-    $temp: ();
   }
 
   @return $flattened;
