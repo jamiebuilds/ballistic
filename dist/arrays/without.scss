@@ -1,0 +1,19 @@
+@function without($list, $values...) {
+  $without: ();
+
+  @each $item in $list {
+    $passed: true;
+
+    @each $value in $values {
+      @if $item == $value {
+        $passed: false;
+      }
+    }
+
+    @if $passed {
+      $without: append($without, $item);
+    }
+  }
+
+  @return $without;
+}
