@@ -1,0 +1,63 @@
+@include describe("Arrays::Rest") {
+  @include it("should return the rest item in an array") {
+    $numbers:  1, 2, 3;
+    $strings:  "foo", "bar", "baz";
+    $booleans: true, false, false;
+
+    @include should(expect( rest($numbers ) ), to( match( (2, 3) )));
+    @include should(expect( rest($strings ) ), to( match( ("bar", "baz") )));
+    @include should(expect( rest($booleans) ), to( match( (false, false) )));
+
+    @include should(expect( tail($numbers ) ), to( match( (2, 3) )));
+    @include should(expect( tail($strings ) ), to( match( ("bar", "baz") )));
+    @include should(expect( tail($booleans) ), to( match( (false, false) )));
+
+    @include should(expect( drop($numbers ) ), to( match( (2, 3) )));
+    @include should(expect( drop($strings ) ), to( match( ("bar", "baz") )));
+    @include should(expect( drop($booleans) ), to( match( (false, false) )));
+  }
+
+  @include it("should return the rest nth items in an array") {
+    $numbers:  1, 2, 3;
+    $strings:  "foo", "bar", "baz";
+    $booleans: true, false, false;
+
+    @include should(expect( rest($numbers , 2) ), to( match( 3 )));
+    @include should(expect( rest($strings , 2) ), to( match( "baz" )));
+    @include should(expect( rest($booleans, 2) ), to( match( false )));
+
+    @include should(expect( tail($numbers , 2) ), to( match( 3 )));
+    @include should(expect( tail($strings , 2) ), to( match( "baz" )));
+    @include should(expect( tail($booleans, 2) ), to( match( false )));
+
+    @include should(expect( drop($numbers , 2) ), to( match( 3 )));
+    @include should(expect( drop($strings , 2) ), to( match( "baz" )));
+    @include should(expect( drop($booleans, 2) ), to( match( false )));
+  }
+
+  @include it("should return the only item in an single item array") {
+    $number: 1;
+    $string: "foo";
+    $boolean: true;
+
+    @include should(expect( rest($number ) ), to( match( 1 )));
+    @include should(expect( rest($string ) ), to( match( "foo" )));
+    @include should(expect( rest($boolean) ), to( match( true )));
+
+    @include should(expect( tail($number ) ), to( match( 1 )));
+    @include should(expect( tail($string ) ), to( match( "foo" )));
+    @include should(expect( tail($boolean) ), to( match( true )));
+
+    @include should(expect( drop($number ) ), to( match( 1 )));
+    @include should(expect( drop($string ) ), to( match( "foo" )));
+    @include should(expect( drop($boolean) ), to( match( true )));
+  }
+
+  @include it("should return undefined when a list is empty") {
+    $empty: ();
+
+    @include should(expect( rest($empty) ), to( be-undefined() ));
+    @include should(expect( tail($empty) ), to( be-undefined() ));
+    @include should(expect( drop($empty) ), to( be-undefined() ));
+  }
+}

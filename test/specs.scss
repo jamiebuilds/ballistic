@@ -1,5 +1,4 @@
 @import "bootcamp";
-@import "matchers/match";
 
 $bootcamp-setting-verbose: false;
 
@@ -7,8 +6,11 @@ $bootcamp-setting-verbose: false;
 
 @include runner-start;
 
+@import "matchers/match";
+
 @import "arrays/first";
 @import "arrays/initial";
 @import "arrays/last";
+@import "arrays/rest";
 
 @include runner-end;
