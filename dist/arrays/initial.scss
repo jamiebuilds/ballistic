@@ -9,7 +9,7 @@
 
   $output: ();
 
-  @for $i from 1 to length($list) - $nth + 1 {
+  @for $i from 1 through length($list) - $nth {
     $output: append($output, nth($list, $i), comma);
   }
 
