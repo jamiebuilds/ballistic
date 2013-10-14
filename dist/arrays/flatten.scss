@@ -1,0 +1,28 @@
+@function flatten($list) {
+  $flattened: $list;
+  $contains-list: true;
+
+  @while $contains-list {
+    $contains-list: false;
+    $temp: $flattened;
+    $flattened: ();
+
+    @each $item in $temp {
+      @if type-of($item) == "list" {
+        @each $_item in $item {
+          @if type-of($_item) == "list" {
+            $contains-list: true;
+          }
+
+          $flattened: append($flattened, $_item);
+        }
+      } @else {
+        $flattened: append($flattened, $item);
+      }
+    }
+
+    $temp: ();
+  }
+
+  @return $flattened;
+}
