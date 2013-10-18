@@ -16,5 +16,6 @@ $bootcamp-setting-verbose: false;
 @import "arrays/compact";
 @import "arrays/without";
 @import "arrays/union";
+@import "arrays/intersection";
 
 @include runner-end;

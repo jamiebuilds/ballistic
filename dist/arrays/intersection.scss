@@ -1,0 +1,17 @@
+@function intersection($list, $others...) {
+  $filtered: $list;
+
+  @each $list in $others {
+    $temp: ();
+
+    @each $item in $filtered {
+      @if not not index($list, $item) {
+        $temp: append($temp, $item, comma);
+      }
+    }
+
+    $filtered: $temp;
+  }
+
+  @return $filtered;
+}
