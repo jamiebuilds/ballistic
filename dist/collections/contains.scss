@@ -1,0 +1,9 @@
+@function contains($list, $value) {
+  @return not not index($list, $value)
+}
+
+// Aliases
+
+@function include($list, $value) {
+  @return contains($list, $value)
+}

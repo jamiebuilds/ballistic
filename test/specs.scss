@@ -8,6 +8,8 @@ $bootcamp-setting-verbose: false;
 
 @import "matchers/match";
 
+@import "collections/contains";
+
 @import "arrays/first";
 @import "arrays/initial";
 @import "arrays/last";

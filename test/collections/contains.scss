@@ -1,0 +1,29 @@
+@include describe("Collections::Contains") {
+  @include it("should be true if collection contains value") {
+    $numbers:  1, 2, 3;
+    $strings:  "foo", "bar", "baz";
+    $booleans: true, false, false;
+
+    @include should(expect( contains( $numbers,  1     ) ), to( be( true ) ));
+    @include should(expect( contains( $strings,  "foo" ) ), to( be( true ) ));
+    @include should(expect( contains( $booleans, false ) ), to( be( true ) ));
+
+    @include should(expect( include( $numbers,  1     ) ), to( be( true ) ));
+    @include should(expect( include( $strings,  "foo" ) ), to( be( true ) ));
+    @include should(expect( include( $booleans, false ) ), to( be( true ) ));
+  }
+
+  @include it("should be false if collection doesnt contain value") {
+    $numbers:  1, 2, 3;
+    $strings:  "foo", "bar", "baz";
+    $booleans: true, false, false;
+
+    @include should(expect( contains( $numbers,  4     ) ), to( be( false ) ));
+    @include should(expect( contains( $strings,  "fod" ) ), to( be( false ) ));
+    @include should(expect( contains( $booleans, null  ) ), to( be( false ) ));
+
+    @include should(expect( include( $numbers,  4     ) ), to( be( false ) ));
+    @include should(expect( include( $strings,  "fod" ) ), to( be( false ) ));
+    @include should(expect( include( $booleans, null  ) ), to( be( false ) ));
+  }
+}
