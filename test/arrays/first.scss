@@ -4,17 +4,17 @@
     $strings:  "foo", "bar", "baz";
     $booleans: true, false, false;
 
-    @include should(expect( first($numbers ) ), to( match( 1 )));
-    @include should(expect( first($strings ) ), to( match( "foo" )));
-    @include should(expect( first($booleans) ), to( match( true )));
+    @include should(expect( first($numbers ) ), to( equal( 1 )));
+    @include should(expect( first($strings ) ), to( equal( "foo" )));
+    @include should(expect( first($booleans) ), to( equal( true )));
 
-    @include should(expect( head($numbers ) ), to( match( 1 )));
-    @include should(expect( head($strings ) ), to( match( "foo" )));
-    @include should(expect( head($booleans) ), to( match( true )));
+    @include should(expect( head($numbers ) ), to( equal( 1 )));
+    @include should(expect( head($strings ) ), to( equal( "foo" )));
+    @include should(expect( head($booleans) ), to( equal( true )));
 
-    @include should(expect( take($numbers ) ), to( match( 1 )));
-    @include should(expect( take($strings ) ), to( match( "foo" )));
-    @include should(expect( take($booleans) ), to( match( true )));
+    @include should(expect( take($numbers ) ), to( equal( 1 )));
+    @include should(expect( take($strings ) ), to( equal( "foo" )));
+    @include should(expect( take($booleans) ), to( equal( true )));
   }
 
   @include it("should return the first nth items in an array") {
@@ -22,17 +22,17 @@
     $strings:  "foo", "bar", "baz";
     $booleans: true, false, false;
 
-    @include should(expect( first($numbers , 2) ), to( match( (1, 2) )));
-    @include should(expect( first($strings , 2) ), to( match( ("foo", "bar") )));
-    @include should(expect( first($booleans, 2) ), to( match( (true, false) )));
+    @include should(expect( first($numbers , 2) ), to( equal( (1, 2) )));
+    @include should(expect( first($strings , 2) ), to( equal( ("foo", "bar") )));
+    @include should(expect( first($booleans, 2) ), to( equal( (true, false) )));
 
-    @include should(expect( head($numbers , 2) ), to( match( (1, 2) )));
-    @include should(expect( head($strings , 2) ), to( match( ("foo", "bar") )));
-    @include should(expect( head($booleans, 2) ), to( match( (true, false) )));
+    @include should(expect( head($numbers , 2) ), to( equal( (1, 2) )));
+    @include should(expect( head($strings , 2) ), to( equal( ("foo", "bar") )));
+    @include should(expect( head($booleans, 2) ), to( equal( (true, false) )));
 
-    @include should(expect( take($numbers , 2) ), to( match( (1, 2) )));
-    @include should(expect( take($strings , 2) ), to( match( ("foo", "bar") )));
-    @include should(expect( take($booleans, 2) ), to( match( (true, false) )));
+    @include should(expect( take($numbers , 2) ), to( equal( (1, 2) )));
+    @include should(expect( take($strings , 2) ), to( equal( ("foo", "bar") )));
+    @include should(expect( take($booleans, 2) ), to( equal( (true, false) )));
   }
 
   @include it("should return the only item in an single item array") {
@@ -40,17 +40,17 @@
     $string: "foo";
     $boolean: true;
 
-    @include should(expect( first($number ) ), to( match( 1 )));
-    @include should(expect( first($string ) ), to( match( "foo" )));
-    @include should(expect( first($boolean) ), to( match( true )));
+    @include should(expect( first($number ) ), to( equal( 1 )));
+    @include should(expect( first($string ) ), to( equal( "foo" )));
+    @include should(expect( first($boolean) ), to( equal( true )));
 
-    @include should(expect( head($number ) ), to( match( 1 )));
-    @include should(expect( head($string ) ), to( match( "foo" )));
-    @include should(expect( head($boolean) ), to( match( true )));
+    @include should(expect( head($number ) ), to( equal( 1 )));
+    @include should(expect( head($string ) ), to( equal( "foo" )));
+    @include should(expect( head($boolean) ), to( equal( true )));
 
-    @include should(expect( take($number ) ), to( match( 1 )));
-    @include should(expect( take($string ) ), to( match( "foo" )));
-    @include should(expect( take($boolean) ), to( match( true )));
+    @include should(expect( take($number ) ), to( equal( 1 )));
+    @include should(expect( take($string ) ), to( equal( "foo" )));
+    @include should(expect( take($boolean) ), to( equal( true )));
   }
 
   @include it("should return undefined when a list is empty") {

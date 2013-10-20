@@ -5,28 +5,28 @@
     $list-3: true, false, true, true, false;
     $list-4: null, undefined, null, null;
 
-    @include should(expect( without($list-1, 1, 3, 6)   ), to( match( (2, 4, 5)          )));
-    @include should(expect( without($list-2, "b", "x")  ), to( match( ("a", "c")         )));
-    @include should(expect( without($list-3, true)      ), to( match( (false, false)     )));
-    @include should(expect( without($list-3, false)     ), to( match( (true, true, true) )));
-    @include should(expect( without($list-4, undefined) ), to( match( (null, null, null) )));
+    @include should(expect( without($list-1, 1, 3, 6)   ), to( equal( (2, 4, 5)          )));
+    @include should(expect( without($list-2, "b", "x")  ), to( equal( ("a", "c")         )));
+    @include should(expect( without($list-3, true)      ), to( equal( (false, false)     )));
+    @include should(expect( without($list-3, false)     ), to( equal( (true, true, true) )));
+    @include should(expect( without($list-4, undefined) ), to( equal( (null, null, null) )));
   }
 
-  @include it("should return same list when no matching values") {
+  @include it("should return same list when no equaling values") {
     $list-1: 1, 2, 3, 4, 5, 6;
     $list-2: "a", "b", "c", "b", "x";
     $list-3: true, false, true, true, false;
     $list-4: null, undefined, null, null;
 
-    @include should(expect( without($list-1, green) ), to( match( $list-1 )));
-    @include should(expect( without($list-2, green) ), to( match( $list-2 )));
-    @include should(expect( without($list-3, green) ), to( match( $list-3 )));
-    @include should(expect( without($list-4, green) ), to( match( $list-4 )));
+    @include should(expect( without($list-1, green) ), to( equal( $list-1 )));
+    @include should(expect( without($list-2, green) ), to( equal( $list-2 )));
+    @include should(expect( without($list-3, green) ), to( equal( $list-3 )));
+    @include should(expect( without($list-4, green) ), to( equal( $list-4 )));
   }
 
   @include it("should leave empty lists alone") {
     $list: ();
 
-    @include should(expect( without($list, green) ), to( match( $list )));
+    @include should(expect( without($list, green) ), to( equal( $list )));
   }
 }
