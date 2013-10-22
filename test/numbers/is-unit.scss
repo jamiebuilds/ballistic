@@ -1,0 +1,40 @@
+@include describe("Numbers::Is-Unit") {
+  @include it("should be true for matching units") {
+    @include should(expect( is-unit(  10px,  "px" ) ), to( be( true )));
+    @include should(expect( is-unit(  -2pt,  "pt" ) ), to( be( true )));
+    @include should(expect( is-unit(   1pc,  "pc" ) ), to( be( true )));
+    @include should(expect( is-unit(   0cm,  "cm" ) ), to( be( true )));
+    @include should(expect( is-unit( 0.2mm,  "mm" ) ), to( be( true )));
+    @include should(expect( is-unit( 300in,  "in" ) ), to( be( true )));
+    @include should(expect( is-unit(  100%,   "%" ) ), to( be( true )));
+    @include should(expect( is-unit(  10ex,  "ex" ) ), to( be( true )));
+    @include should(expect( is-unit(  0rem, "rem" ) ), to( be( true )));
+    @include should(expect( is-unit(  -3em,  "em" ) ), to( be( true )));
+  }
+
+  @include it("should be false for different units") {
+    @include should(expect( is-unit(  10px,  "pt" ) ), to( be( false )));
+    @include should(expect( is-unit(  -2pt,  "px" ) ), to( be( false )));
+    @include should(expect( is-unit(   1pc,  "cm" ) ), to( be( false )));
+    @include should(expect( is-unit(   0cm,  "pc" ) ), to( be( false )));
+    @include should(expect( is-unit( 0.2mm,  "in" ) ), to( be( false )));
+    @include should(expect( is-unit( 300in,  "mm" ) ), to( be( false )));
+    @include should(expect( is-unit(  100%,  "ex" ) ), to( be( false )));
+    @include should(expect( is-unit(  10ex,   "%" ) ), to( be( false )));
+    @include should(expect( is-unit(  0rem,  "em" ) ), to( be( false )));
+    @include should(expect( is-unit(  -3em, "rem" ) ), to( be( false )));
+  }
+
+  @include it("should be false for unitless numbers") {
+    @include should(expect( is-unit(  10,  "pt" ) ), to( be( false )));
+    @include should(expect( is-unit(  -2,  "px" ) ), to( be( false )));
+    @include should(expect( is-unit(   1,  "cm" ) ), to( be( false )));
+    @include should(expect( is-unit(   0,  "pc" ) ), to( be( false )));
+    @include should(expect( is-unit( 0.2,  "in" ) ), to( be( false )));
+    @include should(expect( is-unit( 300,  "mm" ) ), to( be( false )));
+    @include should(expect( is-unit( 100,  "ex" ) ), to( be( false )));
+    @include should(expect( is-unit(  10,   "%" ) ), to( be( false )));
+    @include should(expect( is-unit(   0,  "em" ) ), to( be( false )));
+    @include should(expect( is-unit(  -3, "rem" ) ), to( be( false )));
+  }
+}
