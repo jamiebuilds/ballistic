@@ -1,11 +1,10 @@
-@import "collections/contains";
-
-@import "arrays/first";
-@import "arrays/initial";
-@import "arrays/last";
-@import "arrays/rest";
-@import "arrays/flatten";
-@import "arrays/compact";
-@import "arrays/without";
-@import "arrays/union";
-@import "arrays/intersection";
+@import "lists/compact";
+@import "lists/contains";
+@import "lists/first";
+@import "lists/flatten";
+@import "lists/initial";
+@import "lists/intersection";
+@import "lists/last";
+@import "lists/rest";
+@import "lists/union";
+@import "lists/without";
