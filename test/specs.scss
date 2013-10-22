@@ -19,5 +19,6 @@ $bootcamp-setting-verbose: false;
 @import "lists/without";
 
 @import "numbers/limit";
+@import "numbers/parse-int";
 
 @include runner-end;
