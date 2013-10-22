@@ -1,0 +1,3 @@
+@function relative-unit($number) {
+  @return unit-type($number) == "relative";
+}
