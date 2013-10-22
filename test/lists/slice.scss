@@ -1,0 +1,127 @@
+@include describe("Arrays::Slice") {
+  @include it("should stay the same without a min or max") {
+    $list-1: 1, 2, 3, 4, 5;
+    $list-2: "foo", "bar", "baz", "caw", "tun";
+    $list-3: true, false, true, true, false;
+    $list-4: 1em, 2px, 0.2in, 1en, 7cm;
+    $list-5: null, undefined, null, null, undefined;
+
+    @include should(expect( slice($list-1) ), to( deep-equal( ( 1, 2, 3, 4, 5 )                          )));
+    @include should(expect( slice($list-2) ), to( deep-equal( ( "foo", "bar", "baz", "caw", "tun" )      )));
+    @include should(expect( slice($list-3) ), to( deep-equal( ( true, false, true, true, false )         )));
+    @include should(expect( slice($list-4) ), to( deep-equal( ( 1em, 2px, 0.2in, 1en, 7cm )              )));
+    @include should(expect( slice($list-5) ), to( deep-equal( ( null, undefined, null, null, undefined ) )));
+  }
+
+  @include it("should cut off the list at min") {
+    $list-1: 1, 2, 3, 4, 5;
+    $list-2: "foo", "bar", "baz", "caw", "tun";
+    $list-3: true, false, true, true, false;
+    $list-4: 1em, 2px, 0.2in, 1en, 7cm;
+    $list-5: null, undefined, null, null, undefined;
+
+    @include should(expect( slice($list-1, 2) ), to( deep-equal( ( 2, 3, 4, 5 )                       )));
+    @include should(expect( slice($list-2, 2) ), to( deep-equal( ( "bar", "baz", "caw", "tun" )       )));
+    @include should(expect( slice($list-3, 2) ), to( deep-equal( ( false, true, true, false )         )));
+    @include should(expect( slice($list-4, 2) ), to( deep-equal( ( 2px, 0.2in, 1en, 7cm )             )));
+    @include should(expect( slice($list-5, 2) ), to( deep-equal( ( undefined, null, null, undefined ) )));
+  }
+
+  @include it("should cut off the list at negative min") {
+    $list-1: 1, 2, 3, 4, 5;
+    $list-2: "foo", "bar", "baz", "caw", "tun";
+    $list-3: true, false, true, true, false;
+    $list-4: 1em, 2px, 0.2in, 1en, 7cm;
+    $list-5: null, undefined, null, null, undefined;
+
+    @include should(expect( slice($list-1, -1) ), to( deep-equal( ( 5 )         )));
+    @include should(expect( slice($list-2, -1) ), to( deep-equal( ( "tun" )     )));
+    @include should(expect( slice($list-3, -1) ), to( deep-equal( ( false )     )));
+    @include should(expect( slice($list-4, -1) ), to( deep-equal( ( 7cm )       )));
+    @include should(expect( slice($list-5, -1) ), to( deep-equal( ( undefined ) )));
+  }
+
+  @include it("should cut off the list at max") {
+    $list-1: 1, 2, 3, 4, 5;
+    $list-2: "foo", "bar", "baz", "caw", "tun";
+    $list-3: true, false, true, true, false;
+    $list-4: 1em, 2px, 0.2in, 1en, 7cm;
+    $list-5: null, undefined, null, null, undefined;
+
+    @include should(expect( slice($list-1, $max: 4) ), to( deep-equal( ( 1, 2, 3, 4 )                       )));
+    @include should(expect( slice($list-2, $max: 4) ), to( deep-equal( ( "foo", "bar", "baz", "caw" )       )));
+    @include should(expect( slice($list-3, $max: 4) ), to( deep-equal( ( true, false, true, true )          )));
+    @include should(expect( slice($list-4, $max: 4) ), to( deep-equal( ( 1em, 2px, 0.2in, 1en )             )));
+    @include should(expect( slice($list-5, $max: 4) ), to( deep-equal( ( null, undefined, null, null )      )));
+  }
+
+  @include it("should cut off the list at negative min") {
+    $list-1: 1, 2, 3, 4, 5;
+    $list-2: "foo", "bar", "baz", "caw", "tun";
+    $list-3: true, false, true, true, false;
+    $list-4: 1em, 2px, 0.2in, 1en, 7cm;
+    $list-5: null, undefined, null, null, undefined;
+
+    @include should(expect( slice($list-1, $max: -1) ), to( deep-equal( ( 1, 2, 3, 4 )                  )));
+    @include should(expect( slice($list-2, $max: -1) ), to( deep-equal( ( "foo", "bar", "baz", "caw" )  )));
+    @include should(expect( slice($list-3, $max: -1) ), to( deep-equal( ( true, false, true, true )     )));
+    @include should(expect( slice($list-4, $max: -1) ), to( deep-equal( ( 1em, 2px, 0.2in, 1en )        )));
+    @include should(expect( slice($list-5, $max: -1) ), to( deep-equal( ( null, undefined, null, null ) )));
+  }
+
+  @include it("should cut off the list at min and max") {
+    $list-1: 1, 2, 3, 4, 5;
+    $list-2: "foo", "bar", "baz", "caw", "tun";
+    $list-3: true, false, true, true, false;
+    $list-4: 1em, 2px, 0.2in, 1en, 7cm;
+    $list-5: null, undefined, null, null, undefined;
+
+    @include should(expect( slice($list-1, 2, 4) ), to( deep-equal( ( 2, 3, 4 )               )));
+    @include should(expect( slice($list-2, 2, 4) ), to( deep-equal( ( "bar", "baz", "caw" )   )));
+    @include should(expect( slice($list-3, 2, 4) ), to( deep-equal( ( false, true, true )     )));
+    @include should(expect( slice($list-4, 2, 4) ), to( deep-equal( ( 2px, 0.2in, 1en )       )));
+    @include should(expect( slice($list-5, 2, 4) ), to( deep-equal( ( undefined, null, null ) )));
+  }
+
+  @include it("should cut off the list at negative min and max") {
+    $list-1: 1, 2, 3, 4, 5;
+    $list-2: "foo", "bar", "baz", "caw", "tun";
+    $list-3: true, false, true, true, false;
+    $list-4: 1em, 2px, 0.2in, 1en, 7cm;
+    $list-5: null, undefined, null, null, undefined;
+
+    @include should(expect( slice($list-1, -3, 4) ), to( deep-equal( ( 3, 4 )         )));
+    @include should(expect( slice($list-2, -3, 4) ), to( deep-equal( ( "baz", "caw" ) )));
+    @include should(expect( slice($list-3, -3, 4) ), to( deep-equal( ( true, true )   )));
+    @include should(expect( slice($list-4, -3, 4) ), to( deep-equal( ( 0.2in, 1en )   )));
+    @include should(expect( slice($list-5, -3, 4) ), to( deep-equal( ( null, null )   )));
+  }
+
+  @include it("should cut off the list at min and negative max") {
+    $list-1: 1, 2, 3, 4, 5;
+    $list-2: "foo", "bar", "baz", "caw", "tun";
+    $list-3: true, false, true, true, false;
+    $list-4: 1em, 2px, 0.2in, 1en, 7cm;
+    $list-5: null, undefined, null, null, undefined;
+
+    @include should(expect( slice($list-1, 2, -2) ), to( deep-equal( ( 2, 3 )            )));
+    @include should(expect( slice($list-2, 2, -2) ), to( deep-equal( ( "bar", "baz" )    )));
+    @include should(expect( slice($list-3, 2, -2) ), to( deep-equal( ( false, true )     )));
+    @include should(expect( slice($list-4, 2, -2) ), to( deep-equal( ( 2px, 0.2in )      )));
+    @include should(expect( slice($list-5, 2, -2) ), to( deep-equal( ( undefined, null ) )));
+  }
+
+  @include it("should cut off the list at negative min and negative max") {
+    $list-1: 1, 2, 3, 4, 5;
+    $list-2: "foo", "bar", "baz", "caw", "tun";
+    $list-3: true, false, true, true, false;
+    $list-4: 1em, 2px, 0.2in, 1en, 7cm;
+    $list-5: null, undefined, null, null, undefined;
+
+    @include should(expect( slice($list-1, -3, -2) ), to( deep-equal( ( 3 )     )));
+    @include should(expect( slice($list-2, -3, -2) ), to( deep-equal( ( "baz" ) )));
+    @include should(expect( slice($list-3, -3, -2) ), to( deep-equal( ( true )  )));
+    @include should(expect( slice($list-4, -3, -2) ), to( deep-equal( ( 0.2in ) )));
+    @include should(expect( slice($list-5, -3, -2) ), to( deep-equal( ( null )  )));
+  }
+}
