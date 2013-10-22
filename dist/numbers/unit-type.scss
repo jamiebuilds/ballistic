@@ -1,0 +1,11 @@
+@function unit-type($number) {
+  $unit: unit($number);
+
+  @if $unit == "%" or $unit == "ex" or $unit == "rem" or $unit == "em" {
+    @return "relative";
+  } @else if not unitless($number) {
+    @return "absolute";
+  } @else {
+    @return "unitless";
+  }
+}
