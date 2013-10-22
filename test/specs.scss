@@ -18,5 +18,6 @@ $bootcamp-setting-verbose: false;
 @import "lists/union";
 @import "lists/without";
 
+@import "numbers/limit";
 
 @include runner-end;
