@@ -1,0 +1,35 @@
+@include describe("Numbers::Exponent") {
+  @include it("should calculate positive exponents") {
+    @include should(expect( exponent(  2, 2 ) ), to( equal(  4 )));
+    @include should(expect( exponent( -2, 2 ) ), to( equal(  4 )));
+    @include should(expect( exponent(  1, 2 ) ), to( equal(  1 )));
+    @include should(expect( exponent(  2, 4 ) ), to( equal( 16 )));
+
+    @include should(expect( power(  2, 2 ) ), to( equal(  4 )));
+    @include should(expect( power( -2, 2 ) ), to( equal(  4 )));
+    @include should(expect( power(  1, 2 ) ), to( equal(  1 )));
+    @include should(expect( power(  2, 4 ) ), to( equal( 16 )));
+
+    @include should(expect( pow(  2, 2 ) ), to( equal(  4 )));
+    @include should(expect( pow( -2, 2 ) ), to( equal(  4 )));
+    @include should(expect( pow(  1, 2 ) ), to( equal(  1 )));
+    @include should(expect( pow(  2, 4 ) ), to( equal( 16 )));
+  }
+
+  @include it("should calculate negative exponents") {
+    @include should(expect( exponent(  2, -2 ) ), to( equal(   0.25 )));
+    @include should(expect( exponent( -2, -2 ) ), to( equal(   0.25 )));
+    @include should(expect( exponent(  1, -2 ) ), to( equal(      1 )));
+    @include should(expect( exponent(  2, -4 ) ), to( equal( 0.0625 )));
+
+    @include should(expect( power(  2, -2 ) ), to( equal(   0.25 )));
+    @include should(expect( power( -2, -2 ) ), to( equal(   0.25 )));
+    @include should(expect( power(  1, -2 ) ), to( equal(      1 )));
+    @include should(expect( power(  2, -4 ) ), to( equal( 0.0625 )));
+
+    @include should(expect( pow(  2, -2 ) ), to( equal(   0.25 )));
+    @include should(expect( pow( -2, -2 ) ), to( equal(   0.25 )));
+    @include should(expect( pow(  1, -2 ) ), to( equal(      1 )));
+    @include should(expect( pow(  2, -4 ) ), to( equal( 0.0625 )));
+  }
+}

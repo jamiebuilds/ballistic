@@ -1,0 +1,5 @@
+@function ceil-to($number, $precision) {
+  $precision: exponent(10, $precision);
+
+  @return ceil($number * $precision) / $precision;
+}

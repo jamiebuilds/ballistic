@@ -1,0 +1,27 @@
+@function exponent($number, $exponent) {
+  $value: $number;
+
+  @if $exponent > 1 {
+    @for $i from 2 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @if $exponent < 1 {
+    @for $i from 0 through -$exponent {
+      $value: $value / $number;
+    }
+  }
+
+  @return $value;
+}
+
+// Aliases
+
+@function power($number, $exponent) {
+  @return exponent($number, $exponent);
+}
+
+@function pow($number, $exponent) {
+  @return exponent($number, $exponent);
+}

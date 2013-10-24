@@ -1,0 +1,27 @@
+@include describe("Numbers::Ceil-To") {
+  @include it("should round number to ceiling at precision") {
+    @include should(expect( ceil-to( 0.2123456789, 0 ) ), to( equal( 1           )));
+    @include should(expect( ceil-to( 0.2123456789, 1 ) ), to( equal( 0.3         )));
+    @include should(expect( ceil-to( 0.2123456789, 2 ) ), to( equal( 0.22        )));
+    @include should(expect( ceil-to( 0.2123456789, 3 ) ), to( equal( 0.213       )));
+    @include should(expect( ceil-to( 0.2123456789, 4 ) ), to( equal( 0.2124      )));
+    @include should(expect( ceil-to( 0.2123456789, 5 ) ), to( equal( 0.21235     )));
+    @include should(expect( ceil-to( 0.2123456789, 6 ) ), to( equal( 0.212346    )));
+    @include should(expect( ceil-to( 0.2123456789, 7 ) ), to( equal( 0.2123457   )));
+    @include should(expect( ceil-to( 0.2123456789, 8 ) ), to( equal( 0.21234568  )));
+    @include should(expect( ceil-to( 0.2123456789, 9 ) ), to( equal( 0.212345679 )));
+  }
+
+  @include it("should leave number alone if its precise enough") {
+    @include should(expect( ceil-to( 0,           0 ) ), to( equal( 0           )));
+    @include should(expect( ceil-to( 0.1,         1 ) ), to( equal( 0.1         )));
+    @include should(expect( ceil-to( 0.12,        2 ) ), to( equal( 0.12        )));
+    @include should(expect( ceil-to( 0.123,       3 ) ), to( equal( 0.123       )));
+    @include should(expect( ceil-to( 0.1234,      4 ) ), to( equal( 0.1234      )));
+    @include should(expect( ceil-to( 0.12345,     5 ) ), to( equal( 0.12345     )));
+    @include should(expect( ceil-to( 0.123456,    6 ) ), to( equal( 0.123456    )));
+    @include should(expect( ceil-to( 0.1234567,   7 ) ), to( equal( 0.1234567   )));
+    @include should(expect( ceil-to( 0.12345678,  8 ) ), to( equal( 0.12345678  )));
+    @include should(expect( ceil-to( 0.123456789, 9 ) ), to( equal( 0.123456789 )));
+  }
+}

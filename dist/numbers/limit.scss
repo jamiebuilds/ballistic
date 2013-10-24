@@ -1,0 +1,11 @@
+@function limit($number, $min: false, $max: false) {
+  @if $min and comparable($number, $min) and $number < $min {
+    $number: $min;
+  }
+
+  @if $max and comparable($number, $max) and $number > $max {
+    $number: $max;
+  }
+
+  @return $number;
+}

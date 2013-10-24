@@ -1,0 +1,5 @@
+@function round-to($number, $precision) {
+  $precision: exponent(10, $precision);
+
+  @return round($number * $precision) / $precision;
+}

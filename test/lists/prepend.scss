@@ -1,0 +1,21 @@
+@include describe("Lists::Prepend") {
+  @include it("should prepend a value to a list") {
+    $list-1: 2, 3, 4;
+    $list-2: false, false, true;
+    $list-3: "foo", "bar", "baz";
+
+    @include should(expect( prepend( $list-1, 1     ) ), to( equal( (1, 2, 3, 4)                 )));
+    @include should(expect( prepend( $list-2, true  ) ), to( equal( (true, false, false, true)   )));
+    @include should(expect( prepend( $list-3, "tal" ) ), to( equal( ("tal", "foo", "bar", "baz") )));
+  }
+
+  @include it("should prepend a list to a list") {
+    $list-1: 3, 4;
+    $list-2: false, true;
+    $list-3: "bar", "baz";
+
+    @include should(expect( prepend( $list-1, (1, 2)         ) ), to( equal( (1, 2, 3, 4)                 )));
+    @include should(expect( prepend( $list-2, (true, false)  ) ), to( equal( (true, false, false, true)   )));
+    @include should(expect( prepend( $list-3, ("tal", "foo") ) ), to( equal( ("tal", "foo", "bar", "baz") )));
+  }
+}

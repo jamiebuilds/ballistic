@@ -1,0 +1,5 @@
+@include describe("Numbers::Infinity") {
+  @include it("should return infinity") {
+    @include should(expect( infinity() ), to( equal( 1/0 )));
+  }
+}

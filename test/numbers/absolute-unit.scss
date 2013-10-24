@@ -1,0 +1,23 @@
+@include describe("Numbers::Absolute-Unit") {
+  @include it("should be true for absolute units") {
+    @include should(expect( absolute-unit(  10px ) ), to( be( true )));
+    @include should(expect( absolute-unit(  -2pt ) ), to( be( true )));
+    @include should(expect( absolute-unit(   1pc ) ), to( be( true )));
+    @include should(expect( absolute-unit(   0cm ) ), to( be( true )));
+    @include should(expect( absolute-unit( 0.2mm ) ), to( be( true )));
+    @include should(expect( absolute-unit( 300in ) ), to( be( true )));
+  }
+
+  @include it("should be false for relative units") {
+    @include should(expect( absolute-unit( 100% ) ), to( be( false )));
+    @include should(expect( absolute-unit( 10ex ) ), to( be( false )));
+    @include should(expect( absolute-unit( 0rem ) ), to( be( false )));
+    @include should(expect( absolute-unit( -3em ) ), to( be( false )));
+  }
+
+  @include it("should be false for unitless numbers") {
+    @include should(expect( absolute-unit( 100 ) ), to( be( false )));
+    @include should(expect( absolute-unit( -10 ) ), to( be( false )));
+    @include should(expect( absolute-unit( 0.2 ) ), to( be( false )));
+  }
+}
