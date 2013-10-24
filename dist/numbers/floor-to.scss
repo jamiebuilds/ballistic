@@ -1,0 +1,5 @@
+@function floor-to($number, $precision) {
+  $precision: exponent(10, $precision);
+
+  @return floor($number * $precision) / $precision;
+}
