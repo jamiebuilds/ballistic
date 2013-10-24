@@ -1,0 +1,9 @@
+@function phi() {
+  @return 1.61803398874;
+}
+
+// Aliases
+
+@function golden-ratio() {
+  @return phi();
+}
