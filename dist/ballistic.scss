@@ -1,3 +1,5 @@
+@import "core/settings";
+
 @import "lists/compact";
 @import "lists/contains";
 @import "lists/first";
@@ -15,6 +17,7 @@
 @import "numbers/ceil-to";
 @import "numbers/e";
 @import "numbers/exponent";
+@import "numbers/factorial";
 @import "numbers/floor-to";
 @import "numbers/infinity";
 @import "numbers/is-unit";

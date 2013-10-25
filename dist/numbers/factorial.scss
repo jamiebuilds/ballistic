@@ -1,0 +1,24 @@
+@function factorial($number) {
+  @if $number < 0 or $number != floor($number) {
+    @if $ballistic-setting-verbose {
+      @warn "Argument for `fact()` must be a positive integer.";
+    }
+
+    @return null;
+  }
+
+  $output: 1;
+
+  @while $number > 0 {
+    $output: $output * $number;
+    $number: $number - 1;
+  }
+
+  @return $output;
+}
+
+// Aliases
+
+@function fact($number) {
+  @return factorial($number);
+}

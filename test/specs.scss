@@ -1,6 +1,7 @@
 @import "bootcamp";
 
 $bootcamp-setting-verbose: false;
+$ballistic-setting-verbose: false;
 
 @import "../dist/ballistic";
 
@@ -23,6 +24,7 @@ $bootcamp-setting-verbose: false;
 @import "numbers/ceil-to";
 @import "numbers/e";
 @import "numbers/exponent";
+@import "numbers/factorial";
 @import "numbers/floor-to";
 @import "numbers/infinity";
 @import "numbers/is-unit";
