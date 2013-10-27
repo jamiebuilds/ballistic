@@ -1,0 +1,64 @@
+@include describe("Numbers::Convert") {
+  @include it("should convert all length units") {
+    @include should(expect( convert(10px, "px") ), to( be-close-to( 10px            , 5)));
+    @include should(expect( convert(10px, "pc") ), to( be-close-to( 0.625pc         , 5)));
+    @include should(expect( convert(10px, "pt") ), to( be-close-to( 7.5pt           , 5)));
+    @include should(expect( convert(10px, "in") ), to( be-close-to( 0.104166667in   , 5)));
+    @include should(expect( convert(10px, "cm") ), to( be-close-to( 0.264583333cm   , 5)));
+    @include should(expect( convert(10px, "mm") ), to( be-close-to( 2.645833333mm   , 5)));
+
+    @include should(expect( convert(10pc, "px") ), to( be-close-to( 160px           , 5)));
+    @include should(expect( convert(10pc, "pc") ), to( be-close-to( 10pc            , 5)));
+    @include should(expect( convert(10pc, "pt") ), to( be-close-to( 120pt           , 5)));
+    @include should(expect( convert(10pc, "in") ), to( be-close-to( 1.666666667in   , 5)));
+    @include should(expect( convert(10pc, "cm") ), to( be-close-to( 4.233333333cm   , 5)));
+    @include should(expect( convert(10pc, "mm") ), to( be-close-to( 42.333333333mm  , 5)));
+
+    @include should(expect( convert(10pt, "px") ), to( be-close-to( 13.333333333px  , 5)));
+    @include should(expect( convert(10pt, "pc") ), to( be-close-to( 0.833333333pc   , 5)));
+    @include should(expect( convert(10pt, "pt") ), to( be-close-to( 10pt            , 5)));
+    @include should(expect( convert(10pt, "in") ), to( be-close-to( 0.138888889in   , 5)));
+    @include should(expect( convert(10pt, "cm") ), to( be-close-to( 0.352777778cm   , 5)));
+    @include should(expect( convert(10pt, "mm") ), to( be-close-to( 3.527777778mm   , 5)));
+
+    @include should(expect( convert(10in, "px") ), to( be-close-to( 960px           , 5)));
+    @include should(expect( convert(10in, "pc") ), to( be-close-to( 60pc            , 5)));
+    @include should(expect( convert(10in, "pt") ), to( be-close-to( 720pt           , 5)));
+    @include should(expect( convert(10in, "in") ), to( be-close-to( 10in            , 5)));
+    @include should(expect( convert(10in, "cm") ), to( be-close-to( 25.4cm          , 5)));
+    @include should(expect( convert(10in, "mm") ), to( be-close-to( 254mm           , 5)));
+
+    @include should(expect( convert(10cm, "px") ), to( be-close-to( 377.952755906px , 5)));
+    @include should(expect( convert(10cm, "pc") ), to( be-close-to( 23.622047244pc  , 5)));
+    @include should(expect( convert(10cm, "pt") ), to( be-close-to( 283.464566929pt , 5)));
+    @include should(expect( convert(10cm, "in") ), to( be-close-to( 3.937007874in   , 5)));
+    @include should(expect( convert(10cm, "cm") ), to( be-close-to( 10cm            , 5)));
+    @include should(expect( convert(10cm, "mm") ), to( be-close-to( 100mm           , 5)));
+
+    @include should(expect( convert(10mm, "px") ), to( be-close-to( 37.795275591px  , 5)));
+    @include should(expect( convert(10mm, "pc") ), to( be-close-to( 2.362204724pc   , 5)));
+    @include should(expect( convert(10mm, "pt") ), to( be-close-to( 28.346456693pt  , 5)));
+    @include should(expect( convert(10mm, "in") ), to( be-close-to( 0.393700787in   , 5)));
+    @include should(expect( convert(10mm, "cm") ), to( be-close-to( 1cm             , 5)));
+    @include should(expect( convert(10mm, "mm") ), to( be-close-to( 10mm            , 5)));
+  }
+
+  @include it("should convert all time units") {
+    @include should(expect( convert(10ms, "s") ), to( be-close-to( 0.01s   , 5)));
+    @include should(expect( convert(10s, "ms") ), to( be-close-to( 10000ms , 5)));
+  }
+
+  @include it("should convert all angle units") {
+    @include should(expect( convert(10deg, "deg")  ), to( be-close-to( 10deg            , 5)));
+    @include should(expect( convert(10deg, "rad")  ), to( be-close-to( 0.174532925rad   , 5)));
+    @include should(expect( convert(10deg, "turn") ), to( be-close-to( 0.0277777778turn , 5)));
+
+    @include should(expect( convert(10rad, "deg")  ), to( be-close-to( 572.957795deg    , 5)));
+    @include should(expect( convert(10rad, "rad")  ), to( be-close-to( 10rad            , 5)));
+    @include should(expect( convert(10rad, "turn") ), to( be-close-to( 1.59154943turn   , 5)));
+
+    @include should(expect( convert(10turn, "deg")  ), to( be-close-to( 3600deg         , 5)));
+    @include should(expect( convert(10turn, "rad")  ), to( be-close-to( 62.8318531rad   , 5)));
+    @include should(expect( convert(10turn, "turn") ), to( be-close-to( 10turn          , 5)));
+  }
+}
