@@ -50,14 +50,22 @@
 
   @include it("should convert all angle units") {
     @include should(expect( convert(10deg, "deg")  ), to( be-close-to( 10deg            , 5)));
+    @include should(expect( convert(10deg, "grad") ), to( be-close-to( 11.111111111grad , 5)));
     @include should(expect( convert(10deg, "rad")  ), to( be-close-to( 0.174532925rad   , 5)));
     @include should(expect( convert(10deg, "turn") ), to( be-close-to( 0.0277777778turn , 5)));
 
     @include should(expect( convert(10rad, "deg")  ), to( be-close-to( 572.957795deg    , 5)));
+    @include should(expect( convert(10rad, "grad") ), to( be-close-to( 636.61977grad    , 5)));
     @include should(expect( convert(10rad, "rad")  ), to( be-close-to( 10rad            , 5)));
     @include should(expect( convert(10rad, "turn") ), to( be-close-to( 1.59154943turn   , 5)));
 
+    @include should(expect( convert(10grad, "deg")  ), to( be-close-to( 9deg            , 5)));
+    @include should(expect( convert(10grad, "grad") ), to( be-close-to( 10grad          , 5)));
+    @include should(expect( convert(10grad, "rad")  ), to( be-close-to( 0.1570795rad    , 5)));
+    @include should(expect( convert(10grad, "turn") ), to( be-close-to( 0.025turn       , 5)));
+
     @include should(expect( convert(10turn, "deg")  ), to( be-close-to( 3600deg         , 5)));
+    @include should(expect( convert(10turn, "grad") ), to( be-close-to( 4000grad        , 5)));
     @include should(expect( convert(10turn, "rad")  ), to( be-close-to( 62.8318531rad   , 5)));
     @include should(expect( convert(10turn, "turn") ), to( be-close-to( 10turn          , 5)));
   }
