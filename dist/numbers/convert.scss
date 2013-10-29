@@ -1,4 +1,4 @@
-@function convert($number, $unit) {
+@function convert($number, $unit, $ref: null) {
   $fail: "Can't convert #{$number} to #{$unit}. ";
 
   $convert: null;
@@ -18,12 +18,12 @@
     (1pt,  0.75),
     (1in,  0.0104166666666666666666666666666),
     (1cm,  0.0264583333333333333333333333333),
-    (1mm,  0.2645833333333333333333333333333) //,
-    // (1em,  null),
-    // (1rem, null),
-    // (1ex,  null),
-    // (1ch,  null),
-    // (1%,   null)
+    (1mm,  0.2645833333333333333333333333333),
+    (1em,  null),
+    (1rem, null),
+    (1ex,  null),
+    (1ch,  null),
+    (100%, null)
   ), (
     (1ms, 1),
     (1s,  0.001)
@@ -48,5 +48,19 @@
 
   $number: parse-int($number);
 
-  @return $number * ($ref-2 / $ref-1) * $convert;
+  $mod: null;
+
+  @if $ref != null { $ref: 1 / $ref }
+
+  @if $ref-1 == null and $ref-2 == null and $ref != null { $mod: $ref            }
+  @if $ref-1 != null and $ref-2 == null and $ref != null { $mod: $ref   / $ref-1 }
+  @if $ref-1 == null and $ref-2 != null and $ref != null { $mod: $ref-2 / $ref   }
+  @if $ref-1 != null and $ref-2 != null                  { $mod: $ref-2 / $ref-1 }
+
+  @if $mod != null {
+    @return $number * $mod * $convert;
+  } @else {
+    @warn $fail + "Needs Reference.";
+    @return null;
+  }
 }
