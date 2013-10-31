@@ -201,6 +201,15 @@ is-unit(1px, "px");
 => true
 ```
 
+#### Limit `limit($number, [$min], [$max])`
+
+Returns `$number` rounded to be between `$min` and `$max`. 
+
+```scss
+limit(3, 10, 20);
+=> 10
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
