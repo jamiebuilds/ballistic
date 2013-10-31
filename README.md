@@ -228,6 +228,15 @@ phi();
 => 1.61803398874
 ```
 
+#### Pi `pi()`
+
+Returns Pi.
+
+```scss
+pi();
+=> 3.14159265359
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
