@@ -14,6 +14,15 @@ compact( (0, 1, false, 2, '', 3 ) );
 => (1, 2, 3)
 ```
 
+#### Contains `contains($list, $value)`
+
+Returns _true_ if the `$value` is present in the `$list`. Uses `index` internally.
+
+```scss
+contains( (1, 2, 3), 2 );
+=> true
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
