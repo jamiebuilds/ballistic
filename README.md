@@ -107,6 +107,15 @@ union( (1, 2, 3), (101, 2, 1, 10), (2, 1));
 => (1, 2, 3, 101, 10)
 ```
 
+#### Without `without($list, [$values...])`
+
+Returns a copy of the `$list` with all instances of the `$values` removed.
+
+```scss
+without( (1, 2, 1, 0, 3, 1, 4), 0, 1 );
+=> (2, 3, 4)
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
