@@ -237,6 +237,15 @@ pi();
 => 3.14159265359
 ```
 
+#### Relative Unit `relative-unit($number)`
+
+Returns _true_ if the `$number` is an relative value.
+
+```scss
+relative-unit(10em);
+=> true
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
