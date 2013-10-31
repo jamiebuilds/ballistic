@@ -132,8 +132,19 @@ absolute-unit(10px);
 Returns `$number` rounded up to the `$precision` decimal place.
 
 ```scss
-ceil-to( 0.1234, 2 )
+ceil-to( 0.1234, 2 );
 => 0.13
+```
+
+#### Convert `convert($number, $unit, [$ref])`
+
+Returns `$number` converted to `$unit`. Relative Units require a `$ref`. Valid `$unit`s are `px`, `pc`, `pt`, `in`, `cm`, `mm`, `em`, `rem`, `ex`, `ch`, `ms`, `s`, `deg`, `grad`, `rad`, and `turn`.
+
+```scss
+convert(10px, "in");
+=> 0.104166667in
+convert(10px, 'em', 10);
+=> 1em
 ```
 
 ## License
