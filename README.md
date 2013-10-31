@@ -116,6 +116,17 @@ without( (1, 2, 1, 0, 3, 1, 4), 0, 1 );
 => (2, 3, 4)
 ```
 
+## Numbers
+
+#### Absolute Unit `absolute-unit($number)`
+
+Returns _true_ if the `$number` is an absolute value.
+
+```scss
+absolute-unit(10px);
+=> true
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
