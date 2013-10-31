@@ -210,6 +210,15 @@ limit(3, 10, 20);
 => 10
 ```
 
+#### Parse Int `parse-int($number)`
+
+Returns copy of `$number` without any unit.
+
+```scss
+parse-int(10px);
+=> 10
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
