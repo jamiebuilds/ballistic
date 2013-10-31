@@ -71,6 +71,16 @@ last( (5, 4, 3, 2, 1) );
 => 1
 ```
 
+#### Prepend `prepend($list, $item)`
+
+Prepends a single `$item` onto the start of a `$list`.
+
+```scss
+prepend( (2, 3, 4), 1 );
+=> (1, 2, 3, 4)
+```
+
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
