@@ -32,6 +32,17 @@ first( (5, 4, 3, 2, 1) );
 => 5
 ```
 
+#### Flatten `flatten($list, [$shallow])`
+
+Flattens a nested `$list` (the nesting can be to any depth). If you pass `$shallow`, the `$list` will only be flattened a single level.
+
+```scss
+flatten( (1, (2), (3, ((4)))) );
+=> (1, 2, 3, 4);
+
+flatten( (1, (2), (3, ((4)))), true );
+=> (1, 2, 3, ((4)));
+```
 
 ## License
 
