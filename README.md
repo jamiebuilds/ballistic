@@ -183,6 +183,15 @@ floor-to( 0.1234, 2 );
 => 0.12
 ```
 
+#### Infinity `infinity()`
+
+Returns sass infinity.
+
+```scss
+infinity();
+=> 1/0
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
