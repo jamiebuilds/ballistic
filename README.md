@@ -264,6 +264,15 @@ tau();
 => 6.2831853072
 ```
 
+#### Unit Type `unit-type($number)`
+
+Returns unit type of `$number` (relative, absolute, or unitless).
+
+```scss
+unit-type(1em);
+=> "relative"
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
