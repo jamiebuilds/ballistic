@@ -143,8 +143,17 @@ Returns `$number` converted to `$unit`. Relative Units require a `$ref`. Valid `
 ```scss
 convert(10px, "in");
 => 0.104166667in
-convert(10px, 'em', 10);
+convert(10px, "em", 10);
 => 1em
+```
+
+#### E `e()`
+
+Returns Euler's Number
+
+```scss
+e();
+=> 2.71828182845
 ```
 
 ## License
