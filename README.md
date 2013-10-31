@@ -255,6 +255,15 @@ round-to( 0.1234, 2 );
 => 0.12
 ```
 
+#### Tau `tau()`
+
+Returns Tau.
+
+```scss
+tau();
+=> 6.2831853072
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
