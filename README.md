@@ -80,6 +80,14 @@ prepend( (2, 3, 4), 1 );
 => (1, 2, 3, 4)
 ```
 
+#### Rest `rest($list, [$n])` _Alias:_ **tail**, **drop**
+
+Returns the rest of the elements in an `$list`. Passing `$n` will return the values of the `$list` from `$n` onward.
+
+```scss
+rest( (5, 4, 3, 2, 1) );
+=> (4, 3, 2, 1)
+```
 
 ## License
 
