@@ -192,6 +192,15 @@ infinity();
 => 1/0
 ```
 
+#### Is Unit `is-unit($number, $unit)`
+
+Returns true if `$number` is `$unit`.
+
+```scss
+is-unit(1px, "px");
+=> true
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
