@@ -138,7 +138,7 @@ ceil-to( 0.1234, 2 );
 
 #### Convert `convert($number, $unit, [$ref])`
 
-Returns `$number` converted to `$unit`. Relative Units require a `$ref`. Valid `$unit`s are `px`, `pc`, `pt`, `in`, `cm`, `mm`, `em`, `rem`, `ex`, `ch`, `ms`, `s`, `deg`, `grad`, `rad`, and `turn`.
+Returns `$number` converted to `$unit`. Relative Units require a `$ref`. Valid `$unit`s are `px`, `pc`, `pt`, `in`, `cm`, `mm`, `em*`, `rem*`, `ex*`, `ch*`, `ms`, `s`, `deg`, `grad`, `rad`, and `turn`. *needs `$ref`.
 
 ```scss
 convert(10px, "in");
