@@ -127,6 +127,15 @@ absolute-unit(10px);
 => true
 ```
 
+#### Ceil To `ceil-to($number, $precision)`
+
+Returns `$number` rounded up to the `$precision` decimal place.
+
+```scss
+ceil-to( 0.1234, 2 )
+=> 0.13
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
