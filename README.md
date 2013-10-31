@@ -149,7 +149,7 @@ convert(10px, "em", 10);
 
 #### E `e()`
 
-Returns Euler's Number
+Returns Euler's Number.
 
 ```scss
 e();
@@ -163,6 +163,15 @@ Returns `$number` multiplied exponentially to `$exponent`.
 ```scss
 exponent(2, 2);
 => 4
+```
+
+#### Factorial `factorial($number)` _Alias:_ **fact**
+
+Returns the factorial of `$number`.
+
+```scss
+factorial(3);
+=> 6
 ```
 
 ## License
