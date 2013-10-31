@@ -156,6 +156,15 @@ e();
 => 2.71828182845
 ```
 
+#### Exponent `exponent($number, $exponent)` _Alias:_ **power**, **pow**
+
+Returns `$number` multiplied exponentially to `$exponent`.
+
+```scss
+exponent(2, 2);
+=> 4
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
