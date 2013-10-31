@@ -3,6 +3,17 @@ Ballistic [![Build Status](https://travis-ci.org/tctcl/ballistic.png?branch=mast
 
 Powerful Function Library for Sass
 
+## Lists
+
+#### Compact `compact($list)`
+
+Returns a copy of the list with all falsy values removed.
+
+```scss
+compact( (0, 1, false, 2, '', 3 ) );
+=> (1, 2, 3)
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
