@@ -14,7 +14,7 @@ compact( (0, 1, false, 2, '', 3 ) );
 => (1, 2, 3)
 ```
 
-#### Contains `contains($list, $value)`
+#### Contains `contains($list, $value)` _Alias:_ **include**
 
 Returns _true_ if the `$value` is present in the `$list`. Uses `index` internally.
 
@@ -22,6 +22,16 @@ Returns _true_ if the `$value` is present in the `$list`. Uses `index` internall
 contains( (1, 2, 3), 2 );
 => true
 ```
+
+#### First `first($list, [$n])` _Alias:_ **head**, **take**
+
+Returns the first element of a `$list`. Passing `$n` will return the first `$n` elements of the `$list`.
+
+```scss
+first( (5, 4, 3, 2, 1) );
+=> 5
+```
+
 
 ## License
 
