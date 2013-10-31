@@ -89,6 +89,15 @@ rest( (5, 4, 3, 2, 1) );
 => (4, 3, 2, 1)
 ```
 
+#### Slice `slice($list, [$min], [$max])`
+
+Returns a copy of the list between `$min` and `$max`. `$min` defaults to the start of the list, `$max` defaults to the end of the list. Negative values are valid and will count from the end of the list.
+
+```scss
+slice( (1, 2, 3, 4, 5), 2, 4 )
+=> (2, 3, 4)
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
