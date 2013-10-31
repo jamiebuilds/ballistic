@@ -98,6 +98,15 @@ slice( (1, 2, 3, 4, 5), 2, 4 )
 => (2, 3, 4)
 ```
 
+#### Union `union($lists...)`
+
+Computes the union of the passed-in `$lists`: the list of unique items, in order, that are present in one or more of the `$lists`.
+
+```scss
+union( (1, 2, 3), (101, 2, 1, 10), (2, 1));
+=> (1, 2, 3, 101, 10)
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
