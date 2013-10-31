@@ -53,6 +53,15 @@ initial( (5, 4, 3, 2, 1) );
 => (5, 4, 3, 2)
 ```
 
+#### Intersection `intersection($lists...)`
+
+Computes the list of values that are the intersection of all the `$lists`. Each value in the result is present in each of the `$lists`.
+
+```scss
+intersection( (1, 2, 3), (101, 2, 1, 10), (2, 1) );
+=> (1, 2)
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
