@@ -44,6 +44,15 @@ flatten( (1, (2), (3, ((4)))), true );
 => (1, 2, 3, ((4)));
 ```
 
+#### Initial `initial($list, [$n])`
+
+Returns everything but the last entry of the `$list`. Pass `$n` to exclude the last `$n` elements from the result.
+
+```scss
+initial( (5, 4, 3, 2, 1) );
+=> (5, 4, 3, 2)
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
