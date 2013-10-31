@@ -174,6 +174,15 @@ factorial(3);
 => 6
 ```
 
+#### Floor To `floor-to($number, $precision)`
+
+Returns `$number` rounded down to the `$precision` decimal place.
+
+```scss
+floor-to( 0.1234, 2 );
+=> 0.12
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
