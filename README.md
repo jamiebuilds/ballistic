@@ -62,6 +62,15 @@ intersection( (1, 2, 3), (101, 2, 1, 10), (2, 1) );
 => (1, 2)
 ```
 
+#### Last `last($list, [$n])`
+
+Returns the last element of an `$list`. Passing `$n` will return the last `$n` elements of the `$list`.
+
+```scss
+last( (5, 4, 3, 2, 1) );
+=> 1
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
