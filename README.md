@@ -219,6 +219,15 @@ parse-int(10px);
 => 10
 ```
 
+#### Phi `phi()` _Alias:_ **golden-ratio**
+
+Returns Phi.
+
+```scss
+phi();
+=> 1.61803398874
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
