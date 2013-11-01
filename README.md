@@ -5,6 +5,28 @@ Powerful Function Library for Sass
 
 #### [Read Introduction](https://github.com/tctcl/ballistic/wiki/introduction)
 
+## Install
+
+In the future, Ballistic will hopefully be available in more ways, for now you can either clone the repo yourself, install via [bower](http://bower.io/), or install via [npm](https://npmjs.org/) as a grunt plugin. If you would like, please help create a [yeoman generator](http://yeoman.io/), a [ruby gem](http://rubygems.org/), or any other package manager you'd like out there.
+
+#### Git
+
+```
+git clone git@github.com:tctcl/ballistic.git && cd ballistic
+```
+
+#### Bower
+
+```
+bower install ballistic --save-dev
+```
+
+#### npm
+
+```
+npm install ballistic --save-dev
+```
+
 ## Support
 
 Have a question or need help? Tweet [@thejameskyle](https://twitter.com/thejameskyle).
