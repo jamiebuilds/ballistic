@@ -4,5 +4,4 @@ test
 .gitignore
 .travis.yml
 bower.json
-*.md
 Gruntfile.coffee
