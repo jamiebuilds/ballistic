@@ -1,0 +1,4 @@
+@function is-prime($number) {
+  $number: parse-int($number);
+  @return is-int($number) and $number >= 2 and factorial($number - 1) % $number == $number - 1;
+}

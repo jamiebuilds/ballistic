@@ -31,6 +31,7 @@ $ballistic-setting-verbose: false;
 @import "numbers/is-float";
 @import "numbers/is-inf";
 @import "numbers/is-int";
+@import "numbers/is-prime";
 @import "numbers/is-unit";
 @import "numbers/limit";
 @import "numbers/parse-int";
