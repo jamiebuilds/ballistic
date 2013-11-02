@@ -1,0 +1,3 @@
+@function is-inf($number) {
+  @return type-of($number) == number and abs($number) == infinity();
+}
