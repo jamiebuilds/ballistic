@@ -1,17 +1,23 @@
 @function factorial($number) {
-  @if $number < 0 or $number != floor($number) {
+  @if is-int($number) == false {
     @if $ballistic-setting-verbose {
-      @warn "Argument for `fact()` must be a positive integer.";
+      @warn "Argument for `factorial()` must be a positive integer. Returning `null`.";
     }
 
     @return null;
   }
 
-  $output: 1;
+  $start: 1;
 
-  @while $number > 0 {
-    $output: $output * $number;
-    $number: $number - 1;
+  $output: $start;
+
+  @if $number > 1 {
+    $i: $start;
+
+    @while $i <= $number {
+      $output: $output * $i;
+      $i: $i + 1;
+    }
   }
 
   @return $output;
