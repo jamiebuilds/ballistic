@@ -19,7 +19,6 @@
     @include should(expect( is-float(  3    ) ), to( be( false )));
     @include should(expect( is-float( 17    ) ), to( be( false )));
     @include should(expect( is-float( -6    ) ), to( be( false )));
-    @include should(expect( is-float( inf() ) ), to( be( false )));
   }
 
   @include it("should be false for non-numbers") {

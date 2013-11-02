@@ -19,7 +19,6 @@
     @include should(expect( is-int( -0.5  ) ), to( be( false )));
     @include should(expect( is-int( 11.2  ) ), to( be( false )));
     @include should(expect( is-int( 1/5   ) ), to( be( false )));
-    @include should(expect( is-int( inf() ) ), to( be( false )));
   }
 
   @include it("should be false for non-numbers") {

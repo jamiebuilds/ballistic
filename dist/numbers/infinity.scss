@@ -1,3 +1,9 @@
 @function infinity() {
   @return 1/0;
 }
+
+// Aliases
+
+@function inf() {
+  @return infinity();
+}
