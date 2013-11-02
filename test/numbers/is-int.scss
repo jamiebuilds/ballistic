@@ -1,0 +1,32 @@
+@include describe("Numbers::Is-Unit") {
+  @include it("should be true for integers") {
+    @include should(expect( is-int( 10 ) ), to( be( true )));
+    @include should(expect( is-int( 20 ) ), to( be( true )));
+    @include should(expect( is-int(  3 ) ), to( be( true )));
+    @include should(expect( is-int( 17 ) ), to( be( true )));
+    @include should(expect( is-int( -6 ) ), to( be( true )));
+  }
+
+  @include it("should be true for integers with units") {
+    @include should(expect( is-int( 10em ) ), to( be( true )));
+    @include should(expect( is-int( 20px ) ), to( be( true )));
+    @include should(expect( is-int(  3in ) ), to( be( true )));
+    @include should(expect( is-int( 17ch ) ), to( be( true )));
+  }
+
+  @include it("should be false for non-integers") {
+    @include should(expect( is-int(  0.1  ) ), to( be( false )));
+    @include should(expect( is-int( -0.5  ) ), to( be( false )));
+    @include should(expect( is-int( 11.2  ) ), to( be( false )));
+    @include should(expect( is-int( 1/5   ) ), to( be( false )));
+    @include should(expect( is-int( inf() ) ), to( be( false )));
+  }
+
+  @include it("should be false for non-numbers") {
+    @include should(expect( is-int( false   ) ), to( be( false )));
+    @include should(expect( is-int( true   ) ), to( be( false )));
+    @include should(expect( is-int( "foo"  ) ), to( be( false )));
+    @include should(expect( is-int( null   ) ), to( be( false )));
+    @include should(expect( is-int( (1, 2) ) ), to( be( false )));
+  }
+}
