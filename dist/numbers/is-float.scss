@@ -1,0 +1,3 @@
+@function is-float($value) {
+  @return type-of($value) == number and floor(abs($value)) != abs($value);
+}

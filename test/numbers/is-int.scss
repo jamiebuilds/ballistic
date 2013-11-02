@@ -1,4 +1,4 @@
-@include describe("Numbers::Is-Unit") {
+@include describe("Numbers::Is-Int") {
   @include it("should be true for integers") {
     @include should(expect( is-int( 10 ) ), to( be( true )));
     @include should(expect( is-int( 20 ) ), to( be( true )));
@@ -23,7 +23,7 @@
   }
 
   @include it("should be false for non-numbers") {
-    @include should(expect( is-int( false   ) ), to( be( false )));
+    @include should(expect( is-int( false  ) ), to( be( false )));
     @include should(expect( is-int( true   ) ), to( be( false )));
     @include should(expect( is-int( "foo"  ) ), to( be( false )));
     @include should(expect( is-int( null   ) ), to( be( false )));
