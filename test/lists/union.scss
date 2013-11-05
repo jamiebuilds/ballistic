@@ -8,13 +8,13 @@
     $list-2b: "bar", "nan", "baz";
     $list-2c: "foo", "baz", "bar";
 
-    $list-3a:      true, false, false;
-    $list-3b:      true,  null, false;
-    $list-3c: undefined,  null,  true;
+    $list-3a: true, false, false;
+    $list-3b: true,  null, false;
+    $list-3c: null,  null,  true;
 
-    @include should(expect( union($list-1a, $list-1b, $list-1c) ), to( equal( ( 1, 2, 3, 4, 6, 8             ) )));
-    @include should(expect( union($list-2a, $list-2b, $list-2c) ), to( equal( ( "foo", "bar", "baz", "nan"   ) )));
-    @include should(expect( union($list-3a, $list-3b, $list-3c) ), to( equal( ( true, false, null, undefined ) )));
+    @include should(expect( union($list-1a, $list-1b, $list-1c) ), to( equal( ( 1, 2, 3, 4, 6, 8  ) )));
+    @include should(expect( union($list-2a, $list-2b, $list-2c) ), to( equal( ( "foo", "bar", "baz", "nan" ) )));
+    @include should(expect( union($list-3a, $list-3b, $list-3c) ), to( equal( ( true, false, null ) )));
   }
 
   @include it("should return one item if all the items are the same") {
@@ -32,13 +32,13 @@
     $list-2b: "bar", ("nan", "baz");
     $list-2c: "foo", ("baz", "bar");
 
-    $list-3a:      true, (false, false);
-    $list-3b:      true, ( null, false);
-    $list-3c: undefined, ( null,  true);
+    $list-3a: true, (false, false);
+    $list-3b: true, ( null, false);
+    $list-3c: null, ( null,  true);
 
-    @include should(expect( union($list-1a, $list-1b, $list-1c) ), not-to( equal( ( 1, 2, 3, 4, 6, 8             ) )));
-    @include should(expect( union($list-2a, $list-2b, $list-2c) ), not-to( equal( ( "foo", "bar", "baz", "nan"   ) )));
-    @include should(expect( union($list-3a, $list-3b, $list-3c) ), not-to( equal( ( true, false, null, undefined ) )));
+    @include should(expect( union($list-1a, $list-1b, $list-1c) ), not-to( equal( ( 1, 2, 3, 4, 6, 8 ) )));
+    @include should(expect( union($list-2a, $list-2b, $list-2c) ), not-to( equal( ( "foo", "bar", "baz", "nan" ) )));
+    @include should(expect( union($list-3a, $list-3b, $list-3c) ), not-to( equal( ( true, false, null ) )));
   }
 
   @include it("should leave an empty array alone") {
