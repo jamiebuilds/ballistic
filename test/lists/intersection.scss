@@ -8,9 +8,9 @@
     $list-2b: "bar", "nan", "foo";
     $list-2c: "foo", "baz", "bar";
 
-    $list-3a:      true,  false, false;
-    $list-3b:      true,   null, false;
-    $list-3c: undefined,  false,  true;
+    $list-3a: true,  false, false;
+    $list-3b: true,   null, false;
+    $list-3c: null,  false,  true;
 
     @include should(expect( intersection($list-1a, $list-1b, $list-1c) ), to( equal( ( 1, 2 ) )));
     @include should(expect( intersection($list-2a, $list-2b, $list-2c) ), to( equal( ( "foo", "bar" ) )));

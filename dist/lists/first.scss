@@ -1,6 +1,6 @@
 @function first($list, $nth: 1) {
   @if length($list) == 0 {
-    @return undefined;
+    @return null;
   }
 
   $output: ();

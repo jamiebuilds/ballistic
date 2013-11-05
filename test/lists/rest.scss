@@ -53,11 +53,11 @@
     @include should(expect( drop($boolean) ), to( equal( true )));
   }
 
-  @include it("should return undefined when a list is empty") {
+  @include it("should return null when a list is empty") {
     $empty: ();
 
-    @include should(expect( rest($empty) ), to( be-undefined() ));
-    @include should(expect( tail($empty) ), to( be-undefined() ));
-    @include should(expect( drop($empty) ), to( be-undefined() ));
+    @include should(expect( rest($empty) ), to( be-null() ));
+    @include should(expect( tail($empty) ), to( be-null() ));
+    @include should(expect( drop($empty) ), to( be-null() ));
   }
 }

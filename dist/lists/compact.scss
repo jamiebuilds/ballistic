@@ -2,7 +2,7 @@
   $compacted: ();
 
   @each $item in $list {
-    @if $item and $item != 0 and $item != undefined {
+    @if $item {
       $compacted: append($compacted, $item, comma);
     }
   }
