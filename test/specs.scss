@@ -16,6 +16,7 @@ $ballistic-setting-verbose: false;
 @import "lists/last";
 @import "lists/prepend";
 @import "lists/replace";
+@import "lists/replace-nth";
 @import "lists/rest";
 @import "lists/slice";
 @import "lists/union";
