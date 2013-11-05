@@ -1,10 +1,6 @@
 @function factorial($number) {
   @if is-int($number) == false {
-    @if $ballistic-setting-verbose {
-      @warn "Argument for `factorial()` must be a positive integer. Returning `null`.";
-    }
-
-    @return null;
+    @return warn("Argument for `factorial()` must be a positive integer. Returning `null`.");
   }
 
   $start: 1;
