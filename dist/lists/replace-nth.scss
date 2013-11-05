@@ -2,24 +2,15 @@
   $result: ();
 
   @if type-of($index) != number {
-    @if $ballistic-setting-verbose {
-      @warn "List index #{quote($index)} is not a number for `replace-nth`/`remove-nth`.";
-    }
-    @return null;
+    @return warn("List index #{$index} is not a number for `replace-nth`/`remove-nth`.");
   }
 
   @else if $index == 0 {
-    @if $ballistic-setting-verbose {
-      @warn "List index 0 must be a non-zero integer for `replace-nth`/`remove-nth`.";
-    }
-    @return null;
+    @return warn("List index 0 must be a non-zero integer for `replace-nth`/`remove-nth`.");
   }
 
   @else if abs($index) > length($list) {
-    @if $ballistic-setting-verbose {
-      @warn "List index is #{quote($index)} but list is only #{length($list)} item long for `replace-nth`/`remove-nth`.";
-    }
-    @return null;
+    @return warn("List index is #{$index} but list is only #{length($list)} item long for `replace-nth`/`remove-nth`.");
   }
 
   @else {

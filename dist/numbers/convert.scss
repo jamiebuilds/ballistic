@@ -42,8 +42,7 @@
   }
 
   @if $list-1 != $list-2 {
-    @warn $fail + "Incompatible unit types.";
-    @return null;
+    @return warn($fail + "Incompatible unit types.");
   }
 
   $number: parse-int($number);
@@ -60,7 +59,6 @@
   @if $mod != null {
     @return $number * $mod * $convert;
   } @else {
-    @warn $fail + "Needs Reference.";
-    @return null;
+    @return warn($fail + "Needs Reference.");
   }
 }
