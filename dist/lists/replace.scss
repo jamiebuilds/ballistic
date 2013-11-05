@@ -1,0 +1,19 @@
+@function replace($list, $old-value, $new-value: null, $recursive: false) {
+  $result: ();
+
+  @each $item in $list {
+    @if length($item) > 1 and $recursive {
+      $result: append($result, replace($item, $old-value, $new-value, $recursive), comma);
+    }
+
+    @else if $item == $old-value and $new-value != null {
+      $result: append($result, $new-value, comma);
+    }
+
+    @else if $item != $old-value {
+      $result: append($result, $item, comma);
+    }
+  }
+
+  @return $result;
+}
