@@ -2,7 +2,7 @@
   $compacted: ();
 
   @each $item in $list {
-    @if $item {
+    @if $item and $item != "" {
       $compacted: append($compacted, $item, comma);
     }
   }
