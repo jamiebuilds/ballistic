@@ -1,0 +1,40 @@
+@function replace-nth($list, $index, $value: null) {
+  $result: ();
+
+  @if type-of($index) != number {
+    @if $ballistic-setting-verbose {
+      @warn "List index #{quote($index)} is not a number for `replace-nth`/`remove-nth`.";
+    }
+    @return null;
+  }
+
+  @else if $index == 0 {
+    @if $ballistic-setting-verbose {
+      @warn "List index 0 must be a non-zero integer for `replace-nth`/`remove-nth`.";
+    }
+    @return null;
+  }
+
+  @else if abs($index) > length($list) {
+    @if $ballistic-setting-verbose {
+      @warn "List index is #{quote($index)} but list is only #{length($list)} item long for `replace-nth`/`remove-nth`.";
+    }
+    @return null;
+  }
+
+  @else {
+    $index: if($index < 0, length($list) + $index + 1, $index);
+
+    @for $i from 1 through length($list) {
+      @if $i == $index and $value != null {
+        $result: append($result, $value, comma);
+      }
+
+      @else if $i != $index {
+        $result: append($result, nth($list, $i), comma);
+      }
+    }
+  }
+
+  @return $result;
+}
