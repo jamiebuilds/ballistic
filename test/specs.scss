@@ -15,6 +15,7 @@ $ballistic-setting-verbose: false;
 @import "lists/flatten";
 @import "lists/initial";
 @import "lists/intersection";
+@import "lists/is-symmetrical";
 @import "lists/last";
 @import "lists/prepend";
 @import "lists/replace";

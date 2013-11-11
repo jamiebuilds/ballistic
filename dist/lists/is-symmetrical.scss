@@ -1,0 +1,10 @@
+@function is-symmetrical($list, $recursive: false) {
+  $reverse: reverse($list, $recursive);
+  @return $reverse == reverse($reverse, $recursive);
+}
+
+// Aliases
+
+@function is-mirror($list, $recursive: false) {
+  @return is-symmetrical($list, $recursive);
+}

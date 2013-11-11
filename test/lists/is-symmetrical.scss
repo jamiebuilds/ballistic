@@ -1,0 +1,57 @@
+@include describe("Arrays::Is-Symmetrical") {
+  @include it("should return true if list is symmetrical") {
+    $list-1: 1, 2, 3, 2, 1;
+    $list-2: true, false, false, true;
+    $list-3: "foo", "bar", "foo";
+
+    @include should(expect( is-symmetrical($list-1) ), to( be( true )));
+    @include should(expect( is-symmetrical($list-2) ), to( be( true )));
+    @include should(expect( is-symmetrical($list-3) ), to( be( true )));
+
+    @include should(expect( is-mirror($list-1) ), to( be( true )));
+    @include should(expect( is-mirror($list-2) ), to( be( true )));
+    @include should(expect( is-mirror($list-3) ), to( be( true )));
+  }
+
+  @include it("should return false if list is not symmetrical") {
+    $list-1: 1, 2, 3, 4, 5;
+    $list-2: true, false, true, false;
+    $list-3: "foo", "bar", "baz";
+
+    @include should(expect( is-symmetrical($list-1) ), to( be( false )));
+    @include should(expect( is-symmetrical($list-2) ), to( be( false )));
+    @include should(expect( is-symmetrical($list-3) ), to( be( false )));
+
+    @include should(expect( is-mirror($list-1) ), to( be( false )));
+    @include should(expect( is-mirror($list-2) ), to( be( false )));
+    @include should(expect( is-mirror($list-3) ), to( be( false )));
+  }
+
+  @include it("should not be recursive by default") {
+    $list-1: 1, (2, 3, 4), 1;
+    $list-2: true, (false, false), true;
+    $list-3: "foo", ("bar", "baz"), "foo";
+
+    @include should(expect( is-symmetrical($list-1) ), to( be( true )));
+    @include should(expect( is-symmetrical($list-2) ), to( be( true )));
+    @include should(expect( is-symmetrical($list-3) ), to( be( true )));
+
+    @include should(expect( is-mirror($list-1) ), to( be( true )));
+    @include should(expect( is-mirror($list-2) ), to( be( true )));
+    @include should(expect( is-mirror($list-3) ), to( be( true )));
+  }
+
+  @include it("should be recursive when told to") {
+    $list-1: 1, (2, 3, 2), 1;
+    $list-2: true, (false, false), true;
+    $list-3: "foo", ("bar", "bar"), "foo";
+
+    @include should(expect( is-symmetrical($list-1, $recursive: true) ), to( be( true )));
+    @include should(expect( is-symmetrical($list-2, $recursive: true) ), to( be( true )));
+    @include should(expect( is-symmetrical($list-3, $recursive: true) ), to( be( true )));
+
+    @include should(expect( is-mirror($list-1, $recursive: true) ), to( be( true )));
+    @include should(expect( is-mirror($list-2, $recursive: true) ), to( be( true )));
+    @include should(expect( is-mirror($list-3, $recursive: true) ), to( be( true )));
+  }
+}
