@@ -1,17 +1,27 @@
-@function intersection($list, $others...) {
-  $filtered: $list;
+@function intersection($array, $others...) {
+  $unique: ();
 
-  @each $list in $others {
-    $temp: ();
+  @each $item in $array {
+    @if not index($unique, $item) {
+      $unique: append($unique, $item, comma);
+    }
+  }
 
-    @each $item in $filtered {
-      @if not not index($list, $item) {
-        $temp: append($temp, $item, comma);
+  $intersection: ();
+
+  @each $item in $unique {
+    $exists: true;
+
+    @each $other in $others {
+      @if not index($other, $item) {
+        $exists: false;
       }
     }
 
-    $filtered: $temp;
+    @if $exists {
+      $intersection: append($intersection, $item, comma);
+    }
   }
 
-  @return $filtered;
+  @return $intersection;
 }
