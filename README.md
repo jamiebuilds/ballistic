@@ -1,7 +1,7 @@
 Ballistic [![NPM version](https://badge.fury.io/js/ballistic.png)](http://badge.fury.io/js/ballistic) [![Build Status](https://travis-ci.org/tctcl/ballistic.png?branch=master)](https://travis-ci.org/tctcl/ballistic) [![Dependency Status](https://david-dm.org/tctcl/ballistic.png)](https://david-dm.org/tctcl/ballistic) [![devDependency Status](https://david-dm.org/tctcl/ballistic/dev-status.png)](https://david-dm.org/tctcl/ballistic#info=devDependencies)
 ========
 
-Powerful Function Library for Sass
+Utility-Belt Library for Sass
 
 #### [Read Introduction](https://github.com/tctcl/ballistic/wiki/introduction)
 
