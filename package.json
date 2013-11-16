@@ -40,7 +40,7 @@
     "grunt-contrib-sass": "~0.5.0",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-init": "~0.2.1",
-    "bootcamp": "~0.0.5"
+    "bootcamp": "~1.0.0"
   },
   "peerDependencies": {},
   "engines": {

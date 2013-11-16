@@ -12,15 +12,15 @@
     $list-3b: true,   null, false;
     $list-3c: null,  false,  true;
 
-    @include should(expect( intersection($list-1a, $list-1b, $list-1c) ), to( equal( ( 1, 2 ) )));
-    @include should(expect( intersection($list-2a, $list-2b, $list-2c) ), to( equal( ( "foo", "bar" ) )));
-    @include should(expect( intersection($list-3a, $list-3b, $list-3c) ), to( equal( ( true, false ) )));
+    @include should(expect( intersection($list-1a, $list-1b, $list-1c) ), to( be( ( 1, 2 ) )));
+    @include should(expect( intersection($list-2a, $list-2b, $list-2c) ), to( be( ( "foo", "bar" ) )));
+    @include should(expect( intersection($list-3a, $list-3b, $list-3c) ), to( be( ( true, false ) )));
   }
 
   @include it("should return one item if all the items are the same") {
-    @include should(expect( intersection(1, 1, 1)             ), to( equal( ( 1     ) )));
-    @include should(expect( intersection("foo", "foo", "foo") ), to( equal( ( "foo" ) )));
-    @include should(expect( intersection(false, false, false) ), to( equal( ( false ) )));
+    @include should(expect( intersection(1, 1, 1)             ), to( be( ( 1     ) )));
+    @include should(expect( intersection("foo", "foo", "foo") ), to( be( ( "foo" ) )));
+    @include should(expect( intersection(false, false, false) ), to( be( ( false ) )));
   }
 
   @include it("should return nothing if all the items are the same except one") {

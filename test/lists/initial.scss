@@ -4,9 +4,9 @@
     $strings:  "foo", "bar", "baz";
     $booleans: true, false, false;
 
-    @include should(expect( initial($numbers ) ), to( equal( (1, 2) )));
-    @include should(expect( initial($strings ) ), to( equal( ("foo", "bar") )));
-    @include should(expect( initial($booleans) ), to( equal( (true, false) )));
+    @include should(expect( initial($numbers ) ), to( be( (1, 2) )));
+    @include should(expect( initial($strings ) ), to( be( ("foo", "bar") )));
+    @include should(expect( initial($booleans) ), to( be( (true, false) )));
   }
 
   @include it("should return the initial nth items in an array") {
@@ -14,9 +14,9 @@
     $strings:  "foo", "bar", "baz";
     $booleans: true, false, false;
 
-    @include should(expect( initial($numbers , 2) ), to( equal( 1 )));
-    @include should(expect( initial($strings , 2) ), to( equal( "foo" )));
-    @include should(expect( initial($booleans, 2) ), to( equal( true )));
+    @include should(expect( initial($numbers , 2) ), to( be( 1 )));
+    @include should(expect( initial($strings , 2) ), to( be( "foo" )));
+    @include should(expect( initial($booleans, 2) ), to( be( true )));
   }
 
   @include it("should return the only item in an single item array") {
@@ -24,9 +24,9 @@
     $string: "foo";
     $boolean: true;
 
-    @include should(expect( initial($number ) ), to( equal( 1 )));
-    @include should(expect( initial($string ) ), to( equal( "foo" )));
-    @include should(expect( initial($boolean) ), to( equal( true )));
+    @include should(expect( initial($number ) ), to( be( 1 )));
+    @include should(expect( initial($string ) ), to( be( "foo" )));
+    @include should(expect( initial($boolean) ), to( be( true )));
   }
 
   @include it("should return null when a list is empty") {
