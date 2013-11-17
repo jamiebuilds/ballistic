@@ -6,21 +6,21 @@
 
     $result: 1, 2, 3, 4, 5, 6, 7;
 
-    @include should(expect( flatten($list-1) ), to( equal( $result )));
-    @include should(expect( flatten($list-2) ), to( equal( $result )));
-    @include should(expect( flatten($list-3) ), to( equal( $result )));
+    @include should(expect( flatten($list-1) ), to( be( $result )));
+    @include should(expect( flatten($list-2) ), to( be( $result )));
+    @include should(expect( flatten($list-3) ), to( be( $result )));
   }
 
   @include it("should leave normal arrays alone") {
     $list: 1, 2, 3, 4, 5, 6, 7;
 
-    @include should(expect( flatten($list) ), to( equal( $list )));
+    @include should(expect( flatten($list) ), to( be( $list )));
   }
 
   @include it("should leave empty lists alone") {
     $list: ();
 
-    @include should(expect( flatten($list) ), to( equal( $list )));
+    @include should(expect( flatten($list) ), to( be( $list )));
   }
 
   @include it("should only flatten one level when shallow") {
@@ -32,20 +32,20 @@
     $result-2: 1, 2, (3,  4, 5),  6, 7;
     $result-3: 1, 2, (3, (4, 5)), 6, 7;
 
-    @include should(expect( flatten($list-1, true) ), to( equal( $result-1 )));
-    @include should(expect( flatten($list-2, true) ), to( equal( $result-2 )));
-    @include should(expect( flatten($list-3, true) ), to( equal( $result-3 )));
+    @include should(expect( flatten($list-1, true) ), to( be( $result-1 )));
+    @include should(expect( flatten($list-2, true) ), to( be( $result-2 )));
+    @include should(expect( flatten($list-3, true) ), to( be( $result-3 )));
   }
 
   @include it("should leave normal arrays alone when shallow") {
     $list: 1, 2, 3, 4, 5, 6, 7;
 
-    @include should(expect( flatten($list, true) ), to( equal( $list )));
+    @include should(expect( flatten($list, true) ), to( be( $list )));
   }
 
   @include it("should leave empty lists alone when shallow") {
     $list: ();
 
-    @include should(expect( flatten($list, true) ), to( equal( $list )));
+    @include should(expect( flatten($list, true) ), to( be( $list )));
   }
 }

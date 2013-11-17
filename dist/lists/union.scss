@@ -1,5 +1,5 @@
 @function union($lists...) {
-  $flattened: flatten($lists, true);
+  $flattened: flatten($lists, $shallow: true);
   $unique: ();
 
   @each $item in $flattened {
