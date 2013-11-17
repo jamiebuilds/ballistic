@@ -1,19 +1,27 @@
-@function without($list, $values...) {
-  $without: ();
+@function without($list, $values, $recursive: false) {
+  $result: ();
 
   @each $item in $list {
     $passed: true;
 
     @each $value in $values {
-      @if $item == $value {
+      @if type-of($item) == "list" and $recursive {
+        $item: without($item, $value);
+      } @else if $item == $value {
         $passed: false;
       }
     }
 
     @if $passed {
-      $without: append($without, $item);
+      $result: append($result, $item);
     }
   }
 
-  @return $without;
+  @return $result;
+}
+
+// Aliases
+
+@function remove($list, $values, $recursive: false) {
+  @return without($list, $values, $recursive);
 }
