@@ -1,5 +1,13 @@
 # Changelog
 
+#### 0.2.0 - 2013-11-18
+
+- Add `chunk()`
+- Add `unique()`, `uniq()`, `remove-duplicates()`
+- Add `$recursive` param to `without()`
+- Add `without()` alias `remove()`
+- Improve `flatten()`
+
 #### 0.1.0 - 2013-11-16
 
 - Add `is-int()`

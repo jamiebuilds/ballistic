@@ -1,6 +1,6 @@
 {
   "name": "ballistic",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "http://github.com/tctcl/ballistic",
   "main": "dist/ballistic.scss",
   "ignore": [
