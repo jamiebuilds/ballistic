@@ -20,13 +20,13 @@ git clone git@github.com:tctcl/ballistic.git && cd ballistic
 #### Bower
 
 ```
-bower install ballistic --save-dev
+bower install ballistic --save
 ```
 
 #### npm
 
 ```
-npm install ballistic --save-dev
+npm install ballistic --save
 ```
 
 ## Support
