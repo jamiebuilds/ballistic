@@ -1,3 +1,9 @@
 @function parse-int($number) {
   @return $number / ($number * 0 + 1);
 }
+
+// Aliases
+
+@function strip-unit($number) {
+  @return parse-int($number);
+}
