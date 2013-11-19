@@ -9,3 +9,9 @@
 
   @return $compacted;
 }
+
+// Aliases
+
+@function purge($list) {
+  @return compact($list);
+}
