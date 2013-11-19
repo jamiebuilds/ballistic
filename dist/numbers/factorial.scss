@@ -1,22 +1,17 @@
 @function factorial($number) {
-  @if is-int($number) == false {
+  @if not is-int($number) or $number < 0 {
     @return warn("Argument for `factorial()` must be a positive integer. Returning `null`.");
   }
 
-  $start: 1;
+  $index:  1;
+  $result: 1;
 
-  $output: $start;
-
-  @if $number > 1 {
-    $i: $start;
-
-    @while $i <= $number {
-      $output: $output * $i;
-      $i: $i + 1;
-    }
+  @while $index <= $number {
+    $result: $result * $index;
+    $index: $index + 1;
   }
 
-  @return $output;
+  @return $result;
 }
 
 // Aliases
