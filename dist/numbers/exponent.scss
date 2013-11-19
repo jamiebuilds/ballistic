@@ -1,27 +1,27 @@
-@function exponent($number, $exponent) {
-  $value: $number;
+@function exponent($base, $exponent) {
+  $result: $base;
 
   @if $exponent > 1 {
     @for $i from 2 through $exponent {
-      $value: $value * $number;
+      $result: $result * $base;
     }
   }
 
   @if $exponent < 1 {
     @for $i from 0 through -$exponent {
-      $value: $value / $number;
+      $result: $result / $base;
     }
   }
 
-  @return $value;
+  @return $result;
 }
 
 // Aliases
 
-@function power($number, $exponent) {
-  @return exponent($number, $exponent);
+@function power($base, $exponent) {
+  @return exponent($base, $exponent);
 }
 
-@function pow($number, $exponent) {
-  @return exponent($number, $exponent);
+@function pow($base, $exponent) {
+  @return exponent($base, $exponent);
 }
