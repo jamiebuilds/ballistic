@@ -34,13 +34,14 @@
     "dist/"
   ],
   "bin": {},
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-sass": "~0.5.0",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-init": "~0.2.1",
-    "bootcamp": "~1.0.0"
+    "bootcamp": "~1.1.0"
   },
   "peerDependencies": {},
   "engines": {
