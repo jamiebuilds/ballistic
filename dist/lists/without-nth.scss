@@ -1,0 +1,9 @@
+@function without-nth($list, $index) {
+  @return replace-nth($list, $index);
+}
+
+// Aliases
+
+@function remove-nth($list, $index) {
+  @return without-nth($list, $index);
+}
