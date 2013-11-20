@@ -1,4 +1,4 @@
-@include describe("Numbers::Unit-Type") {
+@include describe("Numbers ~ Unit-Type") {
   @include it("should return relative units") {
     @include should(expect( unit-type( 100% ) ), to( be( "relative" )));
     @include should(expect( unit-type( 10ex ) ), to( be( "relative" )));

@@ -1,4 +1,4 @@
-@include describe("Numbers::Pi") {
+@include describe("Numbers ~ Pi") {
   @include it("should return pi") {
     @include should(expect( pi() ), to( equal( 3.14159265359 )));
   }

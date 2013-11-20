@@ -1,4 +1,4 @@
-@include describe("Arrays::Sum") {
+@include describe("Lists ~ Sum") {
   @include it("should add up unitless numbers in a list") {
     @include should(expect( sum( (2, 2)   ) ), to( equal( 4)));
     @include should(expect( sum( (-2, -2) ) ), to( equal(-4)));

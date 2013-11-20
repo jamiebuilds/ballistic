@@ -1,4 +1,4 @@
-@include describe("Numbers::Parse-Int") {
+@include describe("Numbers ~ Parse-Int") {
   @include it("should strip numbers of their units") {
     @include should(expect( parse-int(   1px ) ), to( equal(   1 )));
     @include should(expect( parse-int( 0.2em ) ), to( equal( 0.2 )));

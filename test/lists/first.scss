@@ -1,4 +1,4 @@
-@include describe("Arrays::First") {
+@include describe("Lists ~ First") {
   @include it("should return the first item in an array") {
     $numbers:  1, 2, 3;
     $strings:  "foo", "bar", "baz";

@@ -1,4 +1,4 @@
-@include describe("Numbers::Is-Float") {
+@include describe("Numbers ~ Is-Float") {
   @include it("should be true for floats") {
     @include should(expect( is-float(  0.1  ) ), to( be( true )));
     @include should(expect( is-float( -0.5  ) ), to( be( true )));

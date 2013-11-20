@@ -1,4 +1,4 @@
-@include describe("Arrays::Chunk") {
+@include describe("Lists ~ Chunk") {
   @include it("should split lists into equal chunks") {
     $list-1: 1, 2, 3, 1, 2, 3, 1, 2, 3;
     $list-2: "foo", "bar", "foo", "bar";

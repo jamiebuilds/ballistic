@@ -1,4 +1,4 @@
-@include describe("Arrays::Slice") {
+@include describe("Lists ~ Slice") {
   @include it("should stay the same without a min or max") {
     $list-1: 1, 2, 3, 4, 5;
     $list-2: "foo", "bar", "baz", "caw", "tun";

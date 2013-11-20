@@ -1,4 +1,4 @@
-@include describe("Numbers::Is-Inf") {
+@include describe("Numbers ~ Is-Inf") {
   @include it("should be true for infinite numbers") {
     @include should(expect( is-inf(  1/0 ) ), to( be( true )));
     @include should(expect( is-inf(  2/0 ) ), to( be( true )));

@@ -1,4 +1,4 @@
-@include describe("Collections::Contains") {
+@include describe("Lists ~ Contains") {
   @include it("should be true if collection contains value") {
     $numbers:  1, 2, 3;
     $strings:  "foo", "bar", "baz";

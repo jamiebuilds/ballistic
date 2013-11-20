@@ -1,4 +1,4 @@
-@include describe("Arrays::Compact") {
+@include describe("Lists ~ Compact") {
   @include it("should remove all falsy values from array") {
     $list-1: 0,  1 , 2 , false,  3 , null,  4, "";
     $list-2: "a", "b", false, "c", null, "d", "";

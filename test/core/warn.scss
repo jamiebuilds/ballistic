@@ -1,4 +1,4 @@
-@include describe("Core::Warn") {
+@include describe("Core ~ Warn") {
   @include it("should return null by default") {
     @include should(expect( warn("message") ), to( be-null()));
   }

@@ -1,4 +1,4 @@
-@include describe("Lists::Replace") {
+@include describe("Lists ~ Replace") {
   @include it("should replace a value in a list") {
     $list-1: 1, 2, 3, 4;
     $list-2: true, false, false, true;

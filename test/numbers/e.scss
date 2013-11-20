@@ -1,4 +1,4 @@
-@include describe("Numbers::E") {
+@include describe("Numbers ~ E") {
   @include it("should return eulers number") {
     @include should(expect( e() ), to( equal( 2.71828182845 )));
   }

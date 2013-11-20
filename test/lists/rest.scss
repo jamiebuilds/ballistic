@@ -1,4 +1,4 @@
-@include describe("Arrays::Rest") {
+@include describe("Lists ~ Rest") {
   @include it("should return the rest item in an array") {
     $numbers:  1, 2, 3;
     $strings:  "foo", "bar", "baz";

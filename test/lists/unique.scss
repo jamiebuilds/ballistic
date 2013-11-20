@@ -1,4 +1,4 @@
-@include describe("Arrays::Unique") {
+@include describe("Lists ~ Unique") {
   @include it("should remove any duplicate items") {
     $list-1: 1, 2, 3, 2, 5, 1, 2;
     $list-2: "foo", "bar", "baz", "foo", "bar", "baz", "cah";

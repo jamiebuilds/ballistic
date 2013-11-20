@@ -1,4 +1,4 @@
-@include describe("Arrays::Last") {
+@include describe("Lists ~ Last") {
   @include it("should return the last item in an array") {
     $numbers:  1, 2, 3;
     $strings:  "foo", "bar", "baz";

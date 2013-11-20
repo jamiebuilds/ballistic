@@ -1,4 +1,4 @@
-@include describe("Numbers::Factorial") {
+@include describe("Numbers ~ Factorial") {
   @include it("should calculate the factorial of an integer") {
     @include should(expect( factorial(   1 ) ), to( equal( 1 )));
     @include should(expect( factorial(   2 ) ), to( equal( 2 )));

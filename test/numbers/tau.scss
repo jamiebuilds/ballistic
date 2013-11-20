@@ -1,4 +1,4 @@
-@include describe("Numbers::Tau") {
+@include describe("Numbers ~ Tau") {
   @include it("should return tau") {
     @include should(expect( tau() ), to( be-close-to( 6.2831853072, 10)));
   }
