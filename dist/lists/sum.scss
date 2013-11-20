@@ -1,0 +1,27 @@
+@function sum($list) {
+  $result: 0;
+
+  $unit: unit( nth($list, 1) );
+
+  @each $item in $list {
+    @if type-of($item) == number {
+
+      @if unit($item) == $unit {
+        $result: $result + $item;
+      } @else {
+        @return warn("Sum cannot calculate lists with values that have varying units");
+      }
+
+    } @else {
+      @return warn("Sum cannot calculate lists that contain values other than numbers");
+    }
+  }
+
+  @return $result;
+}
+
+// Aliases
+
+@function total($list) {
+  @return sum($list);
+}
