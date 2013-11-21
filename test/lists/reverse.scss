@@ -4,9 +4,9 @@
     $list-2: true, false, true, false;
     $list-3: "foo", "bar", "baz";
 
-    @include should(expect( reverse( $list-1 ) ), to( equal( (4, 3, 2, 1)               )));
-    @include should(expect( reverse( $list-2 ) ), to( equal( (false, true, false, true) )));
-    @include should(expect( reverse( $list-3 ) ), to( equal( ("baz", "bar", "foo")      )));
+    @include should(expect( ballistic-reverse( $list-1 ) ), to( equal( (4, 3, 2, 1)               )));
+    @include should(expect( ballistic-reverse( $list-2 ) ), to( equal( (false, true, false, true) )));
+    @include should(expect( ballistic-reverse( $list-3 ) ), to( equal( ("baz", "bar", "foo")      )));
   }
 
   @include it("should reverse the values of a list non-recursively") {
@@ -14,9 +14,9 @@
     $list-2: true, false, (true, false);
     $list-3: "foo", ("bar", "baz");
 
-    @include should(expect( reverse( $list-1 ) ), to( equal( ((3, 4), 2, 1)               )));
-    @include should(expect( reverse( $list-2 ) ), to( equal( ((true, false), false, true) )));
-    @include should(expect( reverse( $list-3 ) ), to( equal( (("bar", "baz"), "foo")      )));
+    @include should(expect( ballistic-reverse( $list-1 ) ), to( equal( ((3, 4), 2, 1)               )));
+    @include should(expect( ballistic-reverse( $list-2 ) ), to( equal( ((true, false), false, true) )));
+    @include should(expect( ballistic-reverse( $list-3 ) ), to( equal( (("bar", "baz"), "foo")      )));
   }
 
   @include it("should reverse the values of a list recursively when told to") {
@@ -24,8 +24,8 @@
     $list-2: true, false, (true, false);
     $list-3: "foo", ("bar", "baz");
 
-    @include should(expect( reverse( $list-1, $recursive: true ) ), to( equal( ((4, 3), 2, 1)               )));
-    @include should(expect( reverse( $list-2, $recursive: true ) ), to( equal( ((false, true), false, true) )));
-    @include should(expect( reverse( $list-3, $recursive: true ) ), to( equal( (("baz", "bar"), "foo")      )));
+    @include should(expect( ballistic-reverse( $list-1, $recursive: true ) ), to( equal( ((4, 3), 2, 1)               )));
+    @include should(expect( ballistic-reverse( $list-2, $recursive: true ) ), to( equal( ((false, true), false, true) )));
+    @include should(expect( ballistic-reverse( $list-3, $recursive: true ) ), to( equal( (("baz", "bar"), "foo")      )));
   }
 }

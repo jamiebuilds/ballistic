@@ -1,23 +1,23 @@
 @include describe("Numbers::Is-prime") {
   @include it("should be true for prime numbers") {
-    @include should(expect( is-prime(  3 ) ), to( be( true )));
-    @include should(expect( is-prime(  5 ) ), to( be( true )));
-    @include should(expect( is-prime( 11 ) ), to( be( true )));
-    @include should(expect( is-prime( 23 ) ), to( be( true )));
+    @include should(expect( ballistic-is-prime(  3 ) ), to( be( true )));
+    @include should(expect( ballistic-is-prime(  5 ) ), to( be( true )));
+    @include should(expect( ballistic-is-prime( 11 ) ), to( be( true )));
+    @include should(expect( ballistic-is-prime( 23 ) ), to( be( true )));
   }
 
   @include it("should be true for prime numbers with units") {
-    @include should(expect( is-prime(  3em ) ), to( be( true )));
-    @include should(expect( is-prime(  5px ) ), to( be( true )));
-    @include should(expect( is-prime( 11cm ) ), to( be( true )));
-    @include should(expect( is-prime( 23px ) ), to( be( true )));
+    @include should(expect( ballistic-is-prime(  3em ) ), to( be( true )));
+    @include should(expect( ballistic-is-prime(  5px ) ), to( be( true )));
+    @include should(expect( ballistic-is-prime( 11cm ) ), to( be( true )));
+    @include should(expect( ballistic-is-prime( 23px ) ), to( be( true )));
   }
 
   @include it("should be false for non-prime numbers") {
-    @include should(expect( is-prime(  6 ) ), to( be( false )));
-    @include should(expect( is-prime(  8 ) ), to( be( false )));
-    @include should(expect( is-prime( 12 ) ), to( be( false )));
-    @include should(expect( is-prime( 36 ) ), to( be( false )));
-    @include should(expect( is-prime( -5 ) ), to( be( false )));
+    @include should(expect( ballistic-is-prime(  6 ) ), to( be( false )));
+    @include should(expect( ballistic-is-prime(  8 ) ), to( be( false )));
+    @include should(expect( ballistic-is-prime( 12 ) ), to( be( false )));
+    @include should(expect( ballistic-is-prime( 36 ) ), to( be( false )));
+    @include should(expect( ballistic-is-prime( -5 ) ), to( be( false )));
   }
 }

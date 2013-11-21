@@ -1,9 +1,13 @@
-@function without-nth($list, $index) {
+@function ballistic-without-nth($list, $index) {
   @return replace-nth($list, $index);
 }
 
 // Aliases
 
+@function without-nth($list, $index) {
+  @return ballistic-without-nth($list, $index);
+}
+
 @function remove-nth($list, $index) {
-  @return without-nth($list, $index);
+  @return ballistic-without-nth($list, $index);
 }

@@ -12,9 +12,9 @@
     $list-3b: true,   null, false;
     $list-3c: null,  false,  true;
 
-    @include should(expect( intersection($list-1a, $list-1b, $list-1c) ), to( be( ( 1, 2 ) )));
-    @include should(expect( intersection($list-2a, $list-2b, $list-2c) ), to( be( ( "foo", "bar" ) )));
-    @include should(expect( intersection($list-3a, $list-3b, $list-3c) ), to( be( ( true, false ) )));
+    @include should(expect( ballistic-intersection($list-1a, $list-1b, $list-1c) ), to( be( ( 1, 2 ) )));
+    @include should(expect( ballistic-intersection($list-2a, $list-2b, $list-2c) ), to( be( ( "foo", "bar" ) )));
+    @include should(expect( ballistic-intersection($list-3a, $list-3b, $list-3c) ), to( be( ( true, false ) )));
   }
 
   @include it("should only return unique values") {
@@ -22,26 +22,26 @@
     $list-2: "foo", "foo", "foo";
     $list-3: true, true, true;
 
-    @include should(expect( intersection($list-1, $list-1, $list-1) ), to( be( 1 )));
-    @include should(expect( intersection($list-2, $list-2, $list-2) ), to( be( "foo" )));
-    @include should(expect( intersection($list-3, $list-3, $list-3) ), to( be( true )));
+    @include should(expect( ballistic-intersection($list-1, $list-1, $list-1) ), to( be( 1 )));
+    @include should(expect( ballistic-intersection($list-2, $list-2, $list-2) ), to( be( "foo" )));
+    @include should(expect( ballistic-intersection($list-3, $list-3, $list-3) ), to( be( true )));
   }
 
   @include it("should return one item if all the items are the same") {
-    @include should(expect( intersection(1, 1, 1)             ), to( be( 1 )));
-    @include should(expect( intersection("foo", "foo", "foo") ), to( be( "foo" )));
-    @include should(expect( intersection(false, false, false) ), to( be( false )));
+    @include should(expect( ballistic-intersection(1, 1, 1)             ), to( be( 1 )));
+    @include should(expect( ballistic-intersection("foo", "foo", "foo") ), to( be( "foo" )));
+    @include should(expect( ballistic-intersection(false, false, false) ), to( be( false )));
   }
 
   @include it("should return nothing if all the items are the same except one") {
-    @include should(expect( intersection(1, 1, 2)             ), to( be-empty() ));
-    @include should(expect( intersection("foo", "foo", "bar") ), to( be-empty() ));
-    @include should(expect( intersection(false, false, true)  ), to( be-empty() ));
+    @include should(expect( ballistic-intersection(1, 1, 2)             ), to( be-empty() ));
+    @include should(expect( ballistic-intersection("foo", "foo", "bar") ), to( be-empty() ));
+    @include should(expect( ballistic-intersection(false, false, true)  ), to( be-empty() ));
   }
 
   @include it("should leave empty arrays alone") {
-    @include should(expect( intersection( () )), to( be-empty() ));
-    @include should(expect( intersection( () )), to( be-empty() ));
-    @include should(expect( intersection( () )), to( be-empty() ));
+    @include should(expect( ballistic-intersection( () )), to( be-empty() ));
+    @include should(expect( ballistic-intersection( () )), to( be-empty() ));
+    @include should(expect( ballistic-intersection( () )), to( be-empty() ));
   }
 }

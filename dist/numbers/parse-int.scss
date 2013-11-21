@@ -1,9 +1,13 @@
-@function parse-int($number) {
+@function ballistic-parse-int($number) {
   @return $number / ($number * 0 + 1);
 }
 
 // Aliases
 
+@function parse-int($number) {
+  @return ballistic-parse-int($number);
+}
+
 @function strip-unit($number) {
-  @return parse-int($number);
+  @return ballistic-parse-int($number);
 }

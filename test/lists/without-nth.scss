@@ -4,13 +4,9 @@
     $list-2: true, false, false, true;
     $list-3: "bar", "foo", "bar", "baz";
 
-    @include should(expect( without-nth($list-1, 2) ), to(equal( (1, 3, 4)             )));
-    @include should(expect( without-nth($list-2, 2) ), to(equal( (true, false, true)   )));
-    @include should(expect( without-nth($list-3, 2) ), to(equal( ("bar", "bar", "baz") )));
-
-    @include should(expect( remove-nth($list-1, 2) ), to(equal( (1, 3, 4)             )));
-    @include should(expect( remove-nth($list-2, 2) ), to(equal( (true, false, true)   )));
-    @include should(expect( remove-nth($list-3, 2) ), to(equal( ("bar", "bar", "baz") )));
+    @include should(expect( ballistic-without-nth($list-1, 2) ), to(equal( (1, 3, 4)             )));
+    @include should(expect( ballistic-without-nth($list-2, 2) ), to(equal( (true, false, true)   )));
+    @include should(expect( ballistic-without-nth($list-3, 2) ), to(equal( ("bar", "bar", "baz") )));
   }
 
   @include it("should remove negative nth from a list") {
@@ -18,26 +14,17 @@
     $list-2: true, false, false, true;
     $list-3: "bar", "foo", "bar", "baz";
 
-    @include should(expect( without-nth($list-1, -2) ), to(equal( (1, 2, 4)             )));
-    @include should(expect( without-nth($list-2, -2) ), to(equal( (true, false, true)   )));
-    @include should(expect( without-nth($list-3, -2) ), to(equal( ("bar", "foo", "baz") )));
-
-    @include should(expect( remove-nth($list-1, -2) ), to(equal( (1, 2, 4)             )));
-    @include should(expect( remove-nth($list-2, -2) ), to(equal( (true, false, true)   )));
-    @include should(expect( remove-nth($list-3, -2) ), to(equal( ("bar", "foo", "baz") )));
+    @include should(expect( ballistic-without-nth($list-1, -2) ), to(equal( (1, 2, 4)             )));
+    @include should(expect( ballistic-without-nth($list-2, -2) ), to(equal( (true, false, true)   )));
+    @include should(expect( ballistic-without-nth($list-3, -2) ), to(equal( ("bar", "foo", "baz") )));
   }
 
   @include it("should return null for invalid indexes") {
     $list: 1, 2, 3, 4;
 
-    @include should(expect( without-nth($list,     0) ), to( be-null()));
-    @include should(expect( without-nth($list,     5) ), to( be-null()));
-    @include should(expect( without-nth($list,    -5) ), to( be-null()));
-    @include should(expect( without-nth($list, "foo") ), to( be-null()));
-
-    @include should(expect( remove-nth($list,     0) ), to( be-null()));
-    @include should(expect( remove-nth($list,     5) ), to( be-null()));
-    @include should(expect( remove-nth($list,    -5) ), to( be-null()));
-    @include should(expect( remove-nth($list, "foo") ), to( be-null()));
+    @include should(expect( ballistic-without-nth($list,     0) ), to( be-null()));
+    @include should(expect( ballistic-without-nth($list,     5) ), to( be-null()));
+    @include should(expect( ballistic-without-nth($list,    -5) ), to( be-null()));
+    @include should(expect( ballistic-without-nth($list, "foo") ), to( be-null()));
   }
 }

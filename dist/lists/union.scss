@@ -1,5 +1,5 @@
-@function union($lists...) {
-  $flattened: flatten($lists, $shallow: true);
+@function ballistic-union($lists...) {
+  $flattened: ballistic-flatten($lists, $shallow: true);
   $unique: ();
 
   @each $item in $flattened {
@@ -9,4 +9,10 @@
   }
 
   @return $unique;
+}
+
+// Aliases
+
+@function union($lists...) {
+  @return ballistic-union($lists...);
 }

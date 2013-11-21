@@ -1,5 +1,11 @@
-@function round-to($number, $precision) {
-  $precision: exponent(10, $precision);
+@function ballistic-round-to($number, $precision) {
+  $precision: ballistic-exponent(10, $precision);
 
   @return round($number * $precision) / $precision;
+}
+
+// Aliases
+
+@function round-to($number, $precision) {
+  @return ballistic-round-to($number, $precision);
 }

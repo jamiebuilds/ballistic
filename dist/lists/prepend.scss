@@ -1,3 +1,9 @@
-@function prepend($list, $value) {
+@function ballistic-prepend($list, $value) {
   @return join($value, $list);
+}
+
+// Aliases
+
+@function prepend($list, $value) {
+  @return ballistic-prepend($list, $value);
 }

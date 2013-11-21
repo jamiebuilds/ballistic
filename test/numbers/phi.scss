@@ -1,6 +1,5 @@
 @include describe("Numbers::Phi") {
   @include it("should return phi") {
-    @include should(expect( phi()          ), to( equal( 1.61803398874 )));
-    @include should(expect( golden-ratio() ), to( equal( 1.61803398874 )));
+    @include should(expect( ballistic-phi() ), to( equal( 1.61803398874 )));
   }
 }

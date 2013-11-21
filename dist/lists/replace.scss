@@ -1,9 +1,9 @@
-@function replace($list, $old-value, $new-value: null, $recursive: false) {
+@function ballistic-replace($list, $old-value, $new-value: null, $recursive: false) {
   $result: ();
 
   @each $item in $list {
     @if length($item) > 1 and $recursive {
-      $result: append($result, replace($item, $old-value, $new-value, $recursive), comma);
+      $result: append($result, ballistic-replace($item, $old-value, $new-value, $recursive), comma);
     }
 
     @else if $item == $old-value and $new-value != null {
@@ -16,4 +16,10 @@
   }
 
   @return $result;
+}
+
+// Aliases
+
+@function replace($list, $old-value, $new-value: null, $recursive: false) {
+  @return ballistic-replace($list, $old-value, $new-value, $recursive);
 }

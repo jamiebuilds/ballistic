@@ -1,9 +1,14 @@
-@function contains($list, $value) {
+@function ballistic-contains($list, $value) {
   @return not not index($list, $value)
 }
 
 // Aliases
 
+@function contains($list, $value) {
+  @return ballistic-contains($list, $value)
+}
+
+
 @function include($list, $value) {
-  @return contains($list, $value)
+  @return ballistic-contains($list, $value)
 }

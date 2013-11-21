@@ -1,4 +1,4 @@
-@function convert($number, $unit, $ref: null) {
+@function ballistic-convert($number, $unit, $ref: null) {
   $fail: "Can't convert #{$number} to #{$unit}. ";
 
   $convert: null;
@@ -42,10 +42,10 @@
   }
 
   @if $list-1 != $list-2 {
-    @return warn($fail + "Incompatible unit types.");
+    @return ballistic-warn($fail + "Incompatible unit types.");
   }
 
-  $number: parse-int($number);
+  $number: ballistic-parse-int($number);
 
   $mod: null;
 
@@ -59,6 +59,12 @@
   @if $mod != null {
     @return $number * $mod * $convert;
   } @else {
-    @return warn($fail + "Needs Reference.");
+    @return ballistic-warn($fail + "Needs Reference.");
   }
+}
+
+// Aliases
+
+@function convert($number, $unit, $ref: null) {
+  @return ballistic-convert($number, $unit, $ref);
 }

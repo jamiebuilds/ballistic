@@ -1,16 +1,16 @@
-@function replace-nth($list, $index, $value: null) {
+@function ballistic-replace-nth($list, $index, $value: null) {
   $result: ();
 
   @if type-of($index) != number {
-    @return warn("List index #{$index} is not a number for `replace-nth`/`remove-nth`.");
+    @return ballistic-warn("List index #{$index} is not a number for `replace-nth`/`remove-nth`.");
   }
 
   @else if $index == 0 {
-    @return warn("List index 0 must be a non-zero integer for `replace-nth`/`remove-nth`.");
+    @return ballistic-warn("List index 0 must be a non-zero integer for `replace-nth`/`remove-nth`.");
   }
 
   @else if abs($index) > length($list) {
-    @return warn("List index is #{$index} but list is only #{length($list)} item long for `replace-nth`/`remove-nth`.");
+    @return ballistic-warn("List index is #{$index} but list is only #{length($list)} item long for `replace-nth`/`remove-nth`.");
   }
 
   @else {
@@ -28,4 +28,10 @@
   }
 
   @return $result;
+}
+
+// Aliases
+
+@function replace-nth($list, $index, $value: null) {
+  @return ballistic-replace-nth($list, $index, $value);
 }

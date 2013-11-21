@@ -1,36 +1,36 @@
 @include describe("Numbers::Limit") {
   @include it("should stay the same without min or max") {
-    @include should(expect( limit( 1   ) ), to( equal( 1   )));
-    @include should(expect( limit( 1px ) ), to( equal( 1px )));
-    @include should(expect( limit( 1em ) ), to( equal( 1em )));
-    @include should(expect( limit( 1cm ) ), to( equal( 1cm )));
+    @include should(expect( ballistic-limit( 1   ) ), to( equal( 1   )));
+    @include should(expect( ballistic-limit( 1px ) ), to( equal( 1px )));
+    @include should(expect( ballistic-limit( 1em ) ), to( equal( 1em )));
+    @include should(expect( ballistic-limit( 1cm ) ), to( equal( 1cm )));
   }
 
   @include it("should limit number to min if number is less than min") {
-    @include should(expect( limit( 1,   $min: 2   ) ), not-to( be-less-than( 2   )));
-    @include should(expect( limit( 1px, $min: 2px ) ), not-to( be-less-than( 2px )));
-    @include should(expect( limit( 1em, $min: 2em ) ), not-to( be-less-than( 2em )));
-    @include should(expect( limit( 1cm, $min: 2cm ) ), not-to( be-less-than( 2cm )));
+    @include should(expect( ballistic-limit( 1,   $min: 2   ) ), not-to( be-less-than( 2   )));
+    @include should(expect( ballistic-limit( 1px, $min: 2px ) ), not-to( be-less-than( 2px )));
+    @include should(expect( ballistic-limit( 1em, $min: 2em ) ), not-to( be-less-than( 2em )));
+    @include should(expect( ballistic-limit( 1cm, $min: 2cm ) ), not-to( be-less-than( 2cm )));
   }
 
   @include it("should limit number to max if number is greater than max") {
-    @include should(expect( limit( 2,   $max: 1   ) ), not-to( be-greater-than( 1   )));
-    @include should(expect( limit( 2px, $max: 1px ) ), not-to( be-greater-than( 1px )));
-    @include should(expect( limit( 2em, $max: 1em ) ), not-to( be-greater-than( 1em )));
-    @include should(expect( limit( 2cm, $max: 1cm ) ), not-to( be-greater-than( 1cm )));
+    @include should(expect( ballistic-limit( 2,   $max: 1   ) ), not-to( be-greater-than( 1   )));
+    @include should(expect( ballistic-limit( 2px, $max: 1px ) ), not-to( be-greater-than( 1px )));
+    @include should(expect( ballistic-limit( 2em, $max: 1em ) ), not-to( be-greater-than( 1em )));
+    @include should(expect( ballistic-limit( 2cm, $max: 1cm ) ), not-to( be-greater-than( 1cm )));
   }
 
     @include it("should stay the same if number is greater than min") {
-    @include should(expect( limit( 2,   $min: 1   ) ), to( equal( 2   )));
-    @include should(expect( limit( 2px, $min: 1px ) ), to( equal( 2px )));
-    @include should(expect( limit( 2em, $min: 1em ) ), to( equal( 2em )));
-    @include should(expect( limit( 2cm, $min: 1cm ) ), to( equal( 2cm )));
+    @include should(expect( ballistic-limit( 2,   $min: 1   ) ), to( equal( 2   )));
+    @include should(expect( ballistic-limit( 2px, $min: 1px ) ), to( equal( 2px )));
+    @include should(expect( ballistic-limit( 2em, $min: 1em ) ), to( equal( 2em )));
+    @include should(expect( ballistic-limit( 2cm, $min: 1cm ) ), to( equal( 2cm )));
   }
 
   @include it("should stay the same if number is less than max") {
-    @include should(expect( limit( 1,   $max: 2   ) ), not-to( be-greater-than( 1   )));
-    @include should(expect( limit( 1px, $max: 2px ) ), not-to( be-greater-than( 1px )));
-    @include should(expect( limit( 1em, $max: 2em ) ), not-to( be-greater-than( 1em )));
-    @include should(expect( limit( 1cm, $max: 2cm ) ), not-to( be-greater-than( 1cm )));
+    @include should(expect( ballistic-limit( 1,   $max: 2   ) ), not-to( be-greater-than( 1   )));
+    @include should(expect( ballistic-limit( 1px, $max: 2px ) ), not-to( be-greater-than( 1px )));
+    @include should(expect( ballistic-limit( 1em, $max: 2em ) ), not-to( be-greater-than( 1em )));
+    @include should(expect( ballistic-limit( 1cm, $max: 2cm ) ), not-to( be-greater-than( 1cm )));
   }
 }

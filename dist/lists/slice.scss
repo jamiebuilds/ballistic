@@ -1,4 +1,4 @@
-@function slice($list, $min: 1, $max: length($list)) {
+@function ballistic-slice($list, $min: 1, $max: length($list)) {
   $output: ();
   $length: length($list);
 
@@ -16,4 +16,10 @@
   }
 
   @return $output;
+}
+
+// Aliases
+
+@function slice($list, $min: 1, $max: length($list)) {
+  @return ballistic-slice($list, $min, $max);
 }

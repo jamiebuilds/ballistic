@@ -1,6 +1,6 @@
-@function factorial($number) {
-  @if not is-int($number) or $number < 0 {
-    @return warn("Argument for `factorial()` must be a positive integer. Returning `null`.");
+@function ballistic-factorial($number) {
+  @if not ballistic-is-int($number) or $number < 0 {
+    @return ballistic-warn("Argument for `factorial()` must be a positive integer. Returning `null`.");
   }
 
   $index:  1;
@@ -16,6 +16,10 @@
 
 // Aliases
 
+@function factorial($number) {
+  @return ballistic-factorial($number);
+}
+
 @function fact($number) {
-  @return factorial($number);
+  @return ballistic-factorial($number);
 }

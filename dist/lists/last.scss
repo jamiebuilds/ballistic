@@ -1,4 +1,4 @@
-@function last($list, $nth: 1) {
+@function ballistic-last($list, $nth: 1) {
   $length: length($list);
 
   @if $length == 0 {
@@ -12,4 +12,10 @@
   }
 
   @return $output;
+}
+
+// Aliases
+
+@function last($list, $nth: 1) {
+  @return ballistic-last($list, $nth);
 }

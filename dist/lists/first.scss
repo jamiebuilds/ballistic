@@ -1,4 +1,4 @@
-@function first($list, $nth: 1) {
+@function ballistic-first($list, $nth: 1) {
   @if length($list) == 0 {
     @return null;
   }
@@ -14,10 +14,14 @@
 
 // Aliases
 
+@function first($list, $nth: 1) {
+  @return ballistic-first($list, $nth)
+}
+
 @function head($list, $nth: 1) {
-  @return first($list, $nth)
+  @return ballistic-first($list, $nth)
 }
 
 @function take($list, $nth: 1) {
-  @return first($list, $nth)
+  @return ballistic-first($list, $nth)
 }

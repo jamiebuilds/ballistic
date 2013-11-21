@@ -1,4 +1,4 @@
-@function initial($list, $nth: 1) {
+@function ballistic-initial($list, $nth: 1) {
   @if length($list) == 0 {
     @return null;
   }
@@ -14,4 +14,10 @@
   }
 
   @return $output;
+}
+
+// Aliases
+
+@function initial($list, $nth: 1) {
+  @return ballistic-initial($list, $nth);
 }
