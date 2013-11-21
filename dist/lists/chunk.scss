@@ -1,4 +1,4 @@
-@function chunk($list, $size) {
+@function ballistic-chunk($list, $size) {
   @if $size >= length($list) {
     @return $list;
   }
@@ -16,4 +16,10 @@
   }
 
   @return $result;
+}
+
+// Aliases
+
+@function chunk($list, $size) {
+  @return ballistic-chunk($list, $size);
 }

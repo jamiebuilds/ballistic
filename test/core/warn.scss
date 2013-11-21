@@ -1,10 +1,10 @@
 @include describe("Core::Warn") {
   @include it("should return null by default") {
-    @include should(expect( warn("message") ), to( be-null()));
+    @include should(expect( ballistic-warn("message") ), to( be-null()));
   }
 
   @include it("should return passed in value") {
-    @include should(expect( warn("message", false) ), to( be( false )));
-    @include should(expect( warn("message", "foo") ), to( be( "foo" )));
+    @include should(expect( ballistic-warn("message", false) ), to( be( false )));
+    @include should(expect( ballistic-warn("message", "foo") ), to( be( "foo" )));
   }
 }

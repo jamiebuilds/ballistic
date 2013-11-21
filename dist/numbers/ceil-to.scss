@@ -1,5 +1,11 @@
-@function ceil-to($number, $precision) {
-  $precision: exponent(10, $precision);
+@function ballistic-ceil-to($number, $precision) {
+  $precision: ballistic-exponent(10, $precision);
 
   @return ceil($number * $precision) / $precision;
+}
+
+// Aliases
+
+@function ceil-to($number, $precision) {
+  @return ballistic-ceil-to($number, $precision);
 }

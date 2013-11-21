@@ -1,35 +1,22 @@
 @include describe("Arrays::Sum") {
   @include it("should add up unitless numbers in a list") {
-    @include should(expect( sum( (2, 2)   ) ), to( equal( 4)));
-    @include should(expect( sum( (-2, -2) ) ), to( equal(-4)));
-
-    @include should(expect( total( (2, 2)   ) ), to( equal( 4)));
-    @include should(expect( total( (-2, -2) ) ), to( equal(-4)));
+    @include should(expect( ballistic-sum( (2, 2)   ) ), to( equal( 4)));
+    @include should(expect( ballistic-sum( (-2, -2) ) ), to( equal(-4)));
   }
 
   @include it("should add up numbers with units that are the same") {
-    @include should(expect( sum( (2em, 2em)   ) ), to( equal( 4em)));
-    @include should(expect( sum( (-2px, -2px) ) ), to( equal(-4px)));
-
-    @include should(expect( total( (2em, 2em)   ) ), to( equal( 4em)));
-    @include should(expect( total( (-2px, -2px) ) ), to( equal(-4px)));
+    @include should(expect( ballistic-sum( (2em, 2em)   ) ), to( equal( 4em)));
+    @include should(expect( ballistic-sum( (-2px, -2px) ) ), to( equal(-4px)));
   }
 
   @include it("should return null when list contains non-numbers") {
-    @include should(expect( sum( (1, 2, null) ) ), to( be-null()));
-    @include should(expect( sum( (1, 2, ())   ) ), to( be-null()));
-    @include should(expect( sum( (1, 2, "3")  ) ), to( be-null()));
-
-    @include should(expect( total( (1, 2, null) ) ), to( be-null()));
-    @include should(expect( total( (1, 2, ())   ) ), to( be-null()));
-    @include should(expect( total( (1, 2, "3")  ) ), to( be-null()));
+    @include should(expect( ballistic-sum( (1, 2, null) ) ), to( be-null()));
+    @include should(expect( ballistic-sum( (1, 2, ())   ) ), to( be-null()));
+    @include should(expect( ballistic-sum( (1, 2, "3")  ) ), to( be-null()));
   }
 
   @include it("should return null when list contains multiple units") {
-    @include should(expect( sum( (1px, 1em) ) ), to( be-null()));
-    @include should(expect( sum( (1,   1em) ) ), to( be-null()));
-
-    @include should(expect( total( (1px, 1em) ) ), to( be-null()));
-    @include should(expect( total( (1,   1em) ) ), to( be-null()));
+    @include should(expect( ballistic-sum( (1px, 1em) ) ), to( be-null()));
+    @include should(expect( ballistic-sum( (1,   1em) ) ), to( be-null()));
   }
 }

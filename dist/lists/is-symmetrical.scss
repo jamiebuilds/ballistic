@@ -1,10 +1,14 @@
-@function is-symmetrical($list, $recursive: false) {
-  $reverse: reverse($list, $recursive);
-  @return $reverse == reverse($reverse, $recursive);
+@function ballistic-is-symmetrical($list, $recursive: false) {
+  $reverse: ballistic-reverse($list, $recursive);
+  @return $reverse == ballistic-reverse($reverse, $recursive);
 }
 
 // Aliases
 
+@function is-symmetrical($list, $recursive: false) {
+  @return ballistic-is-symmetrical($list, $recursive);
+}
+
 @function is-mirror($list, $recursive: false) {
-  @return is-symmetrical($list, $recursive);
+  @return ballistic-is-symmetrical($list, $recursive);
 }

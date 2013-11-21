@@ -1,9 +1,13 @@
-@function phi() {
+@function ballistic-phi() {
   @return 1.61803398874;
 }
 
 // Aliases
 
+@function phi() {
+  @return ballistic-phi();
+}
+
 @function golden-ratio() {
-  @return phi();
+  @return ballistic-phi();
 }

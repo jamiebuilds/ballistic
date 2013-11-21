@@ -1,4 +1,4 @@
-@function compact($list) {
+@function ballistic-compact($list) {
   $compacted: ();
 
   @each $item in $list {
@@ -12,6 +12,10 @@
 
 // Aliases
 
+@function compact($list) {
+  @return ballistic-compact($list);
+}
+
 @function purge($list) {
-  @return compact($list);
+  @return ballistic-compact($list);
 }

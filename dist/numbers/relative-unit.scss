@@ -1,3 +1,9 @@
-@function relative-unit($number) {
+@function ballistic-relative-unit($number) {
   @return unit-type($number) == "relative";
+}
+
+// Aliases
+
+@function relative-unit($number) {
+  @return ballistic-relative-unit($number);
 }

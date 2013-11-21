@@ -1,4 +1,4 @@
-@function rest($list, $nth: 1) {
+@function ballistic-rest($list, $nth: 1) {
   $length: length($list);
 
   @if $length == 0 {
@@ -20,10 +20,14 @@
 
 // Aliases
 
+@function rest($list, $nth: 1) {
+  @return ballistic-rest($list, $nth)
+}
+
 @function tail($list, $nth: 1) {
-  @return rest($list, $nth)
+  @return ballistic-rest($list, $nth)
 }
 
 @function drop($list, $nth: 1) {
-  @return rest($list, $nth)
+  @return ballistic-rest($list, $nth)
 }

@@ -1,3 +1,9 @@
-@function absolute-unit($number) {
+@function ballistic-absolute-unit($number) {
   @return unit-type($number) == "absolute";
+}
+
+// Aliases
+
+@function absolute-unit($number) {
+  @return ballistic-absolute-unit($number);
 }

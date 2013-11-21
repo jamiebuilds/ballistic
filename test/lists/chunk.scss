@@ -4,9 +4,9 @@
     $list-2: "foo", "bar", "foo", "bar";
     $list-3: true, false, true, false;
 
-    @include should(expect( chunk($list-1, 3) ), to( be( (1 2 3, 1 2 3, 1 2 3)      )));
-    @include should(expect( chunk($list-2, 2) ), to( be( ("foo" "bar", "foo" "bar") )));
-    @include should(expect( chunk($list-3, 2) ), to( be( (true false, true false)   )));
+    @include should(expect( ballistic-chunk($list-1, 3) ), to( be( (1 2 3, 1 2 3, 1 2 3)      )));
+    @include should(expect( ballistic-chunk($list-2, 2) ), to( be( ("foo" "bar", "foo" "bar") )));
+    @include should(expect( ballistic-chunk($list-3, 2) ), to( be( (true false, true false)   )));
   }
 
   @include it("should split lists into equal chunks with leftover") {
@@ -14,9 +14,9 @@
     $list-2: "foo", "bar", "foo", "bar", "foo";
     $list-3: true, false, true, false, true;
 
-    @include should(expect( chunk($list-1, 5) ), to( be( (1 2 3 1 2, 3 1 2 3)             )));
-    @include should(expect( chunk($list-2, 3) ), to( be( ("foo" "bar" "foo", "bar" "foo") )));
-    @include should(expect( chunk($list-3, 3) ), to( be( (true false true, false true)    )));
+    @include should(expect( ballistic-chunk($list-1, 5) ), to( be( (1 2 3 1 2, 3 1 2 3)             )));
+    @include should(expect( ballistic-chunk($list-2, 3) ), to( be( ("foo" "bar" "foo", "bar" "foo") )));
+    @include should(expect( ballistic-chunk($list-3, 3) ), to( be( (true false true, false true)    )));
   }
 
   @include it("should not split lists into equal chunks when list is too short") {
@@ -24,12 +24,12 @@
     $list-2: "foo", "bar";
     $list-3: true, false, true;
 
-    @include should(expect( chunk($list-1, 4) ), to( be( (1, 2, 3) )));
-    @include should(expect( chunk($list-2, 3) ), to( be( ("foo", "bar") )));
-    @include should(expect( chunk($list-3, 4) ), to( be( (true, false, true) )));
+    @include should(expect( ballistic-chunk($list-1, 4) ), to( be( (1, 2, 3) )));
+    @include should(expect( ballistic-chunk($list-2, 3) ), to( be( ("foo", "bar") )));
+    @include should(expect( ballistic-chunk($list-3, 4) ), to( be( (true, false, true) )));
   }
 
   @include it("should handle empty lists") {
-    @include should(expect( chunk( (), 2 ) ), to( be-empty()));
+    @include should(expect( ballistic-chunk( (), 2 ) ), to( be-empty()));
   }
 }

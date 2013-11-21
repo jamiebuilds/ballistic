@@ -1,3 +1,9 @@
+@function ballistic-is-inf($number) {
+  @return type-of($number) == number and abs($number) == ballistic-infinity();
+}
+
+// Aliases
+
 @function is-inf($number) {
-  @return type-of($number) == number and abs($number) == infinity();
+  @return ballistic-is-inf($number);
 }

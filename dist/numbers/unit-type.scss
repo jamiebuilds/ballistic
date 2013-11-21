@@ -1,4 +1,4 @@
-@function unit-type($number) {
+@function ballistic-unit-type($number) {
   $unit: unit($number);
 
   @if $unit == "%" or $unit == "ex" or $unit == "rem" or $unit == "em" {
@@ -8,4 +8,10 @@
   } @else {
     @return "unitless";
   }
+}
+
+// Aliases
+
+@function unit-type($number) {
+  @return ballistic-unit-type($number);
 }

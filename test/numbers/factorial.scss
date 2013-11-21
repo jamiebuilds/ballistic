@@ -1,63 +1,37 @@
 @include describe("Numbers::Factorial") {
   @include it("should calculate the factorial of an integer") {
-    @include should(expect( factorial(   1 ) ), to( equal( 1 )));
-    @include should(expect( factorial(   2 ) ), to( equal( 2 )));
-    @include should(expect( factorial(   3 ) ), to( equal( 6 )));
-    @include should(expect( factorial(  10 ) ), to( equal( 3628800 )));
-    @include should(expect( factorial(  20 ) ), to( equal( 2432902008176640000 )));
-    @include should(expect( factorial(  40 ) ), to( equal( 815915283247897734345611269596115894272000000000 )));
-    @include should(expect( factorial( 100 ) ), to( equal( 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000 )));
-
-    @include should(expect( fact(   1 ) ), to( equal( 1 )));
-    @include should(expect( fact(   2 ) ), to( equal( 2 )));
-    @include should(expect( fact(   3 ) ), to( equal( 6 )));
-    @include should(expect( fact(  10 ) ), to( equal( 3628800 )));
-    @include should(expect( fact(  20 ) ), to( equal( 2432902008176640000 )));
-    @include should(expect( fact(  40 ) ), to( equal( 815915283247897734345611269596115894272000000000 )));
-    @include should(expect( fact( 100 ) ), to( equal( 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000 )));
+    @include should(expect( ballistic-factorial(   1 ) ), to( equal( 1 )));
+    @include should(expect( ballistic-factorial(   2 ) ), to( equal( 2 )));
+    @include should(expect( ballistic-factorial(   3 ) ), to( equal( 6 )));
+    @include should(expect( ballistic-factorial(  10 ) ), to( equal( 3628800 )));
+    @include should(expect( ballistic-factorial(  20 ) ), to( equal( 2432902008176640000 )));
+    @include should(expect( ballistic-factorial(  40 ) ), to( equal( 815915283247897734345611269596115894272000000000 )));
+    @include should(expect( ballistic-factorial( 100 ) ), to( equal( 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000 )));
   }
 
   @include it("should calculate the factorial of an integer with unit") {
-    @include should(expect( factorial(   1px ) ), to( equal( 1px )));
-    @include should(expect( factorial(   2px ) ), to( equal( 2px )));
-    @include should(expect( factorial(   3px ) ), to( equal( 6px )));
-    @include should(expect( factorial(  10px ) ), to( equal( 3628800px )));
-    @include should(expect( factorial(  20px ) ), to( equal( 2432902008176640000px )));
-    @include should(expect( factorial(  40px ) ), to( equal( 815915283247897734345611269596115894272000000000px )));
-    @include should(expect( factorial( 100px ) ), to( equal( 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000px )));
-
-    @include should(expect( fact(   1px ) ), to( equal( 1px )));
-    @include should(expect( fact(   2px ) ), to( equal( 2px )));
-    @include should(expect( fact(   3px ) ), to( equal( 6px )));
-    @include should(expect( fact(  10px ) ), to( equal( 3628800px )));
-    @include should(expect( fact(  20px ) ), to( equal( 2432902008176640000px )));
-    @include should(expect( fact(  40px ) ), to( equal( 815915283247897734345611269596115894272000000000px )));
-    @include should(expect( fact( 100px ) ), to( equal( 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000px )));
+    @include should(expect( ballistic-factorial(   1px ) ), to( equal( 1px )));
+    @include should(expect( ballistic-factorial(   2px ) ), to( equal( 2px )));
+    @include should(expect( ballistic-factorial(   3px ) ), to( equal( 6px )));
+    @include should(expect( ballistic-factorial(  10px ) ), to( equal( 3628800px )));
+    @include should(expect( ballistic-factorial(  20px ) ), to( equal( 2432902008176640000px )));
+    @include should(expect( ballistic-factorial(  40px ) ), to( equal( 815915283247897734345611269596115894272000000000px )));
+    @include should(expect( ballistic-factorial( 100px ) ), to( equal( 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000px )));
   }
 
   @include it("should return null for factorial of a decimal") {
-    @include should(expect( factorial(  0.1 ) ), to( be-null()));
-    @include should(expect( factorial( 10.6 ) ), to( be-null()));
-
-    @include should(expect( fact(  0.1 ) ), to( be-null()));
-    @include should(expect( fact( 10.6 ) ), to( be-null()));
+    @include should(expect( ballistic-factorial(  0.1 ) ), to( be-null()));
+    @include should(expect( ballistic-factorial( 10.6 ) ), to( be-null()));
   }
 
   @include it("should return null for factorial of a decimal with unit") {
-    @include should(expect( factorial(  0.1px ) ), to( be-null()));
-    @include should(expect( factorial( 10.6px ) ), to( be-null()));
-
-    @include should(expect( fact(  0.1px ) ), to( be-null()));
-    @include should(expect( fact( 10.6px ) ), to( be-null()));
+    @include should(expect( ballistic-factorial(  0.1px ) ), to( be-null()));
+    @include should(expect( ballistic-factorial( 10.6px ) ), to( be-null()));
   }
 
   @include it("should return null for non-numbers") {
-    @include should(expect( factorial( false  ) ), to( be-null()));
-    @include should(expect( factorial( "foo"  ) ), to( be-null()));
-    @include should(expect( factorial( (1, 2) ) ), to( be-null()));
-
-    @include should(expect( fact( false  ) ), to( be-null()));
-    @include should(expect( fact( "foo"  ) ), to( be-null()));
-    @include should(expect( fact( (1, 2) ) ), to( be-null()));
+    @include should(expect( ballistic-factorial( false  ) ), to( be-null()));
+    @include should(expect( ballistic-factorial( "foo"  ) ), to( be-null()));
+    @include should(expect( ballistic-factorial( (1, 2) ) ), to( be-null()));
   }
 }

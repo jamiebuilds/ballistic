@@ -1,4 +1,4 @@
-@function sum($list) {
+@function ballistic-sum($list) {
   $result: 0;
 
   $unit: unit( nth($list, 1) );
@@ -9,11 +9,11 @@
       @if unit($item) == $unit {
         $result: $result + $item;
       } @else {
-        @return warn("Sum cannot calculate lists with values that have varying units");
+        @return ballistic-warn("Sum cannot calculate lists with values that have varying units");
       }
 
     } @else {
-      @return warn("Sum cannot calculate lists that contain values other than numbers");
+      @return ballistic-warn("Sum cannot calculate lists that contain values other than numbers");
     }
   }
 
@@ -22,6 +22,10 @@
 
 // Aliases
 
+@function sum($list) {
+  @return ballistic-sum($list);
+}
+
 @function total($list) {
-  @return sum($list);
+  @return ballistic-sum($list);
 }

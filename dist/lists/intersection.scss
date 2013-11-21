@@ -1,4 +1,4 @@
-@function intersection($array, $others...) {
+@function ballistic-intersection($array, $others...) {
   $unique: ();
 
   @each $item in $array {
@@ -24,4 +24,10 @@
   }
 
   @return $intersection;
+}
+
+// Aliases
+
+@function intersection($array, $others...) {
+  @return ballistic-intersection($array, $others...);
 }

@@ -1,4 +1,4 @@
-@function limit($number, $min: false, $max: false) {
+@function ballistic-limit($number, $min: false, $max: false) {
   @if $min and comparable($number, $min) and $number < $min {
     $number: $min;
   }
@@ -8,4 +8,10 @@
   }
 
   @return $number;
+}
+
+// Aliases
+
+@function limit($number, $min: false, $max: false) {
+  @return ballistic-limit($number, $min, $max);
 }

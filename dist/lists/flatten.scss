@@ -1,4 +1,4 @@
-@function flatten($list, $shallow: false) {
+@function ballistic-flatten($list, $shallow: false) {
   $result: ();
 
   @each $item in $list {
@@ -8,7 +8,7 @@
           $result: append($result, $_item);
         }
       } @else {
-        @each $_item in flatten($item) {
+        @each $_item in ballistic-flatten($item) {
           $result: append($result, $_item);
         }
       }
@@ -18,4 +18,10 @@
   }
 
   @return $result;
+}
+
+// Aliases
+
+@function flatten($list, $shallow: false) {
+  @return ballistic-flatten($list, $shallow);
 }

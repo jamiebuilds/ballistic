@@ -1,9 +1,13 @@
-@function infinity() {
+@function ballistic-infinity() {
   @return 1/0;
 }
 
 // Aliases
 
+@function infinity() {
+  @return ballistic-infinity();
+}
+
 @function inf() {
-  @return infinity();
+  @return ballistic-infinity();
 }

@@ -1,5 +1,5 @@
 @include describe("Numbers::E") {
   @include it("should return eulers number") {
-    @include should(expect( e() ), to( equal( 2.71828182845 )));
+    @include should(expect( ballistic-e() ), to( equal( 2.71828182845 )));
   }
 }

@@ -1,23 +1,23 @@
 @include describe("Numbers::Unit-Type") {
   @include it("should return relative units") {
-    @include should(expect( unit-type( 100% ) ), to( be( "relative" )));
-    @include should(expect( unit-type( 10ex ) ), to( be( "relative" )));
-    @include should(expect( unit-type( 0rem ) ), to( be( "relative" )));
-    @include should(expect( unit-type( -3em ) ), to( be( "relative" )));
+    @include should(expect( ballistic-unit-type( 100% ) ), to( be( "relative" )));
+    @include should(expect( ballistic-unit-type( 10ex ) ), to( be( "relative" )));
+    @include should(expect( ballistic-unit-type( 0rem ) ), to( be( "relative" )));
+    @include should(expect( ballistic-unit-type( -3em ) ), to( be( "relative" )));
   }
 
   @include it("should return absolute units") {
-    @include should(expect( unit-type(  10px ) ), to( be( "absolute" )));
-    @include should(expect( unit-type(  -2pt ) ), to( be( "absolute" )));
-    @include should(expect( unit-type(   1pc ) ), to( be( "absolute" )));
-    @include should(expect( unit-type(   0cm ) ), to( be( "absolute" )));
-    @include should(expect( unit-type( 0.2mm ) ), to( be( "absolute" )));
-    @include should(expect( unit-type( 300in ) ), to( be( "absolute" )));
+    @include should(expect( ballistic-unit-type(  10px ) ), to( be( "absolute" )));
+    @include should(expect( ballistic-unit-type(  -2pt ) ), to( be( "absolute" )));
+    @include should(expect( ballistic-unit-type(   1pc ) ), to( be( "absolute" )));
+    @include should(expect( ballistic-unit-type(   0cm ) ), to( be( "absolute" )));
+    @include should(expect( ballistic-unit-type( 0.2mm ) ), to( be( "absolute" )));
+    @include should(expect( ballistic-unit-type( 300in ) ), to( be( "absolute" )));
   }
 
   @include it("should return unitless numbers") {
-    @include should(expect( unit-type( 100 ) ), to( be( "unitless" )));
-    @include should(expect( unit-type( -10 ) ), to( be( "unitless" )));
-    @include should(expect( unit-type( 0.2 ) ), to( be( "unitless" )));
+    @include should(expect( ballistic-unit-type( 100 ) ), to( be( "unitless" )));
+    @include should(expect( ballistic-unit-type( -10 ) ), to( be( "unitless" )));
+    @include should(expect( ballistic-unit-type( 0.2 ) ), to( be( "unitless" )));
   }
 }

@@ -1,4 +1,4 @@
-@function without($list, $values, $recursive: false) {
+@function ballistic-without($list, $values, $recursive: false) {
   $result: ();
 
   @each $item in $list {
@@ -6,7 +6,7 @@
 
     @each $value in $values {
       @if type-of($item) == "list" and $recursive {
-        $item: without($item, $value);
+        $item: ballistic-without($item, $value);
       } @else if $item == $value {
         $passed: false;
       }
@@ -22,6 +22,10 @@
 
 // Aliases
 
+@function without($list, $values, $recursive: false) {
+  @return ballistic-without($list, $values, $recursive);
+}
+
 @function remove($list, $values, $recursive: false) {
-  @return without($list, $values, $recursive);
+  @return ballistic-without($list, $values, $recursive);
 }

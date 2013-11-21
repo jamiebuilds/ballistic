@@ -4,13 +4,9 @@
     $strings:  "foo", "bar", "baz";
     $booleans: true, false, false;
 
-    @include should(expect( contains( $numbers,  1     ) ), to( be( true ) ));
-    @include should(expect( contains( $strings,  "foo" ) ), to( be( true ) ));
-    @include should(expect( contains( $booleans, false ) ), to( be( true ) ));
-
-    @include should(expect( include( $numbers,  1     ) ), to( be( true ) ));
-    @include should(expect( include( $strings,  "foo" ) ), to( be( true ) ));
-    @include should(expect( include( $booleans, false ) ), to( be( true ) ));
+    @include should(expect( ballistic-contains( $numbers,  1     ) ), to( be( true ) ));
+    @include should(expect( ballistic-contains( $strings,  "foo" ) ), to( be( true ) ));
+    @include should(expect( ballistic-contains( $booleans, false ) ), to( be( true ) ));
   }
 
   @include it("should be false if collection doesnt contain value") {
@@ -18,12 +14,8 @@
     $strings:  "foo", "bar", "baz";
     $booleans: true, false, false;
 
-    @include should(expect( contains( $numbers,  4     ) ), to( be( false ) ));
-    @include should(expect( contains( $strings,  "fod" ) ), to( be( false ) ));
-    @include should(expect( contains( $booleans, null  ) ), to( be( false ) ));
-
-    @include should(expect( include( $numbers,  4     ) ), to( be( false ) ));
-    @include should(expect( include( $strings,  "fod" ) ), to( be( false ) ));
-    @include should(expect( include( $booleans, null  ) ), to( be( false ) ));
+    @include should(expect( ballistic-contains( $numbers,  4     ) ), to( be( false ) ));
+    @include should(expect( ballistic-contains( $strings,  "fod" ) ), to( be( false ) ));
+    @include should(expect( ballistic-contains( $booleans, null  ) ), to( be( false ) ));
   }
 }

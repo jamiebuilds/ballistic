@@ -1,11 +1,11 @@
-@function unique($list, $recursive: false, $remove: ()) {
+@function ballistic-unique($list, $recursive: false, $remove: ()) {
   $result: ();
 
 
   @each $item in $list {
     @if not index($result, $item) and not index($remove, $item) {
       @if type-of($item) == "list" and $recursive {
-        $_result: unique($item, $recursive, $remove: $result);
+        $_result: ballistic-unique($item, $recursive, $remove: $result);
 
         @if $_result != () {
           $result: append($result, $_result);
@@ -23,10 +23,14 @@
 
 // Aliases
 
+@function unique($list, $recursive: false) {
+  @return ballistic-unique($list, $recursive);
+}
+
 @function uniq($list, $recursive: false) {
-  @return unique($list, $recursive);
+  @return ballistic-unique($list, $recursive);
 }
 
 @function remove-duplicates($list, $recursive: false) {
-  @return unique($list, $recursive);
+  @return ballistic-unique($list, $recursive);
 }

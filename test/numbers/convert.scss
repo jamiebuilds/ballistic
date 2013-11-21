@@ -1,179 +1,179 @@
 @include describe("Numbers::Convert") {
   @include it("should convert all length units") {
-    @include should(expect( convert(10px, "px")  ), to( be-close-to( 10px            , 5)));
-    @include should(expect( convert(10px, "pc")  ), to( be-close-to( 0.625pc         , 5)));
-    @include should(expect( convert(10px, "pt")  ), to( be-close-to( 7.5pt           , 5)));
-    @include should(expect( convert(10px, "in")  ), to( be-close-to( 0.104166667in   , 5)));
-    @include should(expect( convert(10px, "cm")  ), to( be-close-to( 0.264583333cm   , 5)));
-    @include should(expect( convert(10px, "mm")  ), to( be-close-to( 2.645833333mm   , 5)));
+    @include should(expect( ballistic-convert(10px, "px") ), to( be-close-to( 10px            , 5)));
+    @include should(expect( ballistic-convert(10px, "pc") ), to( be-close-to( 0.625pc         , 5)));
+    @include should(expect( ballistic-convert(10px, "pt") ), to( be-close-to( 7.5pt           , 5)));
+    @include should(expect( ballistic-convert(10px, "in") ), to( be-close-to( 0.104166667in   , 5)));
+    @include should(expect( ballistic-convert(10px, "cm") ), to( be-close-to( 0.264583333cm   , 5)));
+    @include should(expect( ballistic-convert(10px, "mm") ), to( be-close-to( 2.645833333mm   , 5)));
 
-    @include should(expect( convert(10pc, "px") ), to( be-close-to( 160px           , 5)));
-    @include should(expect( convert(10pc, "pc") ), to( be-close-to( 10pc            , 5)));
-    @include should(expect( convert(10pc, "pt") ), to( be-close-to( 120pt           , 5)));
-    @include should(expect( convert(10pc, "in") ), to( be-close-to( 1.666666667in   , 5)));
-    @include should(expect( convert(10pc, "cm") ), to( be-close-to( 4.233333333cm   , 5)));
-    @include should(expect( convert(10pc, "mm") ), to( be-close-to( 42.333333333mm  , 5)));
+    @include should(expect( ballistic-convert(10pc, "px") ), to( be-close-to( 160px           , 5)));
+    @include should(expect( ballistic-convert(10pc, "pc") ), to( be-close-to( 10pc            , 5)));
+    @include should(expect( ballistic-convert(10pc, "pt") ), to( be-close-to( 120pt           , 5)));
+    @include should(expect( ballistic-convert(10pc, "in") ), to( be-close-to( 1.666666667in   , 5)));
+    @include should(expect( ballistic-convert(10pc, "cm") ), to( be-close-to( 4.233333333cm   , 5)));
+    @include should(expect( ballistic-convert(10pc, "mm") ), to( be-close-to( 42.333333333mm  , 5)));
 
-    @include should(expect( convert(10pt, "px") ), to( be-close-to( 13.333333333px  , 5)));
-    @include should(expect( convert(10pt, "pc") ), to( be-close-to( 0.833333333pc   , 5)));
-    @include should(expect( convert(10pt, "pt") ), to( be-close-to( 10pt            , 5)));
-    @include should(expect( convert(10pt, "in") ), to( be-close-to( 0.138888889in   , 5)));
-    @include should(expect( convert(10pt, "cm") ), to( be-close-to( 0.352777778cm   , 5)));
-    @include should(expect( convert(10pt, "mm") ), to( be-close-to( 3.527777778mm   , 5)));
+    @include should(expect( ballistic-convert(10pt, "px") ), to( be-close-to( 13.333333333px  , 5)));
+    @include should(expect( ballistic-convert(10pt, "pc") ), to( be-close-to( 0.833333333pc   , 5)));
+    @include should(expect( ballistic-convert(10pt, "pt") ), to( be-close-to( 10pt            , 5)));
+    @include should(expect( ballistic-convert(10pt, "in") ), to( be-close-to( 0.138888889in   , 5)));
+    @include should(expect( ballistic-convert(10pt, "cm") ), to( be-close-to( 0.352777778cm   , 5)));
+    @include should(expect( ballistic-convert(10pt, "mm") ), to( be-close-to( 3.527777778mm   , 5)));
 
-    @include should(expect( convert(10in, "px") ), to( be-close-to( 960px           , 5)));
-    @include should(expect( convert(10in, "pc") ), to( be-close-to( 60pc            , 5)));
-    @include should(expect( convert(10in, "pt") ), to( be-close-to( 720pt           , 5)));
-    @include should(expect( convert(10in, "in") ), to( be-close-to( 10in            , 5)));
-    @include should(expect( convert(10in, "cm") ), to( be-close-to( 25.4cm          , 5)));
-    @include should(expect( convert(10in, "mm") ), to( be-close-to( 254mm           , 5)));
+    @include should(expect( ballistic-convert(10in, "px") ), to( be-close-to( 960px           , 5)));
+    @include should(expect( ballistic-convert(10in, "pc") ), to( be-close-to( 60pc            , 5)));
+    @include should(expect( ballistic-convert(10in, "pt") ), to( be-close-to( 720pt           , 5)));
+    @include should(expect( ballistic-convert(10in, "in") ), to( be-close-to( 10in            , 5)));
+    @include should(expect( ballistic-convert(10in, "cm") ), to( be-close-to( 25.4cm          , 5)));
+    @include should(expect( ballistic-convert(10in, "mm") ), to( be-close-to( 254mm           , 5)));
 
-    @include should(expect( convert(10cm, "px") ), to( be-close-to( 377.952755906px , 5)));
-    @include should(expect( convert(10cm, "pc") ), to( be-close-to( 23.622047244pc  , 5)));
-    @include should(expect( convert(10cm, "pt") ), to( be-close-to( 283.464566929pt , 5)));
-    @include should(expect( convert(10cm, "in") ), to( be-close-to( 3.937007874in   , 5)));
-    @include should(expect( convert(10cm, "cm") ), to( be-close-to( 10cm            , 5)));
-    @include should(expect( convert(10cm, "mm") ), to( be-close-to( 100mm           , 5)));
+    @include should(expect( ballistic-convert(10cm, "px") ), to( be-close-to( 377.952755906px , 5)));
+    @include should(expect( ballistic-convert(10cm, "pc") ), to( be-close-to( 23.622047244pc  , 5)));
+    @include should(expect( ballistic-convert(10cm, "pt") ), to( be-close-to( 283.464566929pt , 5)));
+    @include should(expect( ballistic-convert(10cm, "in") ), to( be-close-to( 3.937007874in   , 5)));
+    @include should(expect( ballistic-convert(10cm, "cm") ), to( be-close-to( 10cm            , 5)));
+    @include should(expect( ballistic-convert(10cm, "mm") ), to( be-close-to( 100mm           , 5)));
 
-    @include should(expect( convert(10mm, "px") ), to( be-close-to( 37.795275591px  , 5)));
-    @include should(expect( convert(10mm, "pc") ), to( be-close-to( 2.362204724pc   , 5)));
-    @include should(expect( convert(10mm, "pt") ), to( be-close-to( 28.346456693pt  , 5)));
-    @include should(expect( convert(10mm, "in") ), to( be-close-to( 0.393700787in   , 5)));
-    @include should(expect( convert(10mm, "cm") ), to( be-close-to( 1cm             , 5)));
-    @include should(expect( convert(10mm, "mm") ), to( be-close-to( 10mm            , 5)));
+    @include should(expect( ballistic-convert(10mm, "px") ), to( be-close-to( 37.795275591px  , 5)));
+    @include should(expect( ballistic-convert(10mm, "pc") ), to( be-close-to( 2.362204724pc   , 5)));
+    @include should(expect( ballistic-convert(10mm, "pt") ), to( be-close-to( 28.346456693pt  , 5)));
+    @include should(expect( ballistic-convert(10mm, "in") ), to( be-close-to( 0.393700787in   , 5)));
+    @include should(expect( ballistic-convert(10mm, "cm") ), to( be-close-to( 1cm             , 5)));
+    @include should(expect( ballistic-convert(10mm, "mm") ), to( be-close-to( 10mm            , 5)));
   }
 
   @include it("should convert all length units when converted unit is relative") {
-    @include should(expect( convert(10px, "em",  10) ), to( be-close-to( 1em         , 5)));
-    @include should(expect( convert(10px, "rem", 10) ), to( be-close-to( 1rem        , 5)));
-    @include should(expect( convert(10px, "ex",  10) ), to( be-close-to( 1ex         , 5)));
-    @include should(expect( convert(10px, "ch",  10) ), to( be-close-to( 1ch         , 5)));
-    @include should(expect( convert(10px, "%",   10) ), to( be-close-to( 100%        , 5)));
+    @include should(expect( ballistic-convert(10px, "em",  10) ), to( be-close-to( 1em         , 5)));
+    @include should(expect( ballistic-convert(10px, "rem", 10) ), to( be-close-to( 1rem        , 5)));
+    @include should(expect( ballistic-convert(10px, "ex",  10) ), to( be-close-to( 1ex         , 5)));
+    @include should(expect( ballistic-convert(10px, "ch",  10) ), to( be-close-to( 1ch         , 5)));
+    @include should(expect( ballistic-convert(10px, "%",   10) ), to( be-close-to( 100%        , 5)));
 
-    @include should(expect( convert(10pc, "em",  10) ), to( be-close-to( 16em        , 5)));
-    @include should(expect( convert(10pc, "rem", 10) ), to( be-close-to( 16rem       , 5)));
-    @include should(expect( convert(10pc, "ex",  10) ), to( be-close-to( 16ex        , 5)));
-    @include should(expect( convert(10pc, "ch",  10) ), to( be-close-to( 16ch        , 5)));
-    @include should(expect( convert(10pc, "%",   10) ), to( be-close-to( 1600%       , 5)));
+    @include should(expect( ballistic-convert(10pc, "em",  10) ), to( be-close-to( 16em        , 5)));
+    @include should(expect( ballistic-convert(10pc, "rem", 10) ), to( be-close-to( 16rem       , 5)));
+    @include should(expect( ballistic-convert(10pc, "ex",  10) ), to( be-close-to( 16ex        , 5)));
+    @include should(expect( ballistic-convert(10pc, "ch",  10) ), to( be-close-to( 16ch        , 5)));
+    @include should(expect( ballistic-convert(10pc, "%",   10) ), to( be-close-to( 1600%       , 5)));
 
-    @include should(expect( convert(10pt, "em",  10) ), to( be-close-to( 1.33333em   , 5)));
-    @include should(expect( convert(10pt, "rem", 10) ), to( be-close-to( 1.33333rem  , 5)));
-    @include should(expect( convert(10pt, "ex",  10) ), to( be-close-to( 1.33333ex   , 5)));
-    @include should(expect( convert(10pt, "ch",  10) ), to( be-close-to( 1.33333ch   , 5)));
-    @include should(expect( convert(10pt, "%",   10) ), to( be-close-to( 133.33333%  , 5)));
+    @include should(expect( ballistic-convert(10pt, "em",  10) ), to( be-close-to( 1.33333em   , 5)));
+    @include should(expect( ballistic-convert(10pt, "rem", 10) ), to( be-close-to( 1.33333rem  , 5)));
+    @include should(expect( ballistic-convert(10pt, "ex",  10) ), to( be-close-to( 1.33333ex   , 5)));
+    @include should(expect( ballistic-convert(10pt, "ch",  10) ), to( be-close-to( 1.33333ch   , 5)));
+    @include should(expect( ballistic-convert(10pt, "%",   10) ), to( be-close-to( 133.33333%  , 5)));
 
-    @include should(expect( convert(10in, "em",  10) ), to( be-close-to( 96em        , 5)));
-    @include should(expect( convert(10in, "rem", 10) ), to( be-close-to( 96rem       , 5)));
-    @include should(expect( convert(10in, "ex",  10) ), to( be-close-to( 96ex        , 5)));
-    @include should(expect( convert(10in, "ch",  10) ), to( be-close-to( 96ch        , 5)));
-    @include should(expect( convert(10in, "%",   10) ), to( be-close-to( 9600%       , 5)));
+    @include should(expect( ballistic-convert(10in, "em",  10) ), to( be-close-to( 96em        , 5)));
+    @include should(expect( ballistic-convert(10in, "rem", 10) ), to( be-close-to( 96rem       , 5)));
+    @include should(expect( ballistic-convert(10in, "ex",  10) ), to( be-close-to( 96ex        , 5)));
+    @include should(expect( ballistic-convert(10in, "ch",  10) ), to( be-close-to( 96ch        , 5)));
+    @include should(expect( ballistic-convert(10in, "%",   10) ), to( be-close-to( 9600%       , 5)));
 
-    @include should(expect( convert(10cm, "em",  10) ), to( be-close-to( 37.79528em  , 5)));
-    @include should(expect( convert(10cm, "rem", 10) ), to( be-close-to( 37.79528rem , 5)));
-    @include should(expect( convert(10cm, "ex",  10) ), to( be-close-to( 37.79528ex  , 5)));
-    @include should(expect( convert(10cm, "ch",  10) ), to( be-close-to( 37.79528ch  , 5)));
-    @include should(expect( convert(10cm, "%",   10) ), to( be-close-to( 3779.52756% , 5)));
+    @include should(expect( ballistic-convert(10cm, "em",  10) ), to( be-close-to( 37.79528em  , 5)));
+    @include should(expect( ballistic-convert(10cm, "rem", 10) ), to( be-close-to( 37.79528rem , 5)));
+    @include should(expect( ballistic-convert(10cm, "ex",  10) ), to( be-close-to( 37.79528ex  , 5)));
+    @include should(expect( ballistic-convert(10cm, "ch",  10) ), to( be-close-to( 37.79528ch  , 5)));
+    @include should(expect( ballistic-convert(10cm, "%",   10) ), to( be-close-to( 3779.52756% , 5)));
 
-    @include should(expect( convert(10mm, "em",  10) ), to( be-close-to( 3.77953em   , 5)));
-    @include should(expect( convert(10mm, "rem", 10) ), to( be-close-to( 3.77953rem  , 5)));
-    @include should(expect( convert(10mm, "ex",  10) ), to( be-close-to( 3.77953ex   , 5)));
-    @include should(expect( convert(10mm, "ch",  10) ), to( be-close-to( 3.77953ch   , 5)));
-    @include should(expect( convert(10mm, "%",   10) ), to( be-close-to( 377.95276%  , 5)));
+    @include should(expect( ballistic-convert(10mm, "em",  10) ), to( be-close-to( 3.77953em   , 5)));
+    @include should(expect( ballistic-convert(10mm, "rem", 10) ), to( be-close-to( 3.77953rem  , 5)));
+    @include should(expect( ballistic-convert(10mm, "ex",  10) ), to( be-close-to( 3.77953ex   , 5)));
+    @include should(expect( ballistic-convert(10mm, "ch",  10) ), to( be-close-to( 3.77953ch   , 5)));
+    @include should(expect( ballistic-convert(10mm, "%",   10) ), to( be-close-to( 377.95276%  , 5)));
   }
 
   @include it("should convert all length units when original unit is relative") {
-    @include should(expect( convert(10em,  "px", 10) ), to( be-close-to( 100px         , 5)));
-    @include should(expect( convert(10em,  "pc", 10) ), to( be-close-to( 6.25pc        , 5)));
-    @include should(expect( convert(10em,  "pt", 10) ), to( be-close-to( 75pt          , 5)));
-    @include should(expect( convert(10em,  "in", 10) ), to( be-close-to( 1.04166667in  , 5)));
-    @include should(expect( convert(10em,  "cm", 10) ), to( be-close-to( 2.64583333cm  , 5)));
-    @include should(expect( convert(10em,  "mm", 10) ), to( be-close-to( 26.45833333mm , 5)));
+    @include should(expect( ballistic-convert(10em,  "px", 10) ), to( be-close-to( 100px         , 5)));
+    @include should(expect( ballistic-convert(10em,  "pc", 10) ), to( be-close-to( 6.25pc        , 5)));
+    @include should(expect( ballistic-convert(10em,  "pt", 10) ), to( be-close-to( 75pt          , 5)));
+    @include should(expect( ballistic-convert(10em,  "in", 10) ), to( be-close-to( 1.04166667in  , 5)));
+    @include should(expect( ballistic-convert(10em,  "cm", 10) ), to( be-close-to( 2.64583333cm  , 5)));
+    @include should(expect( ballistic-convert(10em,  "mm", 10) ), to( be-close-to( 26.45833333mm , 5)));
 
-    @include should(expect( convert(10rem, "px", 10) ), to( be-close-to( 100px         , 5)));
-    @include should(expect( convert(10rem, "pc", 10) ), to( be-close-to( 6.25pc        , 5)));
-    @include should(expect( convert(10rem, "pt", 10) ), to( be-close-to( 75pt          , 5)));
-    @include should(expect( convert(10rem, "in", 10) ), to( be-close-to( 1.04166667in  , 5)));
-    @include should(expect( convert(10rem, "cm", 10) ), to( be-close-to( 2.64583333cm  , 5)));
-    @include should(expect( convert(10rem, "mm", 10) ), to( be-close-to( 26.45833333mm , 5)));
+    @include should(expect( ballistic-convert(10rem, "px", 10) ), to( be-close-to( 100px         , 5)));
+    @include should(expect( ballistic-convert(10rem, "pc", 10) ), to( be-close-to( 6.25pc        , 5)));
+    @include should(expect( ballistic-convert(10rem, "pt", 10) ), to( be-close-to( 75pt          , 5)));
+    @include should(expect( ballistic-convert(10rem, "in", 10) ), to( be-close-to( 1.04166667in  , 5)));
+    @include should(expect( ballistic-convert(10rem, "cm", 10) ), to( be-close-to( 2.64583333cm  , 5)));
+    @include should(expect( ballistic-convert(10rem, "mm", 10) ), to( be-close-to( 26.45833333mm , 5)));
 
-    @include should(expect( convert(10ex,  "px", 10) ), to( be-close-to( 100px         , 5)));
-    @include should(expect( convert(10ex,  "pc", 10) ), to( be-close-to( 6.25pc        , 5)));
-    @include should(expect( convert(10ex,  "pt", 10) ), to( be-close-to( 75pt          , 5)));
-    @include should(expect( convert(10ex,  "in", 10) ), to( be-close-to( 1.04166667in  , 5)));
-    @include should(expect( convert(10ex,  "cm", 10) ), to( be-close-to( 2.64583333cm  , 5)));
-    @include should(expect( convert(10ex,  "mm", 10) ), to( be-close-to( 26.45833333mm , 5)));
+    @include should(expect( ballistic-convert(10ex,  "px", 10) ), to( be-close-to( 100px         , 5)));
+    @include should(expect( ballistic-convert(10ex,  "pc", 10) ), to( be-close-to( 6.25pc        , 5)));
+    @include should(expect( ballistic-convert(10ex,  "pt", 10) ), to( be-close-to( 75pt          , 5)));
+    @include should(expect( ballistic-convert(10ex,  "in", 10) ), to( be-close-to( 1.04166667in  , 5)));
+    @include should(expect( ballistic-convert(10ex,  "cm", 10) ), to( be-close-to( 2.64583333cm  , 5)));
+    @include should(expect( ballistic-convert(10ex,  "mm", 10) ), to( be-close-to( 26.45833333mm , 5)));
 
-    @include should(expect( convert(10ch,  "px", 10) ), to( be-close-to( 100px         , 5)));
-    @include should(expect( convert(10ch,  "pc", 10) ), to( be-close-to( 6.25pc        , 5)));
-    @include should(expect( convert(10ch,  "pt", 10) ), to( be-close-to( 75pt          , 5)));
-    @include should(expect( convert(10ch,  "in", 10) ), to( be-close-to( 1.04166667in  , 5)));
-    @include should(expect( convert(10ch,  "cm", 10) ), to( be-close-to( 2.64583333cm  , 5)));
-    @include should(expect( convert(10ch,  "mm", 10) ), to( be-close-to( 26.45833333mm , 5)));
+    @include should(expect( ballistic-convert(10ch,  "px", 10) ), to( be-close-to( 100px         , 5)));
+    @include should(expect( ballistic-convert(10ch,  "pc", 10) ), to( be-close-to( 6.25pc        , 5)));
+    @include should(expect( ballistic-convert(10ch,  "pt", 10) ), to( be-close-to( 75pt          , 5)));
+    @include should(expect( ballistic-convert(10ch,  "in", 10) ), to( be-close-to( 1.04166667in  , 5)));
+    @include should(expect( ballistic-convert(10ch,  "cm", 10) ), to( be-close-to( 2.64583333cm  , 5)));
+    @include should(expect( ballistic-convert(10ch,  "mm", 10) ), to( be-close-to( 26.45833333mm , 5)));
 
-    @include should(expect( convert(10%,   "px", 10) ), to( be-close-to( 100px         , 5)));
-    @include should(expect( convert(10%,   "pc", 10) ), to( be-close-to( 6.25pc        , 5)));
-    @include should(expect( convert(10%,   "pt", 10) ), to( be-close-to( 75pt          , 5)));
-    @include should(expect( convert(10%,   "in", 10) ), to( be-close-to( 1.04166667in  , 5)));
-    @include should(expect( convert(10%,   "cm", 10) ), to( be-close-to( 2.64583333cm  , 5)));
-    @include should(expect( convert(10%,   "mm", 10) ), to( be-close-to( 26.45833333mm , 5)));
+    @include should(expect( ballistic-convert(10%,   "px", 10) ), to( be-close-to( 100px         , 5)));
+    @include should(expect( ballistic-convert(10%,   "pc", 10) ), to( be-close-to( 6.25pc        , 5)));
+    @include should(expect( ballistic-convert(10%,   "pt", 10) ), to( be-close-to( 75pt          , 5)));
+    @include should(expect( ballistic-convert(10%,   "in", 10) ), to( be-close-to( 1.04166667in  , 5)));
+    @include should(expect( ballistic-convert(10%,   "cm", 10) ), to( be-close-to( 2.64583333cm  , 5)));
+    @include should(expect( ballistic-convert(10%,   "mm", 10) ), to( be-close-to( 26.45833333mm , 5)));
   }
 
   @include it("should convert all length units when both units are relative") {
-    @include should(expect( convert(10em,  "em",   16/16 ) ), to( be-close-to( 10em        , 5)));
-    @include should(expect( convert(10em,  "rem",  10/16 ) ), to( be-close-to( 16rem       , 5)));
-    @include should(expect( convert(10em,  "ex",   12/16 ) ), to( be-close-to( 13.33333ex  , 5)));
-    @include should(expect( convert(10em,  "ch",    8/16 ) ), to( be-close-to( 20ch        , 5)));
-    @include should(expect( convert(10em,  "%",   100/16 ) ), to( be-close-to( 160%        , 5)));
+    @include should(expect( ballistic-convert(10em,  "em",   16/16 ) ), to( be-close-to( 10em        , 5)));
+    @include should(expect( ballistic-convert(10em,  "rem",  10/16 ) ), to( be-close-to( 16rem       , 5)));
+    @include should(expect( ballistic-convert(10em,  "ex",   12/16 ) ), to( be-close-to( 13.33333ex  , 5)));
+    @include should(expect( ballistic-convert(10em,  "ch",    8/16 ) ), to( be-close-to( 20ch        , 5)));
+    @include should(expect( ballistic-convert(10em,  "%",   100/16 ) ), to( be-close-to( 160%        , 5)));
 
-    @include should(expect( convert(10rem, "em",   16/10 ) ), to( be-close-to( 6.25em      , 5)));
-    @include should(expect( convert(10rem, "rem",  10/10 ) ), to( be-close-to( 10rem       , 5)));
-    @include should(expect( convert(10rem, "ex",   12/10 ) ), to( be-close-to( 8.33333ex   , 5)));
-    @include should(expect( convert(10rem, "ch",    8/10 ) ), to( be-close-to( 12.5ch      , 5)));
-    @include should(expect( convert(10rem, "%",   100/10 ) ), to( be-close-to( 100%        , 5)));
+    @include should(expect( ballistic-convert(10rem, "em",   16/10 ) ), to( be-close-to( 6.25em      , 5)));
+    @include should(expect( ballistic-convert(10rem, "rem",  10/10 ) ), to( be-close-to( 10rem       , 5)));
+    @include should(expect( ballistic-convert(10rem, "ex",   12/10 ) ), to( be-close-to( 8.33333ex   , 5)));
+    @include should(expect( ballistic-convert(10rem, "ch",    8/10 ) ), to( be-close-to( 12.5ch      , 5)));
+    @include should(expect( ballistic-convert(10rem, "%",   100/10 ) ), to( be-close-to( 100%        , 5)));
 
-    @include should(expect( convert(10ex,  "em",   16/12 ) ), to( be-close-to( 7.5em       , 5)));
-    @include should(expect( convert(10ex,  "rem",  10/12 ) ), to( be-close-to( 12rem       , 5)));
-    @include should(expect( convert(10ex,  "ex",   12/12 ) ), to( be-close-to( 10ex        , 5)));
-    @include should(expect( convert(10ex,  "ch",    8/12 ) ), to( be-close-to( 15ch        , 5)));
-    @include should(expect( convert(10ex,  "%",   100/12 ) ), to( be-close-to( 120%        , 5)));
+    @include should(expect( ballistic-convert(10ex,  "em",   16/12 ) ), to( be-close-to( 7.5em       , 5)));
+    @include should(expect( ballistic-convert(10ex,  "rem",  10/12 ) ), to( be-close-to( 12rem       , 5)));
+    @include should(expect( ballistic-convert(10ex,  "ex",   12/12 ) ), to( be-close-to( 10ex        , 5)));
+    @include should(expect( ballistic-convert(10ex,  "ch",    8/12 ) ), to( be-close-to( 15ch        , 5)));
+    @include should(expect( ballistic-convert(10ex,  "%",   100/12 ) ), to( be-close-to( 120%        , 5)));
 
-    @include should(expect( convert(10ch,  "em",   16/8 ) ), to( be-close-to( 5em          , 5)));
-    @include should(expect( convert(10ch,  "rem",  10/8 ) ), to( be-close-to( 8rem         , 5)));
-    @include should(expect( convert(10ch,  "ex",   12/8 ) ), to( be-close-to( 6.66667ex    , 5)));
-    @include should(expect( convert(10ch,  "ch",    8/8 ) ), to( be-close-to( 10ch         , 5)));
-    @include should(expect( convert(10ch,  "%",   100/8 ) ), to( be-close-to( 80%          , 5)));
+    @include should(expect( ballistic-convert(10ch,  "em",   16/8 ) ), to( be-close-to( 5em          , 5)));
+    @include should(expect( ballistic-convert(10ch,  "rem",  10/8 ) ), to( be-close-to( 8rem         , 5)));
+    @include should(expect( ballistic-convert(10ch,  "ex",   12/8 ) ), to( be-close-to( 6.66667ex    , 5)));
+    @include should(expect( ballistic-convert(10ch,  "ch",    8/8 ) ), to( be-close-to( 10ch         , 5)));
+    @include should(expect( ballistic-convert(10ch,  "%",   100/8 ) ), to( be-close-to( 80%          , 5)));
 
-    @include should(expect( convert(10%,   "em",   16/100 ) ), to( be-close-to( 62.5em     , 5)));
-    @include should(expect( convert(10%,   "rem",  10/100 ) ), to( be-close-to( 100rem     , 5)));
-    @include should(expect( convert(10%,   "ex",   12/100 ) ), to( be-close-to( 83.33333ex , 5)));
-    @include should(expect( convert(10%,   "ch",    8/100 ) ), to( be-close-to( 125ch      , 5)));
-    @include should(expect( convert(10%,   "%",   100/100 ) ), to( be-close-to( 1000%      , 5)));
+    @include should(expect( ballistic-convert(10%,   "em",   16/100 ) ), to( be-close-to( 62.5em     , 5)));
+    @include should(expect( ballistic-convert(10%,   "rem",  10/100 ) ), to( be-close-to( 100rem     , 5)));
+    @include should(expect( ballistic-convert(10%,   "ex",   12/100 ) ), to( be-close-to( 83.33333ex , 5)));
+    @include should(expect( ballistic-convert(10%,   "ch",    8/100 ) ), to( be-close-to( 125ch      , 5)));
+    @include should(expect( ballistic-convert(10%,   "%",   100/100 ) ), to( be-close-to( 1000%      , 5)));
   }
 
   @include it("should convert all time units") {
-    @include should(expect( convert(10ms, "s") ), to( be-close-to( 0.01s   , 5)));
-    @include should(expect( convert(10s, "ms") ), to( be-close-to( 10000ms , 5)));
+    @include should(expect( ballistic-convert(10ms, "s") ), to( be-close-to( 0.01s   , 5)));
+    @include should(expect( ballistic-convert(10s, "ms") ), to( be-close-to( 10000ms , 5)));
   }
 
   @include it("should convert all angle units") {
-    @include should(expect( convert(10deg, "deg")  ), to( be-close-to( 10deg            , 5)));
-    @include should(expect( convert(10deg, "grad") ), to( be-close-to( 11.111111111grad , 5)));
-    @include should(expect( convert(10deg, "rad")  ), to( be-close-to( 0.174532925rad   , 5)));
-    @include should(expect( convert(10deg, "turn") ), to( be-close-to( 0.0277777778turn , 5)));
+    @include should(expect( ballistic-convert(10deg, "deg")  ), to( be-close-to( 10deg            , 5)));
+    @include should(expect( ballistic-convert(10deg, "grad") ), to( be-close-to( 11.111111111grad , 5)));
+    @include should(expect( ballistic-convert(10deg, "rad")  ), to( be-close-to( 0.174532925rad   , 5)));
+    @include should(expect( ballistic-convert(10deg, "turn") ), to( be-close-to( 0.0277777778turn , 5)));
 
-    @include should(expect( convert(10rad, "deg")  ), to( be-close-to( 572.957795deg    , 5)));
-    @include should(expect( convert(10rad, "grad") ), to( be-close-to( 636.61977grad    , 5)));
-    @include should(expect( convert(10rad, "rad")  ), to( be-close-to( 10rad            , 5)));
-    @include should(expect( convert(10rad, "turn") ), to( be-close-to( 1.59154943turn   , 5)));
+    @include should(expect( ballistic-convert(10rad, "deg")  ), to( be-close-to( 572.957795deg    , 5)));
+    @include should(expect( ballistic-convert(10rad, "grad") ), to( be-close-to( 636.61977grad    , 5)));
+    @include should(expect( ballistic-convert(10rad, "rad")  ), to( be-close-to( 10rad            , 5)));
+    @include should(expect( ballistic-convert(10rad, "turn") ), to( be-close-to( 1.59154943turn   , 5)));
 
-    @include should(expect( convert(10grad, "deg")  ), to( be-close-to( 9deg            , 5)));
-    @include should(expect( convert(10grad, "grad") ), to( be-close-to( 10grad          , 5)));
-    @include should(expect( convert(10grad, "rad")  ), to( be-close-to( 0.1570795rad    , 5)));
-    @include should(expect( convert(10grad, "turn") ), to( be-close-to( 0.025turn       , 5)));
+    @include should(expect( ballistic-convert(10grad, "deg")  ), to( be-close-to( 9deg            , 5)));
+    @include should(expect( ballistic-convert(10grad, "grad") ), to( be-close-to( 10grad          , 5)));
+    @include should(expect( ballistic-convert(10grad, "rad")  ), to( be-close-to( 0.1570795rad    , 5)));
+    @include should(expect( ballistic-convert(10grad, "turn") ), to( be-close-to( 0.025turn       , 5)));
 
-    @include should(expect( convert(10turn, "deg")  ), to( be-close-to( 3600deg         , 5)));
-    @include should(expect( convert(10turn, "grad") ), to( be-close-to( 4000grad        , 5)));
-    @include should(expect( convert(10turn, "rad")  ), to( be-close-to( 62.8318531rad   , 5)));
-    @include should(expect( convert(10turn, "turn") ), to( be-close-to( 10turn          , 5)));
+    @include should(expect( ballistic-convert(10turn, "deg")  ), to( be-close-to( 3600deg         , 5)));
+    @include should(expect( ballistic-convert(10turn, "grad") ), to( be-close-to( 4000grad        , 5)));
+    @include should(expect( ballistic-convert(10turn, "rad")  ), to( be-close-to( 62.8318531rad   , 5)));
+    @include should(expect( ballistic-convert(10turn, "turn") ), to( be-close-to( 10turn          , 5)));
   }
 }

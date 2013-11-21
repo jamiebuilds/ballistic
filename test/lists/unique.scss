@@ -4,17 +4,9 @@
     $list-2: "foo", "bar", "baz", "foo", "bar", "baz", "cah";
     $list-3: true, false, false, true, null;
 
-    @include should(expect( unique($list-1) ), to( be( ( 1, 2, 3, 5 ) )));
-    @include should(expect( unique($list-2) ), to( be( ( "foo", "bar", "baz", "cah" ) )));
-    @include should(expect( unique($list-3) ), to( be( ( true, false, null ) )));
-
-    @include should(expect( uniq($list-1) ), to( be( ( 1, 2, 3, 5 ) )));
-    @include should(expect( uniq($list-2) ), to( be( ( "foo", "bar", "baz", "cah" ) )));
-    @include should(expect( uniq($list-3) ), to( be( ( true, false, null ) )));
-
-    @include should(expect( remove-duplicates($list-1) ), to( be( ( 1, 2, 3, 5 ) )));
-    @include should(expect( remove-duplicates($list-2) ), to( be( ( "foo", "bar", "baz", "cah" ) )));
-    @include should(expect( remove-duplicates($list-3) ), to( be( ( true, false, null ) )));
+    @include should(expect( ballistic-unique($list-1) ), to( be( ( 1, 2, 3, 5 ) )));
+    @include should(expect( ballistic-unique($list-2) ), to( be( ( "foo", "bar", "baz", "cah" ) )));
+    @include should(expect( ballistic-unique($list-3) ), to( be( ( true, false, null ) )));
   }
 
   @include it("should remove any duplicate items non-recursively") {
@@ -22,17 +14,9 @@
     $list-2: "foo", "bar", ("baz", "foo", "bar"), "baz", "cah";
     $list-3: true, false, (false, true), null;
 
-    @include should(expect( unique($list-1) ), to( be( ( 1, 2, 3, (2, 5, 6) ) )));
-    @include should(expect( unique($list-2) ), to( be( ( "foo", "bar", ("baz", "foo", "bar"), "baz", "cah" ) )));
-    @include should(expect( unique($list-3) ), to( be( ( true, false, (false, true), null ) )));
-
-    @include should(expect( uniq($list-1) ), to( be( ( 1, 2, 3, (2, 5, 6) ) )));
-    @include should(expect( uniq($list-2) ), to( be( ( "foo", "bar", ("baz", "foo", "bar"), "baz", "cah" ) )));
-    @include should(expect( uniq($list-3) ), to( be( ( true, false, (false, true), null ) )));
-
-    @include should(expect( remove-duplicates($list-1) ), to( be( ( 1, 2, 3, (2, 5, 6) ) )));
-    @include should(expect( remove-duplicates($list-2) ), to( be( ( "foo", "bar", ("baz", "foo", "bar"), "baz", "cah" ) )));
-    @include should(expect( remove-duplicates($list-3) ), to( be( ( true, false, (false, true), null ) )));
+    @include should(expect( ballistic-unique($list-1) ), to( be( ( 1, 2, 3, (2, 5, 6) ) )));
+    @include should(expect( ballistic-unique($list-2) ), to( be( ( "foo", "bar", ("baz", "foo", "bar"), "baz", "cah" ) )));
+    @include should(expect( ballistic-unique($list-3) ), to( be( ( true, false, (false, true), null ) )));
   }
 
   @include it("should remove any duplicate items recursively") {
@@ -40,22 +24,12 @@
     $list-2: "foo", "bar", ("bar", "foo", "bar"), "baz", "cah";
     $list-3: true, false, (false, true), null;
 
-    @include should(expect( unique($list-1, $recursive: true) ), to( be( ( 1, 2, 3, (5, 6) ) )));
-    @include should(expect( unique($list-2, $recursive: true) ), to( be( ( "foo", "bar", "baz", "cah" ) )));
-    @include should(expect( unique($list-3, $recursive: true) ), to( be( ( true, false, null ) )));
-
-    @include should(expect( uniq($list-1, $recursive: true) ), to( be( ( 1, 2, 3, (5, 6) ) )));
-    @include should(expect( uniq($list-2, $recursive: true) ), to( be( ( "foo", "bar", "baz", "cah" ) )));
-    @include should(expect( uniq($list-3, $recursive: true) ), to( be( ( true, false, null ) )));
-
-    @include should(expect( remove-duplicates($list-1, $recursive: true) ), to( be( ( 1, 2, 3, (5, 6) ) )));
-    @include should(expect( remove-duplicates($list-2, $recursive: true) ), to( be( ( "foo", "bar", "baz", "cah" ) )));
-    @include should(expect( remove-duplicates($list-3, $recursive: true) ), to( be( ( true, false, null ) )));
+    @include should(expect( ballistic-unique($list-1, $recursive: true) ), to( be( ( 1, 2, 3, (5, 6) ) )));
+    @include should(expect( ballistic-unique($list-2, $recursive: true) ), to( be( ( "foo", "bar", "baz", "cah" ) )));
+    @include should(expect( ballistic-unique($list-3, $recursive: true) ), to( be( ( true, false, null ) )));
   }
 
   @include it("should leave empty lists alone") {
-    @include should(expect( unique( () ) ), to( be-empty()));
-    @include should(expect( uniq( () ) ), to( be-empty()));
-    @include should(expect( remove-duplicates( () ) ), to( be-empty()));
+    @include should(expect( ballistic-unique( () ) ), to( be-empty()));
   }
 }

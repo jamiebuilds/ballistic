@@ -1,3 +1,9 @@
-@function pi() {
+@function ballistic-pi() {
   @return 3.14159265359;
+}
+
+// Aliases
+
+@function pi() {
+  @return ballistic-pi();
 }

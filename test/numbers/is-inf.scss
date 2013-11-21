@@ -1,23 +1,23 @@
 @include describe("Numbers::Is-Inf") {
   @include it("should be true for infinite numbers") {
-    @include should(expect( is-inf(  1/0 ) ), to( be( true )));
-    @include should(expect( is-inf(  2/0 ) ), to( be( true )));
-    @include should(expect( is-inf( -1/0 ) ), to( be( true )));
+    @include should(expect( ballistic-is-inf(  1/0 ) ), to( be( true )));
+    @include should(expect( ballistic-is-inf(  2/0 ) ), to( be( true )));
+    @include should(expect( ballistic-is-inf( -1/0 ) ), to( be( true )));
   }
 
   @include it("should be false for non-infinite numbers") {
-    @include should(expect( is-inf( 10 ) ), to( be( false )));
-    @include should(expect( is-inf( 20 ) ), to( be( false )));
-    @include should(expect( is-inf(  3 ) ), to( be( false )));
-    @include should(expect( is-inf( 17 ) ), to( be( false )));
-    @include should(expect( is-inf( -6 ) ), to( be( false )));
+    @include should(expect( ballistic-is-inf( 10 ) ), to( be( false )));
+    @include should(expect( ballistic-is-inf( 20 ) ), to( be( false )));
+    @include should(expect( ballistic-is-inf(  3 ) ), to( be( false )));
+    @include should(expect( ballistic-is-inf( 17 ) ), to( be( false )));
+    @include should(expect( ballistic-is-inf( -6 ) ), to( be( false )));
   }
 
   @include it("should be false for non-numbers") {
-    @include should(expect( is-inf( false  ) ), to( be( false )));
-    @include should(expect( is-inf( true   ) ), to( be( false )));
-    @include should(expect( is-inf( "foo"  ) ), to( be( false )));
-    @include should(expect( is-inf( null   ) ), to( be( false )));
-    @include should(expect( is-inf( (1, 2) ) ), to( be( false )));
+    @include should(expect( ballistic-is-inf( false  ) ), to( be( false )));
+    @include should(expect( ballistic-is-inf( true   ) ), to( be( false )));
+    @include should(expect( ballistic-is-inf( "foo"  ) ), to( be( false )));
+    @include should(expect( ballistic-is-inf( null   ) ), to( be( false )));
+    @include should(expect( ballistic-is-inf( (1, 2) ) ), to( be( false )));
   }
 }
