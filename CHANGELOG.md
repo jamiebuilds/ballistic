@@ -1,5 +1,21 @@
 # Changelog
 
+#### 0.3.0 - 2013-11-23
+
+- Add `parse-int()` alias `strip-unit()`
+- Add `compact()` alias `purge()`
+- Add `without-nth()`
+- Add `without-nth()` alias `remove-nth()`
+- Add `sum()`
+- Add `loop()`
+
+**INTERNAL**
+- Update Bootcamp
+- Update Tests
+- Test in Sass 3.3 pre-release
+- Namespace Functions
+- Move old functions to aliases
+
 #### 0.2.0 - 2013-11-18
 
 - Add `chunk()`
