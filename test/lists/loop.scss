@@ -1,0 +1,23 @@
+@include describe("Arrays::Loop") {
+  $list: 1, 2, 3, 4, 5;
+
+  @include it("should shift indexes by 1 by default") {
+    @include should(expect( ballistic-loop($list) ), to( be( (5, 1, 2, 3, 4) )));
+  }
+
+  @include it("should shift indexes by specified positive value") {
+    @include should(expect( ballistic-loop($list,  2) ), to( be( (4, 5, 1, 2, 3) )));
+    @include should(expect( ballistic-loop($list,  3) ), to( be( (3, 4, 5, 1, 2) )));
+    @include should(expect( ballistic-loop($list, 10) ), to( be( (1, 2, 3, 4, 5) )));
+  }
+
+  @include it("should shift indexes by specified negative value") {
+    @include should(expect( ballistic-loop($list,  -2) ), to( be( (3, 4, 5, 1, 2) )));
+    @include should(expect( ballistic-loop($list,  -3) ), to( be( (4, 5, 1, 2, 3) )));
+    @include should(expect( ballistic-loop($list, -10) ), to( be( (1, 2, 3, 4, 5) )));
+  }
+
+  @include it("should shift indexes by 0") {
+    @include should(expect( ballistic-loop($list, 0) ), to( be( (1, 2, 3, 4, 5) )));
+  }
+}
