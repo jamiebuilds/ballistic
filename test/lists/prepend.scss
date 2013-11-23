@@ -1,4 +1,4 @@
-@include describe("Lists::Prepend") {
+@include describe("Lists ~ Prepend") {
   @include it("should prepend a value to a list") {
     $list-1: 2, 3, 4;
     $list-2: false, false, true;

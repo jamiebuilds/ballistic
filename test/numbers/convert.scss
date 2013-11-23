@@ -1,4 +1,4 @@
-@include describe("Numbers::Convert") {
+@include describe("Numbers ~ Convert") {
   @include it("should convert all length units") {
     @include should(expect( ballistic-convert(10px, "px") ), to( be-close-to( 10px            , 5)));
     @include should(expect( ballistic-convert(10px, "pc") ), to( be-close-to( 0.625pc         , 5)));

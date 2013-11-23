@@ -1,4 +1,4 @@
-@include describe("Numbers::Ceil-To") {
+@include describe("Numbers ~ Ceil-To") {
   @include it("should round number to ceiling at precision") {
     @include should(expect( ballistic-ceil-to( 0.2123456789, 0 ) ), to( equal( 1           )));
     @include should(expect( ballistic-ceil-to( 0.2123456789, 1 ) ), to( equal( 0.3         )));

@@ -1,4 +1,4 @@
-@include describe("Arrays::Union") {
+@include describe("Lists ~ Union") {
   @include it("should make a union of unique items in the arrays") {
     $list-1a: 1 2 3;
     $list-1b: 2 4 6;

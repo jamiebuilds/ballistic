@@ -1,4 +1,4 @@
-@include describe("Numbers::Absolute-Unit") {
+@include describe("Numbers ~ Absolute-Unit") {
   @include it("should be true for absolute units") {
     @include should(expect( ballistic-absolute-unit(  10px ) ), to( be( true )));
     @include should(expect( ballistic-absolute-unit(  -2pt ) ), to( be( true )));

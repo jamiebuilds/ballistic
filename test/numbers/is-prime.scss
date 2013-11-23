@@ -1,4 +1,4 @@
-@include describe("Numbers::Is-prime") {
+@include describe("Numbers ~ Is-prime") {
   @include it("should be true for prime numbers") {
     @include should(expect( ballistic-is-prime(  3 ) ), to( be( true )));
     @include should(expect( ballistic-is-prime(  5 ) ), to( be( true )));

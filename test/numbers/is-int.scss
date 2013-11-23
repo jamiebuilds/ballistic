@@ -1,4 +1,4 @@
-@include describe("Numbers::Is-Int") {
+@include describe("Numbers ~ Is-Int") {
   @include it("should be true for integers") {
     @include should(expect( ballistic-is-int( 10 ) ), to( be( true )));
     @include should(expect( ballistic-is-int( 20 ) ), to( be( true )));

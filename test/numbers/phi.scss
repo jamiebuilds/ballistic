@@ -1,4 +1,4 @@
-@include describe("Numbers::Phi") {
+@include describe("Numbers ~ Phi") {
   @include it("should return phi") {
     @include should(expect( ballistic-phi() ), to( equal( 1.61803398874 )));
   }

@@ -1,4 +1,4 @@
-@include describe("Numbers::Round-To") {
+@include describe("Numbers ~ Round-To") {
   @include it("should round number at precision") {
     @include should(expect( ballistic-floor-to( 0.2123456789, 0 ) ), to( equal( 0           )));
     @include should(expect( ballistic-floor-to( 0.2123456789, 1 ) ), to( equal( 0.2         )));

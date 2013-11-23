@@ -1,4 +1,4 @@
-@include describe("Arrays::Is-Symmetrical") {
+@include describe("Lists ~ Is-Symmetrical") {
   @include it("should return true if list is symmetrical") {
     $list-1: 1, 2, 3, 2, 1;
     $list-2: true, false, false, true;

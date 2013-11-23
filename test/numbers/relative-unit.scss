@@ -1,4 +1,4 @@
-@include describe("Numbers::Relative-Unit") {
+@include describe("Numbers ~ Relative-Unit") {
   @include it("should be true for relative units") {
     @include should(expect( ballistic-relative-unit( 100% ) ), to( be( true )));
     @include should(expect( ballistic-relative-unit( 10ex ) ), to( be( true )));

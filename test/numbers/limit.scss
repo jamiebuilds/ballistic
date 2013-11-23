@@ -1,4 +1,4 @@
-@include describe("Numbers::Limit") {
+@include describe("Numbers ~ Limit") {
   @include it("should stay the same without min or max") {
     @include should(expect( ballistic-limit( 1   ) ), to( equal( 1   )));
     @include should(expect( ballistic-limit( 1px ) ), to( equal( 1px )));
