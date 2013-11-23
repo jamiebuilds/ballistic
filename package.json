@@ -1,6 +1,6 @@
 {
   "name": "ballistic",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Utility-Belt Library for Sass",
   "keywords": [
     "bootcamp",
@@ -34,8 +34,7 @@
     "dist/"
   ],
   "bin": {},
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-sass": "~0.5.0",
