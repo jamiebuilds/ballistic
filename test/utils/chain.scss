@@ -1,0 +1,15 @@
+@include describe("Utils ~ Chain") {
+  $list: 1, 2, (3, 4, (5, 6, 7)), 8, 9, (10, 11);
+
+  @include it("should chain functions") {
+    @include should(expect( ballistic-chain( $list, ballistic-flatten, ballistic-last ) ), to( be( 11 )));
+  }
+
+  @include it("should chain functions with arguments") {
+    @include should(expect( ballistic-chain( $list, initial 3, nth 3, ballistic-last, ballistic-flatten, ballistic-loop 2 ) ), to( be( 6 7 5 )));
+  }
+
+  @include it("should pass a list as a set of arguments when using an exclamation mark at the end") {
+    @include should(expect( ballistic-chain( $list, ballistic-flatten, "max!") ), to( be( 11 )))
+  }
+}
