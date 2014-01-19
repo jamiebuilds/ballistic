@@ -9,11 +9,11 @@
     "underscore",
     "bower"
   ],
-  "homepage": "https://github.com/tctcl/ballistic",
-  "bugs": "https://github.com/tctcl/ballistic/issues",
+  "homepage": "https://github.com/thejameskyle/ballistic",
+  "bugs": "https://github.com/thejameskyle/ballistic/issues",
   "author": {
     "name": "Tactical",
-    "url": "https://github.com/tctcl"
+    "url": "https://github.com/thejameskyle"
   },
   "contributors": [
     {
@@ -25,7 +25,7 @@
   "main": "",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tctcl/ballistic.git"
+    "url": "git://github.com/thejameskyle/ballistic.git"
   },
   "scripts": {
     "test": "grunt test"
@@ -50,7 +50,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/tctcl/ballistic/blob/master/LICENSE.md"
+      "url": "https://github.com/thejameskyle/ballistic/blob/master/LICENSE.md"
     }
   ]
 }
