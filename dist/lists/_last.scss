@@ -1,0 +1,15 @@
+@function ballistic-last($list, $nth: 1) {
+  $length: length($list);
+
+  @if $length == 0 {
+    @return null;
+  }
+
+  $output: ();
+
+  @for $i from $length - $nth + 1 through $length {
+    $output: append($output, nth($list, $i), comma);
+  }
+
+  @return $output;
+}

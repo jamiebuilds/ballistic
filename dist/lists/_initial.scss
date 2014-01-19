@@ -1,0 +1,17 @@
+@function ballistic-initial($list, $nth: 1) {
+  @if length($list) == 0 {
+    @return null;
+  }
+
+  @if length($list) == 1 {
+    @return nth($list, 1);
+  }
+
+  $output: ();
+
+  @for $i from 1 through length($list) - $nth {
+    $output: append($output, nth($list, $i), comma);
+  }
+
+  @return $output;
+}

@@ -1,0 +1,13 @@
+@function ballistic-first($list, $nth: 1) {
+  @if length($list) == 0 {
+    @return null;
+  }
+
+  $output: ();
+
+  @for $i from 1 through $nth {
+    $output: append($output, nth($list, $i), comma);
+  }
+
+  @return $output;
+}

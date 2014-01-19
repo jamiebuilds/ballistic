@@ -1,0 +1,5 @@
+@function ballistic-round-to($number, $precision) {
+  $precision: ballistic-exponent(10, $precision);
+
+  @return round($number * $precision) / $precision;
+}

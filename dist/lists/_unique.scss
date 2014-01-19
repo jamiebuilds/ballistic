@@ -1,0 +1,22 @@
+@function ballistic-unique($list, $recursive: false, $remove: ()) {
+  $result: ();
+
+
+  @each $item in $list {
+    @if not index($result, $item) and not index($remove, $item) {
+      @if type-of($item) == "list" and $recursive {
+        $_result: ballistic-unique($item, $recursive, $remove: $result);
+
+        @if $_result != () {
+          $result: append($result, $_result);
+        }
+      }
+
+      @else {
+        $result: append($result, $item);
+      }
+    }
+  }
+
+  @return $result;
+}

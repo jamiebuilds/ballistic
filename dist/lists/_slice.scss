@@ -1,0 +1,19 @@
+@function ballistic-slice($list, $min: 1, $max: length($list)) {
+  $output: ();
+  $length: length($list);
+
+  @if $min < 0 { $min: $length + $min + 1 }
+  @if $max < 0 { $max: $length + $max }
+
+  @if $min > $length { $min: $length }
+  @if $max > $length { $max: $length }
+
+  @if $min <= 0 { $min: 1 }
+  @if $min <= 0 { $min: 1 }
+
+  @for $i from $min through $max {
+    $output: append($output, nth($list, $i), comma);
+  }
+
+  @return $output;
+}

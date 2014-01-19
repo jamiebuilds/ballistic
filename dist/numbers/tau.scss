@@ -1,9 +1,0 @@
-@function ballistic-tau() {
-  @return 2 * ballistic-pi();
-}
-
-// Aliases
-
-@function tau() {
-  @return ballistic-tau();
-}

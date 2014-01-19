@@ -1,0 +1,17 @@
+@function ballistic-reverse($list, $recursive: false) {
+  $result: ();
+
+  @for $i from length($list) * -1 through -1 {
+    $item: nth($list, abs($i));
+
+    @if length($item) > 1 and $recursive {
+      $result: append($result, ballistic-reverse($item, $recursive), comma);
+    }
+
+    @else {
+      $result: append($result, $item, comma);
+    }
+  }
+
+  @return $result;
+}

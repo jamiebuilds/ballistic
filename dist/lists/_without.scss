@@ -1,0 +1,21 @@
+@function ballistic-without($list, $values, $recursive: false) {
+  $result: ();
+
+  @each $item in $list {
+    $passed: true;
+
+    @each $value in $values {
+      @if type-of($item) == "list" and $recursive {
+        $item: ballistic-without($item, $value);
+      } @else if $item == $value {
+        $passed: false;
+      }
+    }
+
+    @if $passed {
+      $result: append($result, $item);
+    }
+  }
+
+  @return $result;
+}

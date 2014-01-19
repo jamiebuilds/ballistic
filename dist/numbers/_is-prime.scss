@@ -1,0 +1,4 @@
+@function ballistic-is-prime($number) {
+  $number: ballistic-parse-int($number);
+  @return ballistic-is-int($number) and $number >= 2 and ballistic-factorial($number - 1) % $number == $number - 1;
+}

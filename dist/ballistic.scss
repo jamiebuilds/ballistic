@@ -1,48 +1,245 @@
-@import "core/settings";
-@import "core/warn";
+@import "ballistic-common";
 
-@import "lists/chunk";
-@import "lists/compact";
-@import "lists/contains";
-@import "lists/first";
-@import "lists/flatten";
-@import "lists/initial";
-@import "lists/intersection";
-@import "lists/is-symmetrical";
-@import "lists/last";
-@import "lists/loop";
-@import "lists/prepend";
-@import "lists/replace-nth";
-@import "lists/replace";
-@import "lists/rest";
-@import "lists/reverse";
-@import "lists/slice";
-@import "lists/sum";
-@import "lists/union";
-@import "lists/unique";
-@import "lists/without";
-@import "lists/without-nth";
+@function warn($message, $value: null) {
+  @return ballistic-warn($message, $value);
+}
 
-@import "numbers/absolute-unit";
-@import "numbers/ceil-to";
-@import "numbers/convert";
-@import "numbers/e";
-@import "numbers/exponent";
-@import "numbers/factorial";
-@import "numbers/floor-to";
-@import "numbers/infinity";
-@import "numbers/is-float";
-@import "numbers/is-inf";
-@import "numbers/is-int";
-@import "numbers/parse-int";
-@import "numbers/is-prime";
-@import "numbers/is-unit";
-@import "numbers/limit";
-@import "numbers/phi";
-@import "numbers/pi";
-@import "numbers/relative-unit";
-@import "numbers/round-to";
-@import "numbers/tau";
-@import "numbers/unit-type";
+@function chunk($list, $size) {
+  @return ballistic-chunk($list, $size);
+}
 
-@import "utils/chain";
+@function compact($list) {
+  @return ballistic-compact($list);
+}
+
+@function purge($list) {
+  @return ballistic-compact($list);
+}
+
+@function contains($list, $value) {
+  @return ballistic-contains($list, $value)
+}
+
+@function include($list, $value) {
+  @return ballistic-contains($list, $value)
+}
+
+@function first($list, $nth: 1) {
+  @return ballistic-first($list, $nth)
+}
+
+@function head($list, $nth: 1) {
+  @return ballistic-first($list, $nth)
+}
+
+@function take($list, $nth: 1) {
+  @return ballistic-first($list, $nth)
+}
+
+@function flatten($list, $shallow: false) {
+  @return ballistic-flatten($list, $shallow);
+}
+
+@function initial($list, $nth: 1) {
+  @return ballistic-initial($list, $nth);
+}
+
+@function intersection($array, $others...) {
+  @return ballistic-intersection($array, $others...);
+}
+
+@function is-symmetrical($list, $recursive: false) {
+  @return ballistic-is-symmetrical($list, $recursive);
+}
+
+@function is-mirror($list, $recursive: false) {
+  @return ballistic-is-symmetrical($list, $recursive);
+}
+
+@function last($list, $nth: 1) {
+  @return ballistic-last($list, $nth);
+}
+
+@function loop($list, $value: 1) {
+  @return ballistic-loop($list, $value);
+}
+
+@function shift-indexes($list, $value: 1) {
+  @return ballistic-loop($list, $value);
+}
+
+@function prepend($list, $value) {
+  @return ballistic-prepend($list, $value);
+}
+
+@function replace-nth($list, $index, $value: null) {
+  @return ballistic-replace-nth($list, $index, $value);
+}
+
+@function replace($list, $old-value, $new-value: null, $recursive: false) {
+  @return ballistic-replace($list, $old-value, $new-value, $recursive);
+}
+
+@function rest($list, $nth: 1) {
+  @return ballistic-rest($list, $nth)
+}
+
+@function tail($list, $nth: 1) {
+  @return ballistic-rest($list, $nth)
+}
+
+@function drop($list, $nth: 1) {
+  @return ballistic-rest($list, $nth)
+}
+
+@function reverse($list, $recursive: false) {
+  @return ballistic-reverse($list, $recursive);
+}
+
+@function slice($list, $min: 1, $max: length($list)) {
+  @return ballistic-slice($list, $min, $max);
+}
+
+@function sum($list) {
+  @return ballistic-sum($list);
+}
+
+@function total($list) {
+  @return ballistic-sum($list);
+}
+
+@function union($lists...) {
+  @return ballistic-union($lists...);
+}
+
+@function unique($list, $recursive: false) {
+  @return ballistic-unique($list, $recursive);
+}
+
+@function uniq($list, $recursive: false) {
+  @return ballistic-unique($list, $recursive);
+}
+
+@function remove-duplicates($list, $recursive: false) {
+  @return ballistic-unique($list, $recursive);
+}
+
+@function without-nth($list, $index) {
+  @return ballistic-without-nth($list, $index);
+}
+
+@function remove-nth($list, $index) {
+  @return ballistic-without-nth($list, $index);
+}
+
+@function without($list, $values, $recursive: false) {
+  @return ballistic-without($list, $values, $recursive);
+}
+
+@function remove($list, $values, $recursive: false) {
+  @return ballistic-without($list, $values, $recursive);
+}
+
+@function absolute-unit($number) {
+  @return ballistic-absolute-unit($number);
+}
+
+@function ceil-to($number, $precision) {
+  @return ballistic-ceil-to($number, $precision);
+}
+
+@function convert($number, $unit, $ref: null) {
+  @return ballistic-convert($number, $unit, $ref);
+}
+
+@function e() {
+  @return ballistic-e();
+}
+
+@function exponent($base, $exponent) {
+  @return ballistic-exponent($base, $exponent);
+}
+
+@function power($base, $exponent) {
+  @return ballistic-exponent($base, $exponent);
+}
+
+@function pow($base, $exponent) {
+  @return ballistic-exponent($base, $exponent);
+}
+
+@function factorial($number) {
+  @return ballistic-factorial($number);
+}
+
+@function fact($number) {
+  @return ballistic-factorial($number);
+}
+
+@function floor-to($number, $precision) {
+  @return ballistic-floor-to($number, $precision);
+}
+
+@function infinity() {
+  @return ballistic-infinity();
+}
+
+@function inf() {
+  @return ballistic-infinity();
+}
+
+@function is-float($number) {
+  @return ballistic-is-float($number);
+}
+
+@function is-inf($number) {
+  @return ballistic-is-inf($number);
+}
+
+@function is-int($number) {
+  @return ballistic-is-int($number);
+}
+
+@function is-prime($number) {
+  @return ballistic-is-prime($number);
+}
+
+@function parse-int($number) {
+  @return ballistic-parse-int($number);
+}
+
+@function strip-unit($number) {
+  @return ballistic-parse-int($number);
+}
+
+@function phi() {
+  @return ballistic-phi();
+}
+
+@function golden-ratio() {
+  @return ballistic-phi();
+}
+
+@function pi() {
+  @return ballistic-pi();
+}
+
+@function relative-unit($number) {
+  @return ballistic-relative-unit($number);
+}
+
+@function round-to($number, $precision) {
+  @return ballistic-round-to($number, $precision);
+}
+
+@function tau() {
+  @return ballistic-tau();
+}
+
+@function unit-type($number) {
+  @return ballistic-unit-type($number);
+}
+
+@function chain($input, $functions...) {
+  @return ballistic-chain($input, $functions...);
+}

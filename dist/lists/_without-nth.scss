@@ -1,0 +1,3 @@
+@function ballistic-without-nth($list, $index) {
+  @return replace-nth($list, $index);
+}

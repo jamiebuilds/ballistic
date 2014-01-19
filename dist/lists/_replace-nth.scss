@@ -1,0 +1,31 @@
+@function ballistic-replace-nth($list, $index, $value: null) {
+  $result: ();
+
+  @if type-of($index) != number {
+    @return ballistic-warn("List index #{$index} is not a number for `replace-nth`/`remove-nth`.");
+  }
+
+  @else if $index == 0 {
+    @return ballistic-warn("List index 0 must be a non-zero integer for `replace-nth`/`remove-nth`.");
+  }
+
+  @else if abs($index) > length($list) {
+    @return ballistic-warn("List index is #{$index} but list is only #{length($list)} item long for `replace-nth`/`remove-nth`.");
+  }
+
+  @else {
+    $index: if($index < 0, length($list) + $index + 1, $index);
+
+    @for $i from 1 through length($list) {
+      @if $i == $index and $value != null {
+        $result: append($result, $value, comma);
+      }
+
+      @else if $i != $index {
+        $result: append($result, nth($list, $i), comma);
+      }
+    }
+  }
+
+  @return $result;
+}

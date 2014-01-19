@@ -1,0 +1,4 @@
+@function ballistic-is-symmetrical($list, $recursive: false) {
+  $reverse: ballistic-reverse($list, $recursive);
+  @return $reverse == ballistic-reverse($reverse, $recursive);
+}
