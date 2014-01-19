@@ -1,0 +1,11 @@
+@function ballistic-compact($list) {
+  $compacted: ();
+
+  @each $item in $list {
+    @if $item and $item != "" {
+      $compacted: append($compacted, $item, comma);
+    }
+  }
+
+  @return $compacted;
+}

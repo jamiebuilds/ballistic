@@ -1,9 +1,0 @@
-@function ballistic-is-float($number) {
-  @return type-of($number) == number and floor(abs($number)) != abs($number);
-}
-
-// Aliases
-
-@function is-float($number) {
-  @return ballistic-is-float($number);
-}

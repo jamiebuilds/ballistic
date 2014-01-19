@@ -1,0 +1,10 @@
+@function ballistic-loop($list, $value: 1) {
+  $result: ();
+  $length: length($list);
+
+  @for $i from 0 to $length {
+    $result: append($result, nth($list, ($i - $value) % $length + 1));
+  }
+
+  @return $result;
+}

@@ -1,0 +1,7 @@
+@function ballistic-warn($message, $value: null) {
+  @if $ballistic-setting-verbose {
+    @warn $message;
+  }
+
+  @return $value;
+}

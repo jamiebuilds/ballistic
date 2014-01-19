@@ -1,0 +1,19 @@
+@function ballistic-rest($list, $nth: 1) {
+  $length: length($list);
+
+  @if $length == 0 {
+    @return null;
+  }
+
+  @if $length == 1 {
+    @return nth($list, $length);
+  }
+
+  $output: ();
+
+  @for $i from $nth + 1 through $length {
+    $output: append($output, nth($list, $i), comma);
+  }
+
+  @return $output;
+}

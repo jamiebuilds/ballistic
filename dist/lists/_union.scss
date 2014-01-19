@@ -1,0 +1,12 @@
+@function ballistic-union($lists...) {
+  $flattened: ballistic-flatten($lists, $shallow: true);
+  $unique: ();
+
+  @each $item in $flattened {
+    @if not index($unique, $item) {
+      $unique: append($unique, $item, comma);
+    }
+  }
+
+  @return $unique;
+}

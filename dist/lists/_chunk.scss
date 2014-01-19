@@ -1,0 +1,19 @@
+@function ballistic-chunk($list, $size) {
+  @if $size >= length($list) {
+    @return $list;
+  }
+
+  $result: ();
+  $temp: ();
+
+  @for $index from 1 through length($list) {
+    $temp: append( $temp, nth($list, $index) );
+
+    @if $index % $size == 0 or $index == length($list) {
+      $result: append($result, $temp, comma);
+      $temp: ();
+    }
+  }
+
+  @return $result;
+}

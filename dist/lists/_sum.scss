@@ -1,0 +1,21 @@
+@function ballistic-sum($list) {
+  $result: 0;
+
+  $unit: unit( nth($list, 1) );
+
+  @each $item in $list {
+    @if type-of($item) == number {
+
+      @if unit($item) == $unit {
+        $result: $result + $item;
+      } @else {
+        @return ballistic-warn("Sum cannot calculate lists with values that have varying units");
+      }
+
+    } @else {
+      @return ballistic-warn("Sum cannot calculate lists that contain values other than numbers");
+    }
+  }
+
+  @return $result;
+}

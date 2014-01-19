@@ -1,9 +1,0 @@
-@function ballistic-e() {
-  @return 2.71828182845;
-}
-
-// Aliases
-
-@function e() {
-  @return ballistic-e();
-}

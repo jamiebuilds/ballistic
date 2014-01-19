@@ -1,0 +1,27 @@
+@function ballistic-intersection($array, $others...) {
+  $unique: ();
+
+  @each $item in $array {
+    @if not index($unique, $item) {
+      $unique: append($unique, $item, comma);
+    }
+  }
+
+  $intersection: ();
+
+  @each $item in $unique {
+    $exists: true;
+
+    @each $other in $others {
+      @if not index($other, $item) {
+        $exists: false;
+      }
+    }
+
+    @if $exists {
+      $intersection: append($intersection, $item, comma);
+    }
+  }
+
+  @return $intersection;
+}

@@ -1,9 +1,0 @@
-@function ballistic-is-int($number) {
-  @return type-of($number) == number and floor(abs($number)) == abs($number);
-}
-
-// Aliases
-
-@function is-int($number) {
-  @return ballistic-is-int($number);
-}

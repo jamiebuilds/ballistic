@@ -1,0 +1,21 @@
+@function ballistic-flatten($list, $shallow: false) {
+  $result: ();
+
+  @each $item in $list {
+    @if type-of($item) == "list" {
+      @if $shallow {
+        @each $_item in $item {
+          $result: append($result, $_item);
+        }
+      } @else {
+        @each $_item in ballistic-flatten($item) {
+          $result: append($result, $_item);
+        }
+      }
+    } @else {
+      $result: append($result, $item);
+    }
+  }
+
+  @return $result;
+}
