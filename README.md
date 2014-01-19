@@ -14,7 +14,7 @@ In the future, Ballistic will hopefully be available in more ways, for now you c
 #### Git
 
 ```
-git clone git@github.com:tctcl/ballistic.git && cd ballistic
+git clone git@github.com:thejameskyle/ballistic.git && cd ballistic
 ```
 
 #### Bower
