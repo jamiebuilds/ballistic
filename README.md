@@ -1,11 +1,11 @@
-Ballistic [![NPM version](https://badge.fury.io/js/ballistic.png)](http://badge.fury.io/js/ballistic) [![Build Status](https://travis-ci.org/tctcl/ballistic.png?branch=master)](https://travis-ci.org/tctcl/ballistic) [![Dependency Status](https://david-dm.org/tctcl/ballistic.png)](https://david-dm.org/tctcl/ballistic) [![devDependency Status](https://david-dm.org/tctcl/ballistic/dev-status.png)](https://david-dm.org/tctcl/ballistic#info=devDependencies)
+Ballistic [![NPM version](https://badge.fury.io/js/ballistic.png)](http://badge.fury.io/js/ballistic) [![Build Status](https://travis-ci.org/thejameskyle/ballistic.png?branch=master)](https://travis-ci.org/thejameskyle/ballistic) [![Dependency Status](https://david-dm.org/tctcl/ballistic.png)](https://david-dm.org/thejameskyle/ballistic) [![devDependency Status](https://david-dm.org/tctcl/ballistic/dev-status.png)](https://david-dm.org/thejameskyle/ballistic#info=devDependencies)
 ========
 
 Utility-Belt Library for Sass
 
-#### [Read Introduction](https://github.com/tctcl/ballistic/wiki/introduction)
+#### [Read Introduction](https://github.com/thejameskyle/ballistic/wiki/introduction)
 
-#### [Read Setup](https://github.com/tctcl/ballistic/wiki/setup)
+#### [Read Setup](https://github.com/thejameskyle/ballistic/wiki/setup)
 
 ## Install
 
@@ -35,7 +35,7 @@ Have a question or need help? Tweet [@thejameskyle](https://twitter.com/thejames
 
 ## Contributing
 
-As an open-source project, contributions are more than welcome, they're extremely helpful and actively encouraged. If you see any room for improvement, open an [issue](https://github.com/tctcl/ballistic/issues) or submit a [pull request](https://github.com/tctcl/ballistic/pulls). Also make sure to take a look at the [contributing doc](CONTRIBUTING.md).
+As an open-source project, contributions are more than welcome, they're extremely helpful and actively encouraged. If you see any room for improvement, open an [issue](https://github.com/thejameskyle/ballistic/issues) or submit a [pull request](https://github.com/thejameskyle/ballistic/pulls). Also make sure to take a look at the [contributing doc](CONTRIBUTING.md).
 
 ## License
 
