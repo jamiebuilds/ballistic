@@ -1,5 +1,11 @@
 # Changelog
 
+#### 0.3.1 - 2014-01-18
+
+- Use Sass Partials
+- Move Prefixes to separate file
+- `bootcamp-common.scss`
+
 #### 0.3.0 - 2013-11-23
 
 - Add `parse-int()` alias `strip-unit()`

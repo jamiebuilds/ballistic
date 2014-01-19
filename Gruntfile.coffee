@@ -9,7 +9,8 @@ module.exports = (grunt) ->
 
   # Grunt Tasks
   grunt.initConfig
-    meta: version: '0.3.0'
+    pkg: grunt.file.readJSON 'package.json'
+    meta: version: '<%= pkg.version %>'
 
     # Sass
     sass: test:
