@@ -1,7 +1,7 @@
 {
   "name": "ballistic",
   "version": "0.3.0",
-  "homepage": "http://github.com/tctcl/ballistic",
+  "homepage": "http://github.com/thejameskyle/ballistic",
   "main": "dist/ballistic.scss",
   "ignore": [
     "test",
