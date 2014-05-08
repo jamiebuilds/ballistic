@@ -19,6 +19,16 @@
     @include should(expect( ballistic-first($booleans, 2) ), to( be( (true, false) )));
   }
 
+  @include it("should return self when the length of list is not enough") {
+    $numbers:  1, 2, 3;
+    $strings:  "foo", "bar", "baz";
+    $booleans: true, false, false;
+
+    @include should(expect( ballistic-first($numbers , 4) ), to( be( $numbers )));
+    @include should(expect( ballistic-first($strings , 4) ), to( be( $strings )));
+    @include should(expect( ballistic-first($booleans, 4) ), to( be( $booleans )));
+  }
+
   @include it("should return the only item in an single item array") {
     $number: 1;
     $string: "foo";
