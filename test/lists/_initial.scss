@@ -24,9 +24,9 @@
     $strings:  "foo", "bar", "baz";
     $booleans: true, false, false;
 
-    @include should(expect( ballistic-initial($numbers , 4) ), to( be( () )));
-    @include should(expect( ballistic-initial($strings , 4) ), to( be( () )));
-    @include should(expect( ballistic-initial($booleans, 4) ), to( be( () )));
+    @include should(expect( ballistic-initial($numbers , 4) ), to( be-empty()));
+    @include should(expect( ballistic-initial($strings , 4) ), to( be-empty()));
+    @include should(expect( ballistic-initial($booleans, 4) ), to( be-empty()));
   }
 
   @include it("should return the only item in an single item array") {
