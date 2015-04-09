@@ -5,6 +5,10 @@
     @return null;
   }
 
+  @if $length <= $nth {
+    @return $list;
+  }
+
   $output: ();
 
   @for $i from $length - $nth + 1 through $length {

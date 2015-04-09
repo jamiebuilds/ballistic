@@ -1,6 +1,12 @@
 @function ballistic-first($list, $nth: 1) {
-  @if length($list) == 0 {
+  $length: length($list);
+
+  @if $length == 0 {
     @return null;
+  }
+
+  @if $length <= $nth {
+    @return $list;
   }
 
   $output: ();

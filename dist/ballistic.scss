@@ -17,23 +17,23 @@
 }
 
 @function contains($list, $value) {
-  @return ballistic-contains($list, $value)
+  @return ballistic-contains($list, $value);
 }
 
 @function include($list, $value) {
-  @return ballistic-contains($list, $value)
+  @return ballistic-contains($list, $value);
 }
 
 @function first($list, $nth: 1) {
-  @return ballistic-first($list, $nth)
+  @return ballistic-first($list, $nth);
 }
 
 @function head($list, $nth: 1) {
-  @return ballistic-first($list, $nth)
+  @return ballistic-first($list, $nth);
 }
 
 @function take($list, $nth: 1) {
-  @return ballistic-first($list, $nth)
+  @return ballistic-first($list, $nth);
 }
 
 @function flatten($list, $shallow: false) {
@@ -81,15 +81,15 @@
 }
 
 @function rest($list, $nth: 1) {
-  @return ballistic-rest($list, $nth)
+  @return ballistic-rest($list, $nth);
 }
 
 @function tail($list, $nth: 1) {
-  @return ballistic-rest($list, $nth)
+  @return ballistic-rest($list, $nth);
 }
 
 @function drop($list, $nth: 1) {
-  @return ballistic-rest($list, $nth)
+  @return ballistic-rest($list, $nth);
 }
 
 @function reverse($list, $recursive: false) {
